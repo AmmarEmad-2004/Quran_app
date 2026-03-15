@@ -36,7 +36,7 @@ static TextStyle regularCairo14(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 14),
     fontFamily: 'Cairo',
-    color: AppColors.kBlack,
+    color: AppColors.darkGrey,
     fontWeight: FontWeight.w400,
 
   );
