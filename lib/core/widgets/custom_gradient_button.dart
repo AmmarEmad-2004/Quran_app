@@ -41,7 +41,7 @@ class CustomGradientButton extends StatelessWidget {
                 fit: BoxFit.scaleDown,
                 child: Text(
                   text,
-                  style: AppStyles.styleMedium24Cairo(context).copyWith(fontSize: fontSize ?? 14) 
+                  style: AppStyles.mediumCairo24(context).copyWith(fontSize: fontSize ?? 14) 
                 ),
               ),
               Icon(icon, color: textColor, size: 16),

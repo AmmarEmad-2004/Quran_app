@@ -10,7 +10,7 @@ Future<bool> showConfirmDialog({
           builder: (context) {
             return AlertDialog(
               title: Text('Are you sure you want to delete this chat?!',
-                  style: AppStyles.styleMedium24Cairo(context)),
+                  style: AppStyles.mediumCairo24(context)),
               actions: [
                 TextButton(
                     onPressed: () {
@@ -18,7 +18,7 @@ Future<bool> showConfirmDialog({
                       onDelete();
                     },
                     child: Text('Delete',
-                        style: AppStyles.styleMedium24Cairo(context))),
+                        style: AppStyles.mediumCairo24(context))),
               ],
             );
           }) ??

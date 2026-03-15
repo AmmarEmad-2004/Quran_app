@@ -39,7 +39,7 @@ class CustomButon extends StatelessWidget {
              // if (image != null) Image.asset(image!, fit: BoxFit.contain),
               Text(
                 text,
-                style: AppStyles.styleMedium24Cairo(context).copyWith(fontSize: fontSize ?? 14)
+                style: AppStyles.mediumCairo24(context).copyWith(fontSize: fontSize ?? 14)
               ),
               Icon(icon, color: textColor, size: 16),
             ],
