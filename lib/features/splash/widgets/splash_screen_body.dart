@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
@@ -25,7 +26,9 @@ class SplashScreenBody extends StatelessWidget {
             SizedBox(height: 33),
             Text(
               "المصحف الشريف",
-              style: AppStyles.mediumCairo36(context).copyWith(color: Colors.white),
+              style: AppStyles.mediumCairo36(
+                context,
+              ).copyWith(color: Colors.white),
             ),
             SizedBox(height: 33),
             Text(
@@ -34,7 +37,15 @@ class SplashScreenBody extends StatelessWidget {
                 context,
               ).copyWith(color: AppColors.lightGold),
             ),
-            Text("سورة المزمل - آية 4",style: AppStyles.regularCairo14(context),)
+            SizedBox(height: 8),
+            Text(
+              "سورة المزمل - آية 4",
+              style: AppStyles.regularCairo14(
+                context,
+              ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.6)),
+            ),
+
+            Lottie.asset("assets/animation/Loading.json", fit: BoxFit.contain),
           ],
         ),
       ),
