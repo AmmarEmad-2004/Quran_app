@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 
 abstract class AppStyles {
-static TextStyle regular12(BuildContext context) {
+static TextStyle regularCairo12(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 12), 
     fontFamily: 'Cairo',
@@ -13,7 +13,7 @@ static TextStyle regular12(BuildContext context) {
   );
 }
 
-static TextStyle styleMedium24Cairo(BuildContext context) {
+static TextStyle mediumCairo24(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 24), 
     fontFamily: 'Cairo',
@@ -23,7 +23,7 @@ static TextStyle styleMedium24Cairo(BuildContext context) {
   );
 }
 
-static TextStyle styleRegular16Cairo(BuildContext context) {
+static TextStyle regularCairo16(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 16),
     fontFamily: 'Cairo',
@@ -32,8 +32,17 @@ static TextStyle styleRegular16Cairo(BuildContext context) {
 
   );
 }
+static TextStyle regularCairo14(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 14),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w400,
 
-static TextStyle styleSemiBold24Cairo(BuildContext context) {
+  );
+}
+
+static TextStyle semiBoldCairo24(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 24),
     fontFamily: 'Cairo',
@@ -42,7 +51,7 @@ static TextStyle styleSemiBold24Cairo(BuildContext context) {
 
   );
 }
-static TextStyle regular18(BuildContext context) {
+static TextStyle regularCairo18(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 18),
     fontFamily: 'Cairo',
@@ -51,16 +60,16 @@ static TextStyle regular18(BuildContext context) {
   );
 }
 
-static TextStyle regular20(BuildContext context) {
+static TextStyle regularAmiri20(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 20),
-    fontFamily: 'Cairo',
+    fontFamily: 'Amiri',
     color: AppColors.kBlack,
     fontWeight: FontWeight.w400,
   );
 }
 
-static TextStyle regular30(BuildContext context) {
+static TextStyle regularCairo30(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 30),
     fontFamily: 'Cairo',
@@ -69,7 +78,7 @@ static TextStyle regular30(BuildContext context) {
   );
 }
 
-static TextStyle medium14(BuildContext context) {
+static TextStyle mediumCairo14(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 14),
     fontFamily: 'Cairo',
@@ -78,7 +87,7 @@ static TextStyle medium14(BuildContext context) {
   );
 }
 
-static TextStyle medium16(BuildContext context) {
+static TextStyle mediumCairo16(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 16),
     fontFamily: 'Cairo',
@@ -87,7 +96,7 @@ static TextStyle medium16(BuildContext context) {
   );
 }
 
-static TextStyle medium18(BuildContext context) {
+static TextStyle mediumCairo18(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 18),
     fontFamily: 'Cairo',
@@ -96,7 +105,7 @@ static TextStyle medium18(BuildContext context) {
   );
 }
 
-static TextStyle medium36(BuildContext context) {
+static TextStyle mediumCairo36(BuildContext context) {
   return TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 36),
     fontFamily: 'Cairo',
