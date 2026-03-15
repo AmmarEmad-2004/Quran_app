@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 
 abstract class AppStyles {
-static TextStyle styleRegular12Cairo(BuildContext context) {
+static TextStyle regular12(BuildContext context) {
   return TextStyle(
-    fontSize: getResponsiveFontSize(context, fontSize: 12), // 18, 30, 20
+    fontSize: getResponsiveFontSize(context, fontSize: 12), 
     fontFamily: 'Cairo',
     color: AppColors.darkGrey,
     fontWeight: FontWeight.w400,
@@ -15,12 +15,11 @@ static TextStyle styleRegular12Cairo(BuildContext context) {
 
 static TextStyle styleMedium24Cairo(BuildContext context) {
   return TextStyle(
-    fontSize: getResponsiveFontSize(context, fontSize: 24),  // 36, 18, 16, 14
+    fontSize: getResponsiveFontSize(context, fontSize: 24), 
     fontFamily: 'Cairo',
     color: AppColors.kBlack,
     fontWeight: FontWeight.w500,
-    // height: 1.333, 
-    // letterSpacing: 0,
+
   );
 }
 
@@ -30,8 +29,7 @@ static TextStyle styleRegular16Cairo(BuildContext context) {
     fontFamily: 'Cairo',
     color: AppColors.kBlack,
     fontWeight: FontWeight.w400,
-    // height: 1.5, 
-    // letterSpacing: 0,
+
   );
 }
 
@@ -41,11 +39,71 @@ static TextStyle styleSemiBold24Cairo(BuildContext context) {
     fontFamily: 'Cairo',
     color: AppColors.kBlack,
     fontWeight: FontWeight.w600,
-    height: 1.333, 
-    letterSpacing: 0,
+
+  );
+}
+static TextStyle regular18(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w400,
   );
 }
 
+static TextStyle regular20(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 20),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w400,
+  );
+}
+
+static TextStyle regular30(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 30),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w400,
+  );
+}
+
+static TextStyle medium14(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 14),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w500,
+  );
+}
+
+static TextStyle medium16(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 16),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w500,
+  );
+}
+
+static TextStyle medium18(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w500,
+  );
+}
+
+static TextStyle medium36(BuildContext context) {
+  return TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 36),
+    fontFamily: 'Cairo',
+    color: AppColors.kBlack,
+    fontWeight: FontWeight.w500,
+  );
+}
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
