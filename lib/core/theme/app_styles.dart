@@ -48,7 +48,7 @@ static TextStyle styleSemiBold24Cairo(BuildContext context) {
 
 }
 
-double getResponsiveFontSize(context, {required double fontSize}) {
+double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
 
@@ -58,7 +58,7 @@ double getResponsiveFontSize(context, {required double fontSize}) {
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
 
-double getScaleFactor(context) {
+double getScaleFactor(BuildContext context) {
   double width = MediaQuery.sizeOf(context).width;
   if (width < 600) {
     return width / 400;
