@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 
 class CircleBadgeCard extends StatelessWidget {
-  const CircleBadgeCard({super.key, required this.child, required this.size});
+  const CircleBadgeCard({super.key, required this.child, required this.height, required this.width, });
   final Widget child;
-  final double size;
+  final double height, width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size,
-      height: size,
+      width: width,
+      height: height,
       decoration: ShapeDecoration(
         gradient: LinearGradient(
           begin: Alignment(0.50, 0.00),

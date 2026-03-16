@@ -40,7 +40,7 @@ class NavButtonItem extends StatelessWidget {
           color: isSelected ? null : AppColors.kBackGround,
           borderRadius: BorderRadius.circular(radius ?? 16),
           border: isSelected
-              ? Border.all(color: Colors.transparent): Border.all(color: AppColors.darkGrey.withValues(alpha: 0.2))
+              ? Border.all(color: Colors.transparent): Border.all(color: AppColors.darkGrey.withValues(alpha: 0.1))
              ,
         ),
         height: 36,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/widgets/gradient_appbar.dart';
 import 'package:quran_app/features/quran/widgets/app_bar_detalis_screen_conten.dart';
 import 'package:quran_app/features/quran/widgets/ayah_list.dart';
+import 'package:quran_app/features/quran/widgets/ayah_tool_bar.dart';
 import 'package:quran_app/features/quran/widgets/nav_buttons.dart';
 
 class QuranDetailsScreenBody extends StatelessWidget {
@@ -12,6 +13,7 @@ class QuranDetailsScreenBody extends StatelessWidget {
     return  Scaffold(
       body: Column(children: [
         GradientAppbar(radius: 0 ,height: 0.1 , child: AppBarDetailsScreenContent(surahName: 'الفاتحة', surahType: 'مكية', ayahCount: 7,)),
+       AyahToolBar(),
        Expanded(child: AyahList()),
        SurahNavigationBar(),
       ],),

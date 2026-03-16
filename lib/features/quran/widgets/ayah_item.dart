@@ -23,7 +23,8 @@ class AyahItem extends StatelessWidget {
             style: AppStyles.mediumCairo18(context),
           ),
           trailing: CircleBadgeCard(
-            size: 40,
+            height: 40,
+            width: 40,
             child: Text(
              "${ayahModel.number}",
               textAlign: TextAlign.right,
