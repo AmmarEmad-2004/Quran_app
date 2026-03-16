@@ -1,8 +1,9 @@
 class AppImages {
   AppImages._();
-  
+
   static const String asr = "assets/images/AsrImage.png";
-  static const String azkarAfterPreying = "assets/images/azkar_after_preying.png";
+  static const String azkarAfterPreying =
+      "assets/images/azkar_after_preying.png";
   static const String azkarNoum = "assets/images/azkar_noum.png";
   static const String azkarSabah = "assets/images/azkar_sabah.png";
   static const String bookIcon = "assets/images/bookIcon.png";
@@ -21,7 +22,8 @@ class AppImages {
   static const String mark = "assets/images/markImage.png";
   static const String mushafIcon = "assets/images/mushafIcon.png";
   static const String notificationIcon = "assets/images/notificationIcon.png";
-  static const String onboardingBackground = "assets/images/OnboardingBackground.png";
+  static const String onboardingBackground =
+      "assets/images/OnboardingBackground.png";
   static const String qeblaIcon = "assets/images/qeblaIcon.png";
   static const String searchIcon = "assets/images/searchIcon.png";
   static const String sebhaIcon = "assets/images/sebhaIcon.png";
@@ -32,4 +34,5 @@ class AppImages {
   static const String star = "assets/images/starImage.png";
   static const String surahIcon = "assets/images/surahIcon.png";
   static const String zuhrIandAsrcon = "assets/images/zuhrIandAsrcon.png";
+  static const String starSuraNumber = "assets/images/starSuraNumber.png";
 }
