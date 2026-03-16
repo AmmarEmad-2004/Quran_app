@@ -35,4 +35,9 @@ class AppImages {
   static const String surahIcon = "assets/images/surahIcon.png";
   static const String zuhrIandAsrcon = "assets/images/zuhrIandAsrcon.png";
   static const String starSuraNumber = "assets/images/starSuraNumber.png";
+  static const String lightGreenCircle = "assets/images/lightGreencircle.png";
+  static const String soudiFlag = "assets/images/soudiFlag.png";
+  static const String usFlag = "assets/images/🇺🇸Flag.png";
+  static const String arduFlag = "assets/images/arduFlag.png";
+  static const String frFlag = "assets/images/frFlag.png";
 }
