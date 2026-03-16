@@ -1,7 +1,9 @@
 import 'package:flutter/widgets.dart';
 
 class AppColors {
-  static const lightGreen = Color(0xff0D7E5E); // used in different opacity level
+  static const lightGreen = Color(
+    0xff0D7E5E,
+  ); // used in different opacity level
   static const darkGreen = Color(0xff0A6349);
   static const lightGold = Color(0xffD4AF37); // used in different opacity level
   static const darkGold = Color(0xffB8941F);
@@ -18,4 +20,5 @@ class AppColors {
   static const kWhite = Color(0xffFFFFFF);
   static const kBlack = Color(0xff1A1A1A);
   static const kBackGround = Color(0xffF8F7F4);
+  static const gradientWhiteColor = Color(0xffE8F5F1);
 }
