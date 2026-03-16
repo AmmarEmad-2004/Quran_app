@@ -3,8 +3,8 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_text_feild.dart';
 
-class AppBarContent extends StatelessWidget {
-  const AppBarContent({super.key});
+class AppBarQuranScreenContent extends StatelessWidget {
+  const AppBarQuranScreenContent({super.key});
 
   @override
   Widget build(BuildContext context) {
