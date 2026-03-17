@@ -40,8 +40,6 @@ class AppImages {
   static const String usFlag = "assets/images/🇺🇸Flag.png";
   static const String arduFlag = "assets/images/arduFlag.png";
   static const String frFlag = "assets/images/frFlag.png";
-  static const String langIconWithShadow =
-      "assets/images/langIconWithShadow.png";
   static const String locationIconWithShadow =
       "assets/images/locationIconWithShadow.png";
   static const String locationIconGreen = "assets/images/locationIconGreen.png";

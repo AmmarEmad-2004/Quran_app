@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/constants/app_images.dart';
+import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_button.dart';
@@ -43,6 +45,9 @@ class LocationScreenBody extends StatelessWidget {
               fontSize: 18,
               height: 50,
               image: AppImages.locationIcon,
+              onTap: () {
+                GoRouter.of(context).go(AppRouters.quran);
+              },
             ),
             CustomTextButton(
               text: "تخطي الأن",

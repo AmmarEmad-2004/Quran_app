@@ -34,6 +34,7 @@ class _LanguageListState extends State<LanguageList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+       physics: NeverScrollableScrollPhysics(),
       itemCount: languages.length,
       itemBuilder: (context, index) {
         return LanguageItem(

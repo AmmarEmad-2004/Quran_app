@@ -1,11 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 import 'package:quran_app/core/constants/app_images.dart';
+import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 
-class SplashScreenBody extends StatelessWidget {
+class SplashScreenBody extends StatefulWidget {
   const SplashScreenBody({super.key});
+
+  @override
+  State<SplashScreenBody> createState() => _SplashScreenBodyState();
+}
+
+class _SplashScreenBodyState extends State<SplashScreenBody> {
+  @override
+  void initState() {
+    super.initState();
+    navigateAfterDelay();
+  }
+
+  Future<void> navigateAfterDelay() async {
+    await Future.delayed(const Duration(seconds: 3));
+    if (!mounted) return;
+    GoRouter.of(context).go(AppRouters.language);
+  }
 
   @override
   Widget build(BuildContext context) {
