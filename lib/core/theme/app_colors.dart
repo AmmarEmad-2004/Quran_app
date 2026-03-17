@@ -21,4 +21,5 @@ class AppColors {
   static const kBlack = Color(0xff1A1A1A);
   static const kBackGround = Color(0xffF8F7F4);
   static const gradientWhiteColor = Color(0xffE8F5F1);
+
 }
