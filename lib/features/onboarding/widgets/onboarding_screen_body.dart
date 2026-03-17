@@ -15,10 +15,7 @@ class OnBoardingScreenBody extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Column(children: [
-          
-        ],
-      ),
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: []),
     );
   }
 }
