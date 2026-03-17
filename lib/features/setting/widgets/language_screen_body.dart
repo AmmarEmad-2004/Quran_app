@@ -21,14 +21,20 @@ class LanguageScreenBody extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomGradientBackground(
-              sizeWidth: 96,
-              borderRadius: 30,
-              colorGradient1: AppColors.lightGreen,
-              colorGradient2: AppColors.darkGreen,
-              child: Padding(
-                padding: const EdgeInsets.all( 12),
-                child: Image.asset(AppImages.globalIcon, ),
+            Card(
+              color: Colors.transparent,
+              elevation: 10,
+              shadowColor: Colors.black.withValues(alpha: 0.6),
+
+              child: CustomGradientBackground(
+                sizeWidth: 96,
+                borderRadius: 30,
+                colorGradient1: AppColors.lightGreen,
+                colorGradient2: AppColors.darkGreen,
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Image.asset(AppImages.globalIcon),
+                ),
               ),
             ),
             Text(
