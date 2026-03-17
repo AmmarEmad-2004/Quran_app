@@ -35,7 +35,7 @@ class CustomGradientButton extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(20),
         ),
         height: height ?? 56,
         child: Center(

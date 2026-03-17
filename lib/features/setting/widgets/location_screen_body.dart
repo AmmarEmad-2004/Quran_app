@@ -3,6 +3,7 @@ import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_button.dart';
+import 'package:quran_app/core/widgets/custom_text_button.dart';
 import 'package:quran_app/features/setting/widgets/location_info_list.dart';
 
 class LocationScreenBody extends StatelessWidget {
@@ -21,8 +22,8 @@ class LocationScreenBody extends StatelessWidget {
             Image.asset(
               AppImages.locationIconWithShadow,
               fit: BoxFit.contain,
-              width: 120,
-              height: 120,
+              width: 140,
+              height: 140,
             ),
             Text(
               "تحديد الموقع",
@@ -42,6 +43,25 @@ class LocationScreenBody extends StatelessWidget {
               fontSize: 18,
               height: 50,
               image: AppImages.locationIcon,
+            ),
+            CustomTextButton(
+              text: "تخطي الأن",
+              onPressed: () {},
+              textStyle: AppStyles.mediumCairo14(
+                context,
+              ).copyWith(color: AppColors.darkGrey),
+            ),
+            Row(
+              spacing: 10,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(AppImages.protectIconGrey),
+                Text(
+                  "يمكنك تغيير هذا الإعداد لاحقًا من الإعدادات",
+                  style: AppStyles.regularCairo12(context),
+                ),
+              ],
             ),
           ],
         ),
