@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 
 class CircleBadgeCard extends StatelessWidget {
-  const CircleBadgeCard({super.key, required this.child, required this.height, required this.width, });
+  const CircleBadgeCard({
+    super.key,
+    required this.child,
+    required this.height,
+    required this.width, this.gradient1, this.gradient2,
+  });
   final Widget child;
   final double height, width;
+  final Color? gradient1, gradient2;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +20,7 @@ class CircleBadgeCard extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment(0.50, 0.00),
           end: Alignment(0.50, 1.00),
-          colors: [AppColors.lightGreen, AppColors.darkGreen],
+          colors: [gradient1?? AppColors.lightGreen,gradient2?? AppColors.darkGreen],
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(33554400),
@@ -34,7 +40,7 @@ class CircleBadgeCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(child: child)
+      child: Center(child: child),
     );
   }
 }

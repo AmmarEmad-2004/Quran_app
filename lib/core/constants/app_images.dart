@@ -40,4 +40,12 @@ class AppImages {
   static const String usFlag = "assets/images/🇺🇸Flag.png";
   static const String arduFlag = "assets/images/arduFlag.png";
   static const String frFlag = "assets/images/frFlag.png";
+  static const String langIconWithShadow =
+      "assets/images/langIconWithShadow.png";
+  static const String locationIconWithShadow =
+      "assets/images/locationIconWithShadow.png";
+  static const String locationIconGreen = "assets/images/locationIconGreen.png";
+  static const String sendIcon = "assets/images/sendIcon.png";
+  static const String protectIcon = "assets/images/protectIcon.png";
+  static const String protectIconGrey = "assets/images/protectIconGrey.png";
 }

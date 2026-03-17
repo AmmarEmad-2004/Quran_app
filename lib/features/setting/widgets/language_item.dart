@@ -8,30 +8,45 @@ import 'package:quran_app/features/setting/data/models/language_model.dart';
 class LanguageItem extends StatelessWidget {
   const LanguageItem({
     super.key,
-   required this.isSelected, required this.languageModel, this.onTap,
+    required this.isSelected,
+    required this.languageModel,
+    this.onTap,
   });
   final LanguageModel languageModel;
   final bool isSelected;
- final void Function()? onTap;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: CustomGradientBackground(
-        colorGradient1: isSelected ? AppColors.lightGreen.withValues(alpha: 0.1) : AppColors.kWhite,
-        colorGradient2: isSelected ? AppColors.lightGold.withValues(alpha: 0.05)  : AppColors.kWhite,
-        boderColor: isSelected? AppColors.lightGreen : Colors.transparent,
-      borderRadius: 16,
-      width: 2,
+        colorGradient1: isSelected
+            ? AppColors.lightGreen.withValues(alpha: 0.1)
+            : AppColors.kWhite,
+        colorGradient2: isSelected
+            ? AppColors.lightGold.withValues(alpha: 0.05)
+            : AppColors.kWhite,
+        boderColor: isSelected ? AppColors.lightGreen : Colors.transparent,
+        borderRadius: 16,
+        width: 2,
         child: ListTile(
           onTap: onTap,
-          leading: Image.asset(languageModel.imaageFlag, fit: BoxFit.contain),
+          leading: Image.asset(languageModel.image, fit: BoxFit.contain),
           title: Text(
-            languageModel.langName,
+            languageModel.title,
             style: AppStyles.mediumCairo18(context).copyWith(fontSize: 20),
           ),
-          subtitle: Text(languageModel.langNmaeTranslate, style: AppStyles.regularCairo14(context)),
-          trailing: isSelected ? CircleBadgeCard(height: 32, width: 32,child: Icon(Icons.check, color: AppColors.kWhite, size: 16,)): null
+          subtitle: Text(
+            languageModel.subTitle,
+            style: AppStyles.regularCairo14(context),
+          ),
+          trailing: isSelected
+              ? CircleBadgeCard(
+                  height: 32,
+                  width: 32,
+                  child: Icon(Icons.check, color: AppColors.kWhite, size: 16),
+                )
+              : null,
         ),
       ),
     );
