@@ -9,10 +9,15 @@ class CustomGradientButton extends StatelessWidget {
     required this.text,
     this.textColor,
     this.icon,
-    this.height, this.fontSize, this.colorGradient1, this.colorGradient2,
+    this.height,
+    this.fontSize,
+    this.colorGradient1,
+    this.colorGradient2,
+    this.image,
   });
   final VoidCallback? onTap;
   final String text;
+  final String? image;
   final Color? textColor, colorGradient1, colorGradient2;
   final IconData? icon;
   final double? height, fontSize;
@@ -23,7 +28,10 @@ class CustomGradientButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [colorGradient1 ?? AppColors.lightGreen, colorGradient2?? AppColors.darkGreen],
+            colors: [
+              colorGradient1 ?? AppColors.lightGreen,
+              colorGradient2 ?? AppColors.darkGreen,
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -32,16 +40,19 @@ class CustomGradientButton extends StatelessWidget {
         height: height ?? 56,
         child: Center(
           child: Row(
-             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
-            spacing: 2,
+            spacing: 8,
             children: [
-             // if (image != null) Image.asset(image!, fit: BoxFit.contain),
+              if (image != null)
+                Image.asset(image!, fit: BoxFit.contain, width: 18, height: 18),
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
                   text,
-                  style: AppStyles.mediumCairo24(context).copyWith(fontSize: fontSize ?? 14, color: AppColors.kWhite) 
+                  style: AppStyles.mediumCairo24(
+                    context,
+                  ).copyWith(fontSize: fontSize ?? 14, color: AppColors.kWhite),
                 ),
               ),
               Icon(icon, color: textColor, size: 16),
