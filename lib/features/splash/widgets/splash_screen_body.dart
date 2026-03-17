@@ -23,7 +23,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   Future<void> navigateAfterDelay() async {
     await Future.delayed(const Duration(seconds: 3));
     if (!mounted) return;
-    GoRouter.of(context).go(AppRouters.onBoarding);
+    GoRouter.of(context).pushReplacement(AppRouters.onBoarding);
   }
 
   @override
