@@ -1,25 +1,19 @@
 
+import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/features/prayer/data/models/prayer_time_model.dart';
 
 const List<PrayerTimeModel> prayerTimes = [
   PrayerTimeModel(
     nameArabic: 'الفجر',
     time: '5:15',
-    emoji: '🌅',
+    emoji: AppImages.fajr,
     status: PrayerStatus.passed,
-    alarmOn: false,
-  ),
-  PrayerTimeModel(
-    nameArabic: 'الشروق',
-    time: '6:45',
-    emoji: '☀️',
-    status: PrayerStatus.passed,
-    alarmOn: false,
+    alarmOn: true,
   ),
   PrayerTimeModel(
     nameArabic: 'الظهر',
     time: '12:30',
-    emoji: '🌤',
+    emoji: AppImages.azkarAfterPreying,
     status: PrayerStatus.current,
     subtitle: 'بعد ساعة و 15 دقيقة',
     progressPercent: 0.45,
@@ -28,7 +22,7 @@ const List<PrayerTimeModel> prayerTimes = [
   PrayerTimeModel(
     nameArabic: 'العصر',
     time: '3:45',
-    emoji: '🌥',
+    emoji: AppImages.asr,
     status: PrayerStatus.upcoming,
     subtitle: 'قادمة',
     alarmOn: true,
@@ -36,7 +30,7 @@ const List<PrayerTimeModel> prayerTimes = [
   PrayerTimeModel(
     nameArabic: 'المغرب',
     time: '6:15',
-    emoji: '🏙',
+    emoji: AppImages.maghrebIcon,
     status: PrayerStatus.upcoming,
     subtitle: 'قادمة',
     alarmOn: true,
@@ -44,9 +38,9 @@ const List<PrayerTimeModel> prayerTimes = [
   PrayerTimeModel(
     nameArabic: 'العشاء',
     time: '7:45',
-    emoji: '🌙',
+    emoji: AppImages.ishaaIcon,
     status: PrayerStatus.upcoming,
     subtitle: 'قادمة',
-    alarmOn: false,
+    alarmOn: true,
   ),
 ];

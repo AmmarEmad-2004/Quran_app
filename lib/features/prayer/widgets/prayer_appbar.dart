@@ -11,10 +11,10 @@ class PrayerAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientAppbar(
-      height: 0.45,
+      height: 0.44,
       radius: 50,
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           spacing: 20,
           mainAxisAlignment: MainAxisAlignment.start,
