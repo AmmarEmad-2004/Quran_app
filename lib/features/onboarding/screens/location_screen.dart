@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/features/setting/widgets/location_screen_body.dart';
+import 'package:quran_app/features/onboarding/widgets/location_screen_body.dart';
 
 class LocationScreen extends StatelessWidget {
   const LocationScreen({super.key});

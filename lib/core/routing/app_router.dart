@@ -4,8 +4,8 @@ import 'package:quran_app/features/onboarding/screens/onboarding_screen.dart';
 import 'package:quran_app/features/prayer/screens/prayer_screen.dart';
 import 'package:quran_app/features/quran/screens/quran_details_screen.dart';
 import 'package:quran_app/features/quran/screens/quran_screen.dart';
-import 'package:quran_app/features/setting/screens/language_screen.dart';
-import 'package:quran_app/features/setting/screens/location_screen.dart';
+import 'package:quran_app/features/onboarding/screens/language_screen.dart';
+import 'package:quran_app/features/onboarding/screens/location_screen.dart';
 import 'package:quran_app/features/splash/screens/splash_screen.dart';
 
 // GoRouter configuration
@@ -40,6 +40,10 @@ abstract class AppRouter {
         path: AppRouters.prayer,
         builder: (context, state) => const PrayerScreen(),
       ),
+      // GoRoute(
+      //   path: AppRouters.reminder,
+      //   builder: (context, state) => const ReminderScreen(),
+      // ),
     ],
   );
 }

@@ -6,7 +6,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_button.dart';
 import 'package:quran_app/core/widgets/custom_text_button.dart';
-import 'package:quran_app/features/setting/widgets/location_info_list.dart';
+import 'package:quran_app/features/onboarding/widgets/location_info_list.dart';
 
 class LocationScreenBody extends StatelessWidget {
   const LocationScreenBody({super.key});

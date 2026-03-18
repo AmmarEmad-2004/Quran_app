@@ -3,7 +3,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_card.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
-import 'package:quran_app/features/setting/data/models/language_model.dart';
+import 'package:quran_app/features/onboarding/data/models/language_model.dart';
 
 class LocationItemInfo extends StatelessWidget {
   const LocationItemInfo({super.key, required this.languageModel});

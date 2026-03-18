@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/features/setting/widgets/language_screen_body.dart';
+import 'package:quran_app/features/onboarding/widgets/language_screen_body.dart';
 
 class LanguageScreen extends StatelessWidget {
   const LanguageScreen({super.key});

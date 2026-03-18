@@ -6,7 +6,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
 import 'package:quran_app/core/widgets/custom_gradient_button.dart';
-import 'package:quran_app/features/setting/widgets/language_list.dart';
+import 'package:quran_app/features/onboarding/widgets/language_list.dart';
 
 class LanguageScreenBody extends StatelessWidget {
   const LanguageScreenBody({super.key});
