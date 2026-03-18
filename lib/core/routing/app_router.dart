@@ -11,7 +11,7 @@ import 'package:quran_app/features/splash/screens/splash_screen.dart';
 
 // GoRouter configuration
 abstract class AppRouter {
-  static GoRouter get goRouter => GoRouter(
+  static final GoRouter goRouter = GoRouter(
     routes: [
       GoRoute(
         path: AppRouters.splash,
@@ -27,10 +27,8 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: AppRouters.home,
-        pageBuilder: (context, state) => AppTransitions.buildPage(
-          state: state,
-          child: const HomeScreen(),
-        ),
+        pageBuilder: (context, state) =>
+            AppTransitions.buildPage(state: state, child: const HomeScreen()),
       ),
       GoRoute(
         path: AppRouters.quran,
