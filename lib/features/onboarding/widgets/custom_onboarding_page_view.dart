@@ -4,8 +4,12 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/onboarding/widgets/onboarding_item.dart';
 
 class CustomOnBoardingPageView extends StatelessWidget {
-  CustomOnBoardingPageView({super.key});
-  final List<OnBoardingItem> items = [
+  const CustomOnBoardingPageView({
+    super.key,
+    required this.pageController,
+    required this.onPageChanged,
+  });
+  final List<OnBoardingItem> items = const [
     OnBoardingItem(
       title: "القرآن الكريم",
       description:
@@ -27,20 +31,19 @@ class CustomOnBoardingPageView extends StatelessWidget {
       image: AppImages.fav1,
     ),
   ];
+  final PageController pageController;
+  final ValueChanged<int> onPageChanged;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.sizeOf(context).height * 0.5,
       child: PageView.builder(
-        itemCount: 3,
-        scrollDirection: Axis.horizontal,
+        controller: pageController,
+        itemCount: items.length,
+        onPageChanged: onPageChanged,
         itemBuilder: (context, index) {
-          return PageView.builder(
-            itemBuilder: (context, index) {
-              return items[index];
-            },
-          );
+          return items[index];
         },
       ),
     );
