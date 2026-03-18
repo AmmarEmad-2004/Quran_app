@@ -13,8 +13,16 @@ class LocationScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
+    return Container(
+      height: MediaQuery.sizeOf(context).height,
+      width: MediaQuery.sizeOf(context).width,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AppImages.onboardingBackground),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           spacing: 10,
