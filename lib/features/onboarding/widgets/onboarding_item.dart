@@ -12,12 +12,14 @@ class OnBoardingItem extends StatelessWidget {
     required this.image,
     this.gradientColor1 = AppColors.lightGreen,
     this.gradientColor2 = AppColors.darkGreen,
+    this.borderColor = const Color(0xff248267),
   });
   final String title;
   final String description;
   final String image;
   final Color gradientColor1;
   final Color gradientColor2;
+  final Color borderColor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,6 +27,7 @@ class OnBoardingItem extends StatelessWidget {
       child: Column(
         children: [
           CustomItemContainer(
+            borderColor: borderColor,
             image: image,
             gradientColor1: gradientColor1,
             gradientColor2: gradientColor2,
