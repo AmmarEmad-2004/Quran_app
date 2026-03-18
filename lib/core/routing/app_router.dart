@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
+import 'package:quran_app/core/routing/app_transitions.dart';
 import 'package:quran_app/features/onboarding/screens/onboarding_screen.dart';
 import 'package:quran_app/features/quran/screens/quran_details_screen.dart';
 import 'package:quran_app/features/quran/screens/quran_screen.dart';
@@ -13,27 +14,41 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: AppRouters.splash,
-        builder: (context, state) => const SplashScreen(),
+        pageBuilder: (context, state) =>
+            AppTransitions.buildPage(state: state, child: const SplashScreen()),
       ),
       GoRoute(
         path: AppRouters.onBoarding,
-        builder: (context, state) => const OnBoardingScreen(),
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const OnBoardingScreen(),
+        ),
       ),
       GoRoute(
         path: AppRouters.quran,
-        builder: (context, state) => const QuranScreen(),
+        pageBuilder: (context, state) =>
+            AppTransitions.buildPage(state: state, child: const QuranScreen()),
       ),
       GoRoute(
         path: AppRouters.quranDetails,
-        builder: (context, state) => const QuranDetailsScreen(),
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const QuranDetailsScreen(),
+        ),
       ),
       GoRoute(
         path: AppRouters.language,
-        builder: (context, state) => const LanguageScreen(),
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const LanguageScreen(),
+        ),
       ),
       GoRoute(
         path: AppRouters.location,
-        builder: (context, state) => const LocationScreen(),
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const LocationScreen(),
+        ),
       ),
     ],
   );
