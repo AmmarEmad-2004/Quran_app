@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/constants/app_images.dart';
+import 'package:quran_app/features/onboarding/widgets/custom_nav_button.dart';
+import 'package:quran_app/features/onboarding/widgets/custom_onboarding_page_view.dart';
+import 'package:quran_app/features/onboarding/widgets/dots_indicator.dart';
 
 class OnBoardingScreenBody extends StatelessWidget {
   const OnBoardingScreenBody({super.key});
@@ -15,7 +18,19 @@ class OnBoardingScreenBody extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: []),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Spacer(flex: 1),
+          CustomOnBoardingPageView(),
+
+          DotsIndicator(currentPage: 0),
+          Spacer(flex: 1),
+          CustomNavButton(),
+        ],
+      ),
     );
   }
 }
+
+
