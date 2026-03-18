@@ -64,7 +64,10 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
               ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.6)),
             ),
 
-            Lottie.asset("assets/animation/Loading.json"),
+            Transform.scale(
+              scaleX: -1,
+              child: Lottie.asset("assets/animation/Loading.json"),
+            ),
           ],
         ),
       ),
