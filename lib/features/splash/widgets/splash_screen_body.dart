@@ -23,7 +23,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   Future<void> navigateAfterDelay() async {
     await Future.delayed(const Duration(seconds: 3));
     if (!mounted) return;
-    GoRouter.of(context).go(AppRouters.language);
+    GoRouter.of(context).pushReplacement(AppRouters.onBoarding);
   }
 
   @override
@@ -42,21 +42,21 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(AppImages.splash),
-            SizedBox(height: 33),
+            const SizedBox(height: 33),
             Text(
               "المصحف الشريف",
               style: AppStyles.mediumCairo36(
                 context,
               ).copyWith(color: Colors.white),
             ),
-            SizedBox(height: 33),
+            const SizedBox(height: 33),
             Text(
               "﴿ وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا ﴾",
               style: AppStyles.regularAmiri20(
                 context,
               ).copyWith(color: AppColors.lightGold),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               "سورة المزمل - آية 4",
               style: AppStyles.regularCairo14(
@@ -64,7 +64,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
               ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.6)),
             ),
 
-            Lottie.asset("assets/animation/Loading.json", fit: BoxFit.contain),
+            Lottie.asset("assets/animation/Loading.json"),
           ],
         ),
       ),

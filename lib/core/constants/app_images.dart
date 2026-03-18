@@ -46,4 +46,7 @@ class AppImages {
   static const String sendIcon = "assets/images/sendIcon.png";
   static const String protectIcon = "assets/images/protectIcon.png";
   static const String protectIconGrey = "assets/images/protectIconGrey.png";
+  static const String mushafIcon1 = "assets/images/mushaf1.png";
+  static const String clockIcon1 = "assets/images/clock1.png";
+  static const String fav1 = "assets/images/fav1.png";
 }
