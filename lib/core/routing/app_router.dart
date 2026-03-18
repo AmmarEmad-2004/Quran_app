@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/routing/app_transitions.dart';
+import 'package:quran_app/features/home/ui/screens/home_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/onboarding_screen.dart';
 import 'package:quran_app/features/quran/screens/quran_details_screen.dart';
 import 'package:quran_app/features/quran/screens/quran_screen.dart';
@@ -22,6 +23,13 @@ abstract class AppRouter {
         pageBuilder: (context, state) => AppTransitions.buildPage(
           state: state,
           child: const OnBoardingScreen(),
+        ),
+      ),
+      GoRoute(
+        path: AppRouters.home,
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const HomeScreen(),
         ),
       ),
       GoRoute(
