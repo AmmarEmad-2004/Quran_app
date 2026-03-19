@@ -22,4 +22,20 @@ class AppColors {
   static const kBackGround = Color(0xffF8F7F4);
   static const gradientWhiteColor = Color(0xffE8F5F1);
 
+  // Prayer Cards Gradients
+  static const fajrLight = Color(0xffF3F4F6);
+  static const fajrLighter = Color(0xffF9FAFB);
+  
+  static const sunriseLight = Color(0xffFEF3C6);
+  static const sunriseLighter = Color(0xffFFFBEB);
+  
+  static const asrLight = Color(0xffFFEDD4);
+  static const asrLighter = Color(0xffFFF7ED);
+  
+  static const maghrebLight = Color(0xffFFE2E2);
+  static const maghrebLighter = Color(0xffFEF2F2);
+  
+  static const ishaaLight = Color(0xffE0E7FF);
+  static const ishaaLighter = Color(0xffEEF2FF);
+
 }
