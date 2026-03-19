@@ -2,7 +2,7 @@ import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/home/data/models/prayer_model.dart';
 
-final List<PrayerModel> homePrayerTimes = [
+const List<PrayerModel> homePrayerTimeList = [
   PrayerModel(
     name: 'الفجر',
     time: '5:15',
