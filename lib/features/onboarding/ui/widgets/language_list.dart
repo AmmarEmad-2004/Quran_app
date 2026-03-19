@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/features/onboarding/data/models/language_model.dart';
-import 'package:quran_app/features/onboarding/widgets/language_item.dart';
+import 'package:quran_app/features/onboarding/ui/widgets/language_item.dart';
 
 class LanguageList extends StatefulWidget {
   const LanguageList({super.key});

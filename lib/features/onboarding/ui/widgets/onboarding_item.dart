@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/features/onboarding/widgets/custom_divider.dart';
-import 'package:quran_app/features/onboarding/widgets/custom_item_container.dart';
+import 'package:quran_app/features/onboarding/ui/widgets/custom_divider.dart';
+import 'package:quran_app/features/onboarding/ui/widgets/custom_item_container.dart';
 
 class OnBoardingItem extends StatelessWidget {
   const OnBoardingItem({
@@ -12,12 +12,14 @@ class OnBoardingItem extends StatelessWidget {
     required this.image,
     this.gradientColor1 = AppColors.lightGreen,
     this.gradientColor2 = AppColors.darkGreen,
+    this.borderColor = const Color(0xff248267),
   });
   final String title;
   final String description;
   final String image;
   final Color gradientColor1;
   final Color gradientColor2;
+  final Color borderColor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,6 +27,7 @@ class OnBoardingItem extends StatelessWidget {
       child: Column(
         children: [
           CustomItemContainer(
+            borderColor: borderColor,
             image: image,
             gradientColor1: gradientColor1,
             gradientColor2: gradientColor2,

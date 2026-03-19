@@ -49,5 +49,10 @@ class AppImages {
   static const String mushafIcon1 = "assets/images/mushaf1.png";
   static const String clockIcon1 = "assets/images/clock1.png";
   static const String fav1 = "assets/images/fav1.png";
+<<<<<<< HEAD
   static const String ideaIcon = "assets/images/ideaIcon.png";
+=======
+  static const String appBarBackground = "assets/images/appbarBackground.png";
+  static const String card = "assets/images/Card.png";
+>>>>>>> 26b203507f277c7af527c9b5b8e710ecba9fe334
 }
