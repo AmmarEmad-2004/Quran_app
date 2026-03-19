@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/widgets/gradient_appbar.dart';
 import 'package:quran_app/features/reminder/widgets/reminder_appbar_content.dart';
-import 'package:quran_app/features/reminder/widgets/reminder_item.dart';
+import 'package:quran_app/features/reminder/widgets/reminder_item_list.dart';
 
 class ReminderScreenBody extends StatelessWidget {
   const ReminderScreenBody({super.key});
@@ -11,7 +11,7 @@ class ReminderScreenBody extends StatelessWidget {
     return Column(
       children: [
         GradientAppbar(radius: 24, height: 0.1, child: ReminderAppbarContent()),
-        ReminderItem(),
+        Expanded(child: ReminderItemList()),
       ],
     );
   }
