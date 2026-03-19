@@ -14,18 +14,18 @@ class _LanguageListState extends State<LanguageList> {
   int selectedLang = 0;
   final List<LanguageModel> languages = [
     LanguageModel(
-      image: AppImages.soudiFlag,
+      image: AppImages.globalIcon,
       title: "العربية",
       subTitle: "Arabic",
     ),
     LanguageModel(
-      image: AppImages.usFlag,
+      image: AppImages.globalIcon,
       title: "English",
       subTitle: "English",
     ),
-    LanguageModel(image: AppImages.arduFlag, title: "اردو", subTitle: "Urdo"),
+    LanguageModel(image: AppImages.globalIcon, title: "اردو", subTitle: "Urdo"),
     LanguageModel(
-      image: AppImages.frFlag,
+      image: AppImages.globalIcon,
       title: "Français",
       subTitle: "French",
     ),
