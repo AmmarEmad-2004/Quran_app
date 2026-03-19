@@ -49,4 +49,5 @@ class AppImages {
   static const String mushafIcon1 = "assets/images/mushaf1.png";
   static const String clockIcon1 = "assets/images/clock1.png";
   static const String fav1 = "assets/images/fav1.png";
+  static const String ideaIcon = "assets/images/ideaIcon.png";
 }

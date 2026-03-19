@@ -11,11 +11,14 @@ class CustomButon extends StatelessWidget {
     this.textColor,
     this.borderColor,
     this.height,
-    this.fontSize, this.colorGradient1, this.colorGradient2, this.leftIcon, this.rightIcon, this.radius,
+    this.fontSize,
+    this.leftIcon,
+    this.rightIcon,
+    this.radius,
   });
   final VoidCallback? onTap;
   final String text;
-  final Color? buttonColor, textColor, colorGradient1,colorGradient2 ;
+  final Color? buttonColor, textColor;
   final IconData? leftIcon, rightIcon;
   final BoxBorder? borderColor;
   final double? height, fontSize, radius;
@@ -25,8 +28,8 @@ class CustomButon extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: buttonColor?? AppColors.kBackGround,
-          borderRadius: BorderRadius.circular(radius ??16),
+          color: buttonColor ?? AppColors.kBackGround,
+          borderRadius: BorderRadius.circular(radius ?? 16),
           border: borderColor ?? Border.all(color: Colors.grey.shade300),
         ),
         height: height ?? 56,
@@ -36,12 +39,13 @@ class CustomButon extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             spacing: 2,
             children: [
-               if (rightIcon != null) Icon(rightIcon, color: textColor, size: 16),
+              if (rightIcon != null)
+                Icon(rightIcon, color: textColor, size: 16),
               Text(
                 text,
                 style: AppStyles.mediumCairo24(
                   context,
-                ).copyWith(fontSize: fontSize ?? 14),
+                ).copyWith(fontSize: fontSize ?? 14, color: textColor),
               ),
               if (leftIcon != null) Icon(leftIcon, color: textColor, size: 16),
             ],

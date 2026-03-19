@@ -6,7 +6,7 @@ final List<ReminderModel> reminders = [
   ReminderModel(
     title: 'صدقة يومية',
     time: DateTime(5, 2),
-    catImage: AppImages.notificationIcon,
+    catImage: AppImages.fav1,
     enabled: true,
     repeat: 'Every day',
     color: AppColors.lightGreen,
@@ -14,7 +14,7 @@ final List<ReminderModel> reminders = [
   ReminderModel(
     title: 'قراءة الورد',
     time: DateTime(20, 0),
-    catImage: AppImages.notificationIcon,
+    catImage: AppImages.fav1,
     enabled: true,
     repeat: 'Mon, Wed, Fri',
     color: AppColors.lightBeige,
@@ -22,7 +22,7 @@ final List<ReminderModel> reminders = [
   ReminderModel(
     title: 'صلاة الضحى',
     time: DateTime(22, 30),
-    catImage: AppImages.notificationIcon,
+    catImage: AppImages.fav1,
     enabled: false,
     repeat: 'Weekdays',
     color: AppColors.lightBlue,
@@ -30,7 +30,7 @@ final List<ReminderModel> reminders = [
   ReminderModel(
     title: 'أذكار الصباح',
     time: DateTime(22, 30),
-    catImage: AppImages.notificationIcon,
+    catImage: AppImages.fav1,
     enabled: false,
     repeat: 'Weekdays',
     color: AppColors.lightPurple,
@@ -38,7 +38,7 @@ final List<ReminderModel> reminders = [
   ReminderModel(
     title: 'أذكار المساء',
     time: DateTime(22, 30),
-    catImage: AppImages.notificationIcon,
+    catImage: AppImages.fav1,
     enabled: false,
     repeat: 'Weekdays',
     color: AppColors.lightPink,
