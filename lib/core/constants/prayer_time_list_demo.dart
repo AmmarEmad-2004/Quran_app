@@ -6,7 +6,7 @@ const List<PrayerTimeModel> prayerTimes = [
   PrayerTimeModel(
     nameArabic: 'الفجر',
     time: '5:15',
-    emoji: AppImages.fajr,
+    emoji: AppImages.fajrIcon,
     status: PrayerStatus.passed,
     alarmOn: true,
   ),
@@ -22,7 +22,7 @@ const List<PrayerTimeModel> prayerTimes = [
   PrayerTimeModel(
     nameArabic: 'العصر',
     time: '3:45',
-    emoji: AppImages.asr,
+    emoji: AppImages.zuhrIandAsrcon,
     status: PrayerStatus.upcoming,
     subtitle: 'قادمة',
     alarmOn: true,
