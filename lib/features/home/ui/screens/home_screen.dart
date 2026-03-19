@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/features/home/ui/screens/widgets/home_screen_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,9 +7,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Home Screen"),
-      ),
+      body: HomeScreenBody(),
     );
   }
 }
+
