@@ -16,6 +16,17 @@ abstract class AppStyles {
     );
   }
 
+
+   /// Amiri · Regular · 24
+  static TextStyle regularAmiri24(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontFamily: 'Amiri',
+      color: AppColors.kBlack,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
   // ─────────────────────────────────────────
   // Cairo Font · Regular (w400)
   // ─────────────────────────────────────────
@@ -75,6 +86,16 @@ abstract class AppStyles {
   // ─────────────────────────────────────────
   // Cairo Font · Medium (w500)
   // ─────────────────────────────────────────
+
+  /// Cairo · Medium · 12
+  static TextStyle mediumCairo12(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
+      fontFamily: 'Cairo',
+      color: AppColors.kBlack,
+      fontWeight: FontWeight.w500,
+    );
+  }
 
   /// Cairo · Medium · 14
   static TextStyle mediumCairo14(BuildContext context) {
