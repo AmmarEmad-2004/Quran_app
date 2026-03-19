@@ -7,7 +7,7 @@ class PrayerModel {
   final Color gradientColor1;
   final Color gradientColor2;
 
-  PrayerModel({
+  const PrayerModel({
     required this.name,
     required this.time,
     required this.image,
