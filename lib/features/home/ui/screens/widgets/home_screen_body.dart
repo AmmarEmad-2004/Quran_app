@@ -36,28 +36,3 @@ class HomeScreenBody extends StatelessWidget {
 }
 
 
-
-// Stack(
-//   children: [
-//     // الخلفية
-//     Container(
-//       height: 6,
-//       decoration: BoxDecoration(
-//         color: Colors.grey[300],
-//         borderRadius: BorderRadius.circular(10),
-//       ),
-//     ),
-
-//     // التقدم
-//     FractionallySizedBox(
-//       widthFactor: 0.6, // نسبة التقدم
-//       child: Container(
-//         height: 6,
-//         decoration: BoxDecoration(
-//           color: Colors.green,
-//           borderRadius: BorderRadius.circular(10),
-//         ),
-//       ),
-//     ),
-//   ],
-// )
