@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
@@ -23,7 +24,7 @@ class CustomTextButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Padding(
-        padding: const EdgeInsets.all(4),
+        padding: EdgeInsets.all(AppPadding.p4(context)),
         child: Text(
           text,
           style: textStyle,

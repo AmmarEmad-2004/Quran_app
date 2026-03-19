@@ -4,7 +4,7 @@ import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/circle_badge_card.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
 import 'package:quran_app/features/onboarding/data/models/language_model.dart';
-
+import 'package:quran_app/core/helpers/app_padding.dart';
 class LanguageItem extends StatelessWidget {
   const LanguageItem({
     super.key,
@@ -18,7 +18,7 @@ class LanguageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.only(bottom: AppPadding.p16(context)),
       child: CustomGradientBackground(
         colorGradient1: isSelected
             ? AppColors.lightGreen.withValues(alpha: 0.1)

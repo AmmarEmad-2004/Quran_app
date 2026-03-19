@@ -4,7 +4,7 @@ import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/onboarding/ui/widgets/custom_nav_button.dart';
-
+import 'package:quran_app/core/helpers/app_padding.dart';
 class CustomNavOnborading extends StatelessWidget {
   const CustomNavOnborading({
     super.key,
@@ -18,7 +18,7 @@ class CustomNavOnborading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+      padding: EdgeInsets.symmetric(horizontal: AppPadding.p24(context), vertical: AppPadding.p24(context)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -46,7 +46,7 @@ class CustomNavOnborading extends StatelessWidget {
                       borderRadius: BorderRadius.circular(33554400),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(20),
+                      padding: EdgeInsets.all(AppPadding.p20(context)),
                       child: Center(
                         child: Icon(
                           Icons.arrow_back_ios,

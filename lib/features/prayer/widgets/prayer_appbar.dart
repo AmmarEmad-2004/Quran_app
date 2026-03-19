@@ -4,6 +4,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_card.dart';
 import 'package:quran_app/core/widgets/gradient_appbar.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class PrayerAppbar extends StatelessWidget {
   const PrayerAppbar({super.key});
@@ -14,7 +15,7 @@ class PrayerAppbar extends StatelessWidget {
       height: 0.44,
       radius: 50,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(AppPadding.p16(context)),
         child: Column(
           spacing: 16,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -68,9 +69,9 @@ class PrayerAppbar extends StatelessWidget {
               radius: 20,
               cardColor: AppColors.kWhite.withValues(alpha: 0.10),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
+                padding: EdgeInsets.symmetric(
                   vertical: 10,
-                  horizontal: 8,
+                  horizontal: AppPadding.p8(context),
                 ),
                 child: Row(
                   spacing: 12,
@@ -91,7 +92,7 @@ class PrayerAppbar extends StatelessWidget {
               radius: 20,
               cardColor: AppColors.kWhite.withValues(alpha: 0.10),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(AppPadding.p16(context)),
                 child: Column(
                   spacing: 8,
                   mainAxisAlignment: MainAxisAlignment.center,

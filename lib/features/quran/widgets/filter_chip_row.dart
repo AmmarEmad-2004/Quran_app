@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/widgets/custom_card.dart';
 import 'package:quran_app/features/quran/widgets/filter_chip_item.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class FilterChipsRow extends StatefulWidget {
   const FilterChipsRow({super.key});
@@ -27,13 +28,13 @@ class _FilterChipsRowState extends State<FilterChipsRow> {
       radius: 0,
       elevation: 2,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        padding: EdgeInsets.symmetric(horizontal: AppPadding.p16(context), vertical: AppPadding.p4(context)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(filters.length, (index) {
             final item = filters[index];
             return Padding(
-              padding: const EdgeInsets.only(right: 8),
+              padding: EdgeInsets.only(right: AppPadding.p8(context)),
               child: FilterChipItem(
                 label: item['label']!,
                 badge: item['badge']!,

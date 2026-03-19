@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class SuraType extends StatelessWidget {
   const SuraType({super.key, required this.suraType, required this.isMadani});
@@ -11,7 +12,7 @@ class SuraType extends StatelessWidget {
     return Container(
       width: 42.44,
       height: 20,
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      padding: EdgeInsets.symmetric(horizontal: AppPadding.p8(context), vertical: AppPadding.p2(context)),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         color: isMadani

@@ -8,9 +8,9 @@ class QuranApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return SafeArea(
       child: MaterialApp.router(
-        
         debugShowCheckedModeBanner: false,
         locale: const Locale('ar'),
         supportedLocales: const [Locale('ar')],

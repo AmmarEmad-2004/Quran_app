@@ -3,6 +3,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/quran/data/models/ayah_model.dart';
 import 'package:quran_app/core/widgets/circle_badge_card.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class AyahItem extends StatelessWidget {
   const AyahItem({super.key, required this.ayahModel});
@@ -10,7 +11,7 @@ class AyahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: EdgeInsets.only(bottom: AppPadding.p8(context)),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(

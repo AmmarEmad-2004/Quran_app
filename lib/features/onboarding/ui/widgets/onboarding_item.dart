@@ -3,7 +3,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/onboarding/ui/widgets/custom_divider.dart';
 import 'package:quran_app/features/onboarding/ui/widgets/custom_item_container.dart';
-
+import 'package:quran_app/core/helpers/app_padding.dart';
 class OnBoardingItem extends StatelessWidget {
   const OnBoardingItem({
     super.key,
@@ -23,7 +23,7 @@ class OnBoardingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(horizontal: AppPadding.p24(context)),
       child: Column(
         children: [
           CustomItemContainer(

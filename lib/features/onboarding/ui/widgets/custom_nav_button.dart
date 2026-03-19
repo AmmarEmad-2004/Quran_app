@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-
+import 'package:quran_app/core/helpers/app_padding.dart';
 class CustomNavButton extends StatelessWidget {
   const CustomNavButton({
     super.key,
@@ -28,7 +28,7 @@ class CustomNavButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(33554400),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: AppPadding.p40(context), vertical: AppPadding.p20(context)),
           child: Row(
             spacing: 3,
             mainAxisAlignment: MainAxisAlignment.center,

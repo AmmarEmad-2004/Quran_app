@@ -3,6 +3,7 @@ import 'package:quran_app/core/theme/app_colors.dart' show AppColors;
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
 import 'package:quran_app/features/prayer/data/models/prayer_time_model.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class ContentUpcomingPassedCardInfo extends StatelessWidget {
   const ContentUpcomingPassedCardInfo({super.key, required this.prayer});
@@ -14,7 +15,7 @@ class ContentUpcomingPassedCardInfo extends StatelessWidget {
     return Opacity(
       opacity: prayer.status == PrayerStatus.passed? 0.50: 1,
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(AppPadding.p12(context)),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -29,7 +30,7 @@ class ContentUpcomingPassedCardInfo extends StatelessWidget {
                     colorGradient1: AppColors.lightGreen.withValues(alpha: 0.1),
                     colorGradient2: AppColors.lightGold.withValues(alpha: 0.1),
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: EdgeInsets.all(AppPadding.p12(context)),
                       child: Image.asset(prayer.emoji),
                     ),
                   ),

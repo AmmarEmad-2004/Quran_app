@@ -27,7 +27,7 @@ class _LanguageMenuState extends State<LanguageMenu> {
         size: 16,
       ),
       inputDecorationTheme: InputDecorationTheme(
-        contentPadding: EdgeInsets.all(0),
+        contentPadding: EdgeInsets.zero,
         filled: true,
         fillColor: AppColors.kWhite,
 

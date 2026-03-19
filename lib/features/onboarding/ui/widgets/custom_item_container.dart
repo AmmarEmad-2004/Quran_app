@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:quran_app/core/helpers/app_padding.dart';
 class CustomItemContainer extends StatelessWidget {
   const CustomItemContainer({
     super.key,
@@ -25,7 +25,7 @@ class CustomItemContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(AppPadding.p24(context)),
         child: Image.asset(image),
       ),
     );

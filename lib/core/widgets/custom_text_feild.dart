@@ -30,7 +30,7 @@ class CustomTextField extends StatelessWidget {
       style: AppStyles.regularCairo14(context).copyWith(color: AppColors.kWhite),
       decoration: InputDecoration(
        isDense: true,
-        contentPadding: EdgeInsets.all(0),
+        contentPadding: EdgeInsets.zero,
         hintText: hint,
         prefixIcon: icon,
         filled: true,

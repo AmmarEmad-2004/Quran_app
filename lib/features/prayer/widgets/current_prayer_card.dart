@@ -4,6 +4,7 @@ import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
 import 'package:quran_app/features/prayer/data/models/prayer_time_model.dart';
 import 'package:quran_app/features/prayer/widgets/content_current_card_info.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class CurrentPrayerCard extends StatelessWidget {
   final PrayerTimeModel prayer;
@@ -22,7 +23,7 @@ class CurrentPrayerCard extends StatelessWidget {
       borderRadius: 20,
       width: 2,
       child: Padding(
-        padding: const EdgeInsets.all(14),
+        padding: EdgeInsets.all(AppPadding.p14(context)),
         child: Column(
           spacing: 8,
           mainAxisSize: MainAxisSize.min,

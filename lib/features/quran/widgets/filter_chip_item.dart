@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class FilterChipItem extends StatelessWidget {
   const FilterChipItem( {
@@ -17,7 +18,7 @@ class FilterChipItem extends StatelessWidget {
       child: Container(
         height: 30,
         width: MediaQuery.of(context).size.width*0.25,
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: EdgeInsets.symmetric(horizontal: AppPadding.p12(context)),
         decoration: ShapeDecoration(
           gradient: isSelected
               ? LinearGradient(
