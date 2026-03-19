@@ -6,6 +6,6 @@ class LocationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const LocationScreenBody();
+    return const Scaffold(body: LocationScreenBody());
   }
 }
