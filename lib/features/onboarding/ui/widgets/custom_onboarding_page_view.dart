@@ -14,12 +14,12 @@ class CustomOnBoardingPageView extends StatelessWidget {
       title: "القرآن الكريم",
       description:
           "اقرأ القرآن الكريم بخط واضح وتصميم جميل مع إمكانية الاستماع للتلاوات",
-      image: AppImages.mushafIcon1,
+      image: AppImages.mushaf1,
     ),
     OnBoardingItem(
       title: "مواقيت الصلاة",
       description: "تنبيهات دقيقة لمواقيت الصلاة حسب موقعك مع صوت الأذان",
-      image: AppImages.clockIcon1,
+      image: AppImages.clock1,
       gradientColor1: AppColors.lightGold,
       gradientColor2: AppColors.darkGold,
       borderColor: Colors.amber,
