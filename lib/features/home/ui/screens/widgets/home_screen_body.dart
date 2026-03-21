@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/aya_of_today.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/category_card.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/custom_home_appbar.dart';
@@ -14,16 +15,36 @@ class HomeScreenBody extends StatefulWidget {
 
 class _HomeScreenBodyState extends State<HomeScreenBody> {
   late final ScrollController _scrollController;
+  late final ValueNotifier<double> _appBarOffsetNotifier;
+  double _lastOffset = 0.0;
+  final double _maxAppBarOffset = 120.0;
 
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    _appBarOffsetNotifier = ValueNotifier(0.0);
+    _scrollController.addListener(_onScroll);
+  }
+
+  void _onScroll() {
+    if (!_scrollController.hasClients) return;
+    double currentOffset = _scrollController.offset;
+    double delta = currentOffset - _lastOffset;
+    _lastOffset = currentOffset;
+
+    if (currentOffset <= 0) {
+      _appBarOffsetNotifier.value = 0.0;
+    } else {
+      double newValue = _appBarOffsetNotifier.value - delta;
+      _appBarOffsetNotifier.value = newValue.clamp(-_maxAppBarOffset, 0.0);
+    }
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
+    _appBarOffsetNotifier.dispose();
     super.dispose();
   }
 
@@ -48,15 +69,30 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         // Content Layer
         Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: MediaQuery.paddingOf(context).top + 10,
-                left: 20,
-                right: 20,
+            ValueListenableBuilder<double>(
+              valueListenable: _appBarOffsetNotifier,
+              builder: (context, offsetValue, child) {
+                // Smooth opacity fade as it goes up
+                final double opacity =
+                    (1.0 - (offsetValue.abs() / _maxAppBarOffset)).clamp(
+                      0.0,
+                      1.0,
+                    );
+                return Transform.translate(
+                  offset: Offset(0, offsetValue),
+                  child: Opacity(opacity: opacity, child: child),
+                );
+              },
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.paddingOf(context).top + 10,
+                  left: 20,
+                  right: 20,
+                ),
+                child: const CustomHomeAppBar(),
               ),
-              child: const CustomHomeAppBar(),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             AnimatedBuilder(
               animation: _scrollController,
               builder: (context, child) {
@@ -93,17 +129,25 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
           child: Padding(
             padding: EdgeInsets.only(
               top: MediaQuery.sizeOf(context).height * 0.45,
-              left: 20,
-              right: 20,
             ),
-            child: Column(
-              children: [
-                SizedBox(height: 20),
-                AyaOfToday(),
-                SizedBox(height: 20),
-                CategoryCardList(),
-                SizedBox(height: 40),
-              ],
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              decoration: BoxDecoration(
+                color: AppColors.kBackGround,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(48),
+                  topRight: Radius.circular(48),
+                ),
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 20),
+                  AyaOfToday(),
+                  SizedBox(height: 20),
+                  CategoryCardList(),
+                  SizedBox(height: 40),
+                ],
+              ),
             ),
           ),
         ),
