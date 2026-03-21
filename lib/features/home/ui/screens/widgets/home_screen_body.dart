@@ -10,36 +10,67 @@ class HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bgHeight = MediaQuery.sizeOf(context).height * 0.5;
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            height: bgHeight,
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                CustomHomeBackground(),
-                Positioned(
-                  left: 20,
-                  right: 20,
-                  child: Column(
-                    children: [
-                      CustomHomeAppBar(),
-                      SizedBox(height: 24),
-                      NextPrayerCard(),
-                      SizedBox(height: 30),
-                      AyaOfToday(),
-                      SizedBox(height: 20),
-                      CategoryCardList(),
-                    ],
-                  ),
+    final double screenHeight = MediaQuery.sizeOf(context).height;
+    // Top section expands initially to about 45% of screen height
+    final double expandedHeight = (screenHeight * 0.45).clamp(350.0, 500.0);
+    final double pinnedHeight = MediaQuery.paddingOf(context).top + 90;
+
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverAppBar(
+          expandedHeight: expandedHeight,
+          pinned: true,
+          toolbarHeight: 90,
+          backgroundColor: Colors.transparent, // Background handles color
+          elevation: 0,
+          titleSpacing: 20,
+          title: const CustomHomeAppBar(),
+          flexibleSpace: LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+              final double top = constraints.biggest.height;
+              // Fade calculation, fades completely slightly before pinned
+              final double fadeOpacity = 
+                  ((top - pinnedHeight - 20) / (expandedHeight - pinnedHeight - 20)).clamp(0.0, 1.0);
+              
+              // Smooth easing animation for fading
+              final double opacity = Curves.easeInOut.transform(fadeOpacity);
+
+              return FlexibleSpaceBar(
+                background: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    const CustomHomeBackground(),
+                    Positioned(
+                      top: pinnedHeight + 16,
+                      left: 20,
+                      right: 20,
+                      child: Opacity(
+                        opacity: opacity,
+                        child: const NextPrayerCard(),
+                      ),
+                    ),
+                  ],
                 ),
+              );
+            },
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                const AyaOfToday(),
+                const SizedBox(height: 20),
+                const CategoryCardList(),
+                const SizedBox(height: 40),
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -49,12 +80,20 @@ class CategoryCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(children: [CategoryCard(), CategoryCard()]),
-        Row(children: [CategoryCard(), CategoryCard()]),
-        Row(children: [CategoryCard(), CategoryCard()]),
-      ],
+    return GridView.builder(
+      padding: EdgeInsets.zero,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+        childAspectRatio: 0.85, // Adjust for CategoryCard contents
+      ),
+      itemCount: 6,
+      itemBuilder: (context, index) {
+        return const CategoryCard();
+      },
     );
   }
 }
