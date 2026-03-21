@@ -16,12 +16,12 @@ class HomeScreenBody extends StatelessWidget {
     final double pinnedHeight = MediaQuery.paddingOf(context).top + 90;
 
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(
           expandedHeight: expandedHeight,
-          pinned: true,
-          toolbarHeight: 90,
+          floating: true,
+          snap: true,
+          toolbarHeight: 70,
           backgroundColor: Colors.transparent, // Background handles color
           elevation: 0,
           titleSpacing: 20,
@@ -30,9 +30,11 @@ class HomeScreenBody extends StatelessWidget {
             builder: (BuildContext context, BoxConstraints constraints) {
               final double top = constraints.biggest.height;
               // Fade calculation, fades completely slightly before pinned
-              final double fadeOpacity = 
-                  ((top - pinnedHeight - 20) / (expandedHeight - pinnedHeight - 20)).clamp(0.0, 1.0);
-              
+              final double fadeOpacity =
+                  ((top - pinnedHeight - 20) /
+                          (expandedHeight - pinnedHeight - 20))
+                      .clamp(0.0, 1.0);
+
               // Smooth easing animation for fading
               final double opacity = Curves.easeInOut.transform(fadeOpacity);
 
@@ -61,7 +63,6 @@ class HomeScreenBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-                const SizedBox(height: 20),
                 const AyaOfToday(),
                 const SizedBox(height: 20),
                 const CategoryCardList(),
