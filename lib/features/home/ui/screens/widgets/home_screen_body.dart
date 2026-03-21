@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/aya_of_today.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/category_card.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/custom_home_appbar.dart';
@@ -38,7 +37,10 @@ class HomeScreenBody extends StatelessWidget {
               child: const CustomHomeAppBar(),
             ),
             const SizedBox(height: 20),
-            // The Scrollable Part (Column)
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: NextPrayerCard(),
+            ),
             const Expanded(
               child: SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
@@ -46,7 +48,6 @@ class HomeScreenBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
                     children: [
-                      NextPrayerCard(),
                       SizedBox(height: 20),
                       AyaOfToday(),
                       SizedBox(height: 20),
