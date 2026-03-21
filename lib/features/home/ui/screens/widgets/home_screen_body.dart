@@ -34,6 +34,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
     final double expandedHeight = (screenHeight * 0.45).clamp(350.0, 500.0);
 
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         // Background Layer
         Positioned(
@@ -82,26 +83,29 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                 child: NextPrayerCard(),
               ),
             ),
+
             // The Scrollable Part (Column)
-            Expanded(
-              child: SingleChildScrollView(
-                controller: _scrollController,
-                physics: BouncingScrollPhysics(),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 20),
-                      AyaOfToday(),
-                      SizedBox(height: 20),
-                      CategoryCardList(),
-                      SizedBox(height: 40),
-                    ],
-                  ),
-                ),
-              ),
-            ),
           ],
+        ),
+        SingleChildScrollView(
+          controller: _scrollController,
+          physics: BouncingScrollPhysics(),
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: MediaQuery.sizeOf(context).height * 0.45,
+              left: 20,
+              right: 20,
+            ),
+            child: Column(
+              children: [
+                SizedBox(height: 20),
+                AyaOfToday(),
+                SizedBox(height: 20),
+                CategoryCardList(),
+                SizedBox(height: 40),
+              ],
+            ),
+          ),
         ),
       ],
     );
