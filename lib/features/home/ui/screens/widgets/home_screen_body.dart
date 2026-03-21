@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/core/theme/app_colors.dart';
-import 'package:quran_app/features/home/ui/screens/widgets/aya_of_today.dart';
-import 'package:quran_app/features/home/ui/screens/widgets/category_card.dart';
+
 import 'package:quran_app/features/home/ui/screens/widgets/custom_home_appbar.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/custom_home_background.dart';
+import 'package:quran_app/features/home/ui/screens/widgets/home_screen_scroll_body.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/next_prayer_card.dart';
 
 class HomeScreenBody extends StatefulWidget {
@@ -131,70 +130,6 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         ),
         HomeScreenScrollBody(scrollController: _scrollController),
       ],
-    );
-  }
-}
-
-class HomeScreenScrollBody extends StatelessWidget {
-  const HomeScreenScrollBody({
-    super.key,
-    required ScrollController scrollController,
-  }) : _scrollController = scrollController;
-
-  final ScrollController _scrollController;
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      controller: _scrollController,
-      physics: BouncingScrollPhysics(),
-      child: Padding(
-        padding: EdgeInsets.only(
-          top: MediaQuery.sizeOf(context).height * 0.45,
-        ),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          decoration: BoxDecoration(
-            color: AppColors.kBackGround,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(48),
-              topRight: Radius.circular(48),
-            ),
-          ),
-          child: Column(
-            children: [
-              SizedBox(height: 20),
-              AyaOfToday(),
-              SizedBox(height: 20),
-              CategoryCardList(),
-              SizedBox(height: 40),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CategoryCardList extends StatelessWidget {
-  const CategoryCardList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: EdgeInsets.zero,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 0.85, // Adjust for CategoryCard contents
-      ),
-      itemCount: 6,
-      itemBuilder: (context, index) {
-        return const CategoryCard();
-      },
     );
   }
 }
