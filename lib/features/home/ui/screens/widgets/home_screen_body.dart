@@ -30,7 +30,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
     double delta = currentOffset - _lastOffset;
     _lastOffset = currentOffset;
 
-    if (currentOffset <= 20) {
+    if (currentOffset <= 250) {
       if (!_isAppBarVisible) {
         setState(() {
           _isAppBarVisible = true;
@@ -124,8 +124,6 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                 child: NextPrayerCard(),
               ),
             ),
-
-            // The Scrollable Part (Column)
           ],
         ),
         HomeScreenScrollBody(scrollController: _scrollController),
