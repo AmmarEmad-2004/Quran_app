@@ -15,11 +15,8 @@ class HomeScreenScrollBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       controller: _scrollController,
-      physics: BouncingScrollPhysics(),
       child: Padding(
-        padding: EdgeInsets.only(
-          top: MediaQuery.sizeOf(context).height * 0.45,
-        ),
+        padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.45),
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20),
           decoration: BoxDecoration(
@@ -43,3 +40,7 @@ class HomeScreenScrollBody extends StatelessWidget {
     );
   }
 }
+
+
+
+
