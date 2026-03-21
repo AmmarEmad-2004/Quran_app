@@ -24,9 +24,11 @@ class HomeScreenBody extends StatelessWidget {
           toolbarHeight: 70,
           backgroundColor: Colors.transparent, // Background handles color
           elevation: 0,
-          titleSpacing: 20,
+          titleSpacing: 10,
           title: const CustomHomeAppBar(),
-          flexibleSpace: LayoutBuilder(
+        ),
+        SliverToBoxAdapter(
+          child: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
               final double top = constraints.biggest.height;
               // Fade calculation, fades completely slightly before pinned
@@ -40,6 +42,7 @@ class HomeScreenBody extends StatelessWidget {
 
               return FlexibleSpaceBar(
                 background: Stack(
+                  clipBehavior: Clip.none,
                   fit: StackFit.expand,
                   children: [
                     const CustomHomeBackground(),
@@ -52,25 +55,41 @@ class HomeScreenBody extends StatelessWidget {
                         child: const NextPrayerCard(),
                       ),
                     ),
+                    Positioned(
+                      top: pinnedHeight + 50 * -1,
+                      left: 20,
+                      right: 20,
+                      child: Opacity(
+                        opacity: opacity,
+                        child: Column(
+                          children: [
+                            const AyaOfToday(),
+                            const SizedBox(height: 20),
+                            const CategoryCardList(),
+                            const SizedBox(height: 40),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               );
             },
           ),
         ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: [
-                const AyaOfToday(),
-                const SizedBox(height: 20),
-                const CategoryCardList(),
-                const SizedBox(height: 40),
-              ],
-            ),
-          ),
-        ),
+        // SliverToBoxAdapter(
+        //   child: Padding(
+        //     padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        //     child: Column(
+        //       children: [
+        //         const AyaOfToday(),
+        //         const SizedBox(height: 20),
+        //         const CategoryCardList(),
+        //         const SizedBox(height: 40),
+        //       ],
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }
