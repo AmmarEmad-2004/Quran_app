@@ -15,35 +15,49 @@ class HomeScreenBody extends StatelessWidget {
     // Top section expands initially to about 45% of screen height
     final double expandedHeight = (screenHeight * 0.45).clamp(350.0, 500.0);
 
-    return CustomScrollView(
-      slivers: [
-        const SliverAppBar(
-          backgroundColor: AppColors.lightGreen,
-          floating: true,
-          snap: true,
-          toolbarHeight: 70,
+    return Stack(
+      children: [
+        // Background Layer
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          height: expandedHeight,
+          child: const CustomHomeBackground(),
+        ),
 
-          elevation: 0,
-          titleSpacing: 10,
-          title: CustomHomeAppBar(),
-        ),
-        SliverPersistentHeader(
-          pinned: false,
-          delegate: _NextPrayerCardDelegate(expandedHeight - 70),
-        ),
-        const SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: [
-                SizedBox(height: 20),
-                AyaOfToday(),
-                SizedBox(height: 20),
-                CategoryCardList(),
-                SizedBox(height: 40),
-              ],
+        // Content Layer
+        Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(
+                top: MediaQuery.paddingOf(context).top + 10,
+                left: 20,
+                right: 20,
+              ),
+              child: const CustomHomeAppBar(),
             ),
-          ),
+            const SizedBox(height: 20),
+            // The Scrollable Part (Column)
+            const Expanded(
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    children: [
+                      NextPrayerCard(),
+                      SizedBox(height: 20),
+                      AyaOfToday(),
+                      SizedBox(height: 20),
+                      CategoryCardList(),
+                      SizedBox(height: 40),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ],
     );
@@ -70,41 +84,5 @@ class CategoryCardList extends StatelessWidget {
         return const CategoryCard();
       },
     );
-  }
-}
-
-class _NextPrayerCardDelegate extends SliverPersistentHeaderDelegate {
-  final double height;
-
-  _NextPrayerCardDelegate(this.height);
-
-  @override
-  Widget build(
-    BuildContext context,
-    double shrinkOffset,
-    bool overlapsContent,
-  ) {
-    return SizedBox(
-      height: height,
-      child: Stack(
-        clipBehavior: Clip.none,
-        fit: StackFit.expand,
-        children: const [
-          CustomHomeBackground(),
-          Positioned(top: 20, left: 20, right: 20, child: NextPrayerCard()),
-        ],
-      ),
-    );
-  }
-
-  @override
-  double get maxExtent => height;
-
-  @override
-  double get minExtent => height;
-
-  @override
-  bool shouldRebuild(covariant _NextPrayerCardDelegate oldDelegate) {
-    return oldDelegate.height != height;
   }
 }
