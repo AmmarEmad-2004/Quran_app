@@ -3,10 +3,11 @@ import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
+import 'package:quran_app/features/home/data/models/category_model.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key});
-
+  const CategoryCard({super.key, required this.category});
+  final CategoryModel category;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -15,9 +16,9 @@ class CategoryCard extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(
           top: AppPadding.p20(context),
-          bottom: AppPadding.p20(context),
           right: AppPadding.p20(context),
           left: AppPadding.p20(context),
+          bottom: AppPadding.p20(context),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,16 +30,13 @@ class CategoryCard extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [AppColors.lightGreen, AppColors.darkGreen],
+                  colors: category.gradientColors,
                 ),
               ),
-              child: Image.asset(AppImages.mushafIcon),
+              child: Image.asset(category.image),
             ),
-            Text('المصحف', style: AppStyles.mediumCairo18(context)),
-            Text(
-              'قراءة القرآن الكريم',
-              style: AppStyles.regularCairo12(context),
-            ),
+            Text(category.title, style: AppStyles.mediumCairo18(context)),
+            Text(category.subTitle, style: AppStyles.regularCairo12(context)),
           ],
         ),
       ),
