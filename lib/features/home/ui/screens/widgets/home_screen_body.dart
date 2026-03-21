@@ -15,15 +15,13 @@ class HomeScreenBody extends StatefulWidget {
 
 class _HomeScreenBodyState extends State<HomeScreenBody> {
   late final ScrollController _scrollController;
-  late final ValueNotifier<double> _appBarOffsetNotifier;
+  bool _isAppBarVisible = true;
   double _lastOffset = 0.0;
-  final double _maxAppBarOffset = 120.0;
 
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
-    _appBarOffsetNotifier = ValueNotifier(0.0);
     _scrollController.addListener(_onScroll);
   }
 
@@ -33,18 +31,31 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
     double delta = currentOffset - _lastOffset;
     _lastOffset = currentOffset;
 
-    if (currentOffset <= 0) {
-      _appBarOffsetNotifier.value = 0.0;
-    } else {
-      double newValue = _appBarOffsetNotifier.value - delta;
-      _appBarOffsetNotifier.value = newValue.clamp(-_maxAppBarOffset, 0.0);
+    if (currentOffset <= 20) {
+      if (!_isAppBarVisible) {
+        setState(() {
+          _isAppBarVisible = true;
+        });
+      }
+      return;
+    }
+
+    if (delta > 2 && _isAppBarVisible) {
+      // Scrolling down, hide it
+      setState(() {
+        _isAppBarVisible = false;
+      });
+    } else if (delta < -2 && !_isAppBarVisible) {
+      // Scrolling up (slight pull down), show it
+      setState(() {
+        _isAppBarVisible = true;
+      });
     }
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
-    _appBarOffsetNotifier.dispose();
     super.dispose();
   }
 
@@ -69,27 +80,22 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         // Content Layer
         Column(
           children: [
-            ValueListenableBuilder<double>(
-              valueListenable: _appBarOffsetNotifier,
-              builder: (context, offsetValue, child) {
-                // Smooth opacity fade as it goes up
-                final double opacity =
-                    (1.0 - (offsetValue.abs() / _maxAppBarOffset)).clamp(
-                      0.0,
-                      1.0,
-                    );
-                return Transform.translate(
-                  offset: Offset(0, offsetValue),
-                  child: Opacity(opacity: opacity, child: child),
-                );
-              },
-              child: Padding(
-                padding: EdgeInsets.only(
-                  top: MediaQuery.paddingOf(context).top + 10,
-                  left: 20,
-                  right: 20,
+            AnimatedSlide(
+              duration: const Duration(milliseconds: 300),
+              offset: _isAppBarVisible ? Offset.zero : const Offset(0, -1.0),
+              curve: Curves.easeInOut,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 300),
+                opacity: _isAppBarVisible ? 1.0 : 0.0,
+                curve: Curves.easeInOut,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: MediaQuery.paddingOf(context).top + 10,
+                    left: 20,
+                    right: 20,
+                  ),
+                  child: const CustomHomeAppBar(),
                 ),
-                child: const CustomHomeAppBar(),
               ),
             ),
             const SizedBox(height: 10),
@@ -108,7 +114,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
 
                 // If it's completely faded, we shrink its height to 0 to let the list take its place
                 return AnimatedSize(
-                  duration: const Duration(milliseconds: 100),
+                  duration: const Duration(milliseconds: 500),
                   child: fadeOpacity == 0.0
                       ? const SizedBox()
                       : Opacity(opacity: fadeOpacity, child: child),
@@ -123,35 +129,49 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
             // The Scrollable Part (Column)
           ],
         ),
-        SingleChildScrollView(
-          controller: _scrollController,
-          physics: BouncingScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: MediaQuery.sizeOf(context).height * 0.45,
-            ),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              decoration: BoxDecoration(
-                color: AppColors.kBackGround,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(48),
-                  topRight: Radius.circular(48),
-                ),
-              ),
-              child: Column(
-                children: [
-                  SizedBox(height: 20),
-                  AyaOfToday(),
-                  SizedBox(height: 20),
-                  CategoryCardList(),
-                  SizedBox(height: 40),
-                ],
-              ),
+        HomeScreenScrollBody(scrollController: _scrollController),
+      ],
+    );
+  }
+}
+
+class HomeScreenScrollBody extends StatelessWidget {
+  const HomeScreenScrollBody({
+    super.key,
+    required ScrollController scrollController,
+  }) : _scrollController = scrollController;
+
+  final ScrollController _scrollController;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      controller: _scrollController,
+      physics: BouncingScrollPhysics(),
+      child: Padding(
+        padding: EdgeInsets.only(
+          top: MediaQuery.sizeOf(context).height * 0.45,
+        ),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+            color: AppColors.kBackGround,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(48),
+              topRight: Radius.circular(48),
             ),
           ),
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              AyaOfToday(),
+              SizedBox(height: 20),
+              CategoryCardList(),
+              SizedBox(height: 40),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 }
