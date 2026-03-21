@@ -9,6 +9,51 @@ class CategoryCardList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<CategoryModel> categories = [
+      CategoryModel(
+        title: 'المصحف',
+        subTitle: 'قراءة القرآن الكريم',
+        image: AppImages.mushafIcon,
+        gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
+        onTap: () {},
+      ),
+      CategoryModel(
+        title: 'الأذان',
+        subTitle: 'مواقيت الصلاة',
+        image: AppImages.clockIcon,
+        gradientColors: [AppColors.lightGold, AppColors.darkGold],
+        onTap: () {},
+      ),
+      CategoryModel(
+        title: 'الأدعية والأذكار',
+        subTitle: 'حصن المسلم',
+        image: AppImages.handIcon,
+        gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
+        onTap: () {},
+      ),
+      CategoryModel(
+        title: 'التذكيرات',
+        subTitle: 'تنبيهات يومية',
+        image: AppImages.notificationIcon,
+        gradientColors: [AppColors.lightGold, AppColors.darkGold],
+        onTap: () {},
+      ),
+      CategoryModel(
+        title: 'تعليم القرآن',
+        subTitle: 'دروس وتلاوات',
+        image: AppImages.headphoneIcon,
+        gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
+        onTap: () {},
+      ),
+
+      CategoryModel(
+        title: 'المساجد',
+        subTitle: 'أقرب المساجد ',
+        image: AppImages.locationIcon,
+        gradientColors: [AppColors.lightGold, AppColors.darkGold],
+        onTap: () {},
+      ),
+    ];
     return Column(
       children: [
         GridView.builder(
@@ -35,6 +80,7 @@ class CategoryCardList extends StatelessWidget {
               subTitle: 'عداد التسبيح',
               image: AppImages.sebhaIcon,
               gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
+              onTap: () {},
             ),
           ),
         ),
@@ -47,6 +93,7 @@ class CategoryCardList extends StatelessWidget {
               subTitle: 'تحديد اتجاه القبلة',
               image: AppImages.qeblaIcon,
               gradientColors: [AppColors.lightGold, AppColors.darkGold],
+              onTap: () {},
             ),
           ),
         ),
@@ -55,42 +102,3 @@ class CategoryCardList extends StatelessWidget {
   }
 }
 
-const List<CategoryModel> categories = [
-  CategoryModel(
-    title: 'المصحف',
-    subTitle: 'قراءة القرآن الكريم',
-    image: AppImages.mushafIcon,
-    gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
-  ),
-  CategoryModel(
-    title: 'الأذان',
-    subTitle: 'مواقيت الصلاة',
-    image: AppImages.clockIcon,
-    gradientColors: [AppColors.lightGold, AppColors.darkGold],
-  ),
-  CategoryModel(
-    title: 'الأدعية والأذكار',
-    subTitle: 'حصن المسلم',
-    image: AppImages.handIcon,
-    gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
-  ),
-  CategoryModel(
-    title: 'التذكيرات',
-    subTitle: 'تنبيهات يومية',
-    image: AppImages.notificationIcon,
-    gradientColors: [AppColors.lightGold, AppColors.darkGold],
-  ),
-  CategoryModel(
-    title: 'تعليم القرآن',
-    subTitle: 'دروس وتلاوات',
-    image: AppImages.headphoneIcon,
-    gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
-  ),
-
-  CategoryModel(
-    title: 'المساجد',
-    subTitle: 'أقرب المساجد ',
-    image: AppImages.locationIcon,
-    gradientColors: [AppColors.lightGold, AppColors.darkGold],
-  ),
-];
