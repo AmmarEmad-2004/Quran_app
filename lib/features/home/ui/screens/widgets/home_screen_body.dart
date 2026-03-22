@@ -62,7 +62,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.sizeOf(context).height;
     // Top section expands initially to about 45% of screen height
-    final double expandedHeight = (screenHeight * 0.55).clamp(350.0, 500.0);
+    final double expandedHeight = (screenHeight * 0.45).clamp(350.0, 500.0);
 
     return Stack(
       clipBehavior: Clip.none,
@@ -79,7 +79,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         // Content Layer
         Column(
           children: [
-            const SizedBox(height: 100),
+            const SizedBox(height: 10),
             AnimatedBuilder(
               animation: _scrollController,
               builder: (context, child) {
