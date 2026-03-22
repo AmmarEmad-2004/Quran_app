@@ -8,6 +8,7 @@ import 'package:quran_app/features/quran/screens/quran_details_screen.dart';
 import 'package:quran_app/features/quran/screens/quran_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/language_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/location_screen.dart';
+import 'package:quran_app/features/setting/screens/setting_screen.dart';
 import 'package:quran_app/features/splash/screens/splash_screen.dart';
 
 // GoRouter configuration
@@ -65,6 +66,13 @@ abstract class AppRouter {
       //   path: AppRouters.reminder,
       //   builder: (context, state) => const ReminderScreen(),
       // ),
+      GoRoute(
+        path: AppRouters.setting,
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const SettingScreen(),
+        ),
+      ),
     ],
   );
 }
