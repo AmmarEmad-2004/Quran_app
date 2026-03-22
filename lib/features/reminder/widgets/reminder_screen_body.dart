@@ -5,6 +5,7 @@ import 'package:quran_app/core/widgets/gradient_appbar.dart';
 import 'package:quran_app/features/reminder/widgets/reminder_appbar_content.dart';
 import 'package:quran_app/features/reminder/widgets/reminder_item_list.dart';
 import 'package:quran_app/features/reminder/widgets/reminder_screen_footer.dart';
+import 'package:quran_app/features/reminder/widgets/show_bottom_sheet.dart';
 
 class ReminderScreenBody extends StatelessWidget {
   const ReminderScreenBody({super.key});
@@ -31,6 +32,9 @@ class ReminderScreenBody extends StatelessWidget {
             borderColor: Border.all(
               color: AppColors.lightGreen.withValues(alpha: 0.12),
             ),
+            onTap: () {
+              showMyBottomSheet(context);
+            },
           ),
         ),
         Padding(

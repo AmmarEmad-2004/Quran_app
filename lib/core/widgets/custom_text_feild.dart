@@ -27,15 +27,19 @@ class CustomTextField extends StatelessWidget {
       onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
       maxLines: maxLines,
       onSubmitted: onSubmitted,
-      style: AppStyles.regularCairo14(context).copyWith(color: AppColors.kWhite),
+      style: AppStyles.regularCairo14(
+        context,
+      ).copyWith(color: AppColors.kBlack),
       decoration: InputDecoration(
-       isDense: true,
+        // isDense: true,
         contentPadding: EdgeInsets.all(0),
         hintText: hint,
         prefixIcon: icon,
         filled: true,
         fillColor: fillColor ?? AppColors.lightGrey.withValues(alpha: 0.15),
-        hintStyle: AppStyles.regularCairo14(context).copyWith(color: AppColors.kWhite.withValues(alpha: 0.6)),
+        hintStyle: AppStyles.regularCairo14(
+          context,
+        ).copyWith(color: AppColors.darkGrey),
         border: border(context),
         focusedBorder: border(context),
         enabledBorder: border(context),
