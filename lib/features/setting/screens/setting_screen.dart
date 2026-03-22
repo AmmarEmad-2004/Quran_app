@@ -32,6 +32,7 @@ class GlobalSetting extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("الإعدادات العامة", style: AppStyles.mediumCairo12(context)),
+        SizedBox(height: 12),
         Card(
           color: AppColors.kWhite,
           child: Column(
