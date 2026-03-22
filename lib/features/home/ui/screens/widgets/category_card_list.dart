@@ -41,7 +41,7 @@ class CategoryCardList extends StatelessWidget {
       CategoryModel(
         title: 'المسبحة',
         subTitle: 'عداد التسبيح',
-        image: AppImages.headphoneIcon,
+        image: AppImages.sebhaIcon,
         gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
         onTap: () {},
       ),
@@ -54,25 +54,20 @@ class CategoryCardList extends StatelessWidget {
         onTap: () {},
       ),
     ];
-    return Column(
-      children: [
-        GridView.builder(
-          padding: EdgeInsets.zero,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 12,
-            mainAxisSpacing: 12,
-            childAspectRatio: 1.12, // Adjust for CategoryCard contents
-          ),
-          itemCount: 6,
-          itemBuilder: (context, index) {
-            return CategoryCard(category: categories[index]);
-          },
-        ),
-      ],
+    return GridView.builder(
+      padding: EdgeInsets.zero,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12,
+        childAspectRatio: 1.12, // Adjust for CategoryCard contents
+      ),
+      itemCount: 6,
+      itemBuilder: (context, index) {
+        return CategoryCard(category: categories[index]);
+      },
     );
   }
 }
-
