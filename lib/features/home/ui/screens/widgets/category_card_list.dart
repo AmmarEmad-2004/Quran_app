@@ -39,8 +39,8 @@ class CategoryCardList extends StatelessWidget {
         onTap: () {},
       ),
       CategoryModel(
-        title: 'تعليم القرآن',
-        subTitle: 'دروس وتلاوات',
+        title: 'المسبحة',
+        subTitle: 'عداد التسبيح',
         image: AppImages.headphoneIcon,
         gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
         onTap: () {},
@@ -70,32 +70,6 @@ class CategoryCardList extends StatelessWidget {
           itemBuilder: (context, index) {
             return CategoryCard(category: categories[index]);
           },
-        ),
-        SizedBox(height: 12),
-        SizedBox(
-          width: double.infinity,
-          child: CategoryCard(
-            category: CategoryModel(
-              title: 'المسبحة',
-              subTitle: 'عداد التسبيح',
-              image: AppImages.sebhaIcon,
-              gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
-              onTap: () {},
-            ),
-          ),
-        ),
-        SizedBox(height: 12),
-        SizedBox(
-          width: double.infinity,
-          child: CategoryCard(
-            category: CategoryModel(
-              title: 'اتجاه القبلة',
-              subTitle: 'تحديد اتجاه القبلة',
-              image: AppImages.qeblaIcon,
-              gradientColors: [AppColors.lightGold, AppColors.darkGold],
-              onTap: () {},
-            ),
-          ),
         ),
       ],
     );
