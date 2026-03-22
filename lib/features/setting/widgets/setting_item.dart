@@ -18,15 +18,19 @@ class SettingItem extends StatelessWidget {
         ).copyWith(color: AppColors.darkGrey),
       ),
       leading: Container(
+        padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [AppColors.lightGreen, AppColors.lightGold],
+            colors: [
+              AppColors.lightGreen.withValues(alpha: 0.1),
+              AppColors.lightGold.withValues(alpha: 0.1),
+            ],
           ),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(20),
         ),
-        child: Icon(settingModel.icon),
+        child: Icon(settingModel.icon, color: AppColors.darkGreen),
       ),
       trailing: trailing,
     );
