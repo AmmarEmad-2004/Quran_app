@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 
@@ -35,7 +37,9 @@ class CustomHomeAppBar extends StatelessWidget {
               icon: Icon(Icons.dark_mode_outlined, color: AppColors.kWhite),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(AppRouters.setting);
+              },
               icon: Icon(Icons.settings, color: AppColors.kWhite),
             ),
           ],
