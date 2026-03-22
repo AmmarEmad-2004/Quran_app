@@ -28,40 +28,43 @@ class GlobalSetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("الإعدادات العامة", style: AppStyles.mediumCairo12(context)),
-        SizedBox(height: 12),
-        Card(
-          color: AppColors.kWhite,
-          child: Column(
-            children: [
-              SettingItem(
-                settingModel: SettingModel(
-                  title: "الوضع الليلي",
-                  subTitle: "تبديل بين الوضع الفاتح والداكن",
-                  icon: Icons.dark_mode_outlined,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("الإعدادات العامة", style: AppStyles.mediumCairo12(context)),
+          SizedBox(height: 12),
+          Card(
+            color: AppColors.kWhite,
+            child: Column(
+              children: [
+                SettingItem(
+                  settingModel: SettingModel(
+                    title: "الوضع الليلي",
+                    subTitle: "تبديل بين الوضع الفاتح والداكن",
+                    icon: Icons.dark_mode_outlined,
+                  ),
+                  trailing: Switch(value: false, onChanged: (value) {}),
                 ),
-                trailing: Switch(value: false, onChanged: (value) {}),
-              ),
-              Container(
-                height: 1,
-                width: double.infinity,
-                color: Color(0xffe2f0ec),
-              ),
-              SettingItem(
-                settingModel: SettingModel(
-                  title: "الإشعارات",
-                  subTitle: "إدارة التنبيهات والإشعارات",
-                  icon: Icons.notifications_none_outlined,
+                Container(
+                  height: 1,
+                  width: double.infinity,
+                  color: Color(0xffe2f0ec),
                 ),
-                trailing: Switch(value: false, onChanged: (value) {}),
-              ),
-            ],
+                SettingItem(
+                  settingModel: SettingModel(
+                    title: "الإشعارات",
+                    subTitle: "إدارة التنبيهات والإشعارات",
+                    icon: Icons.notifications_none_outlined,
+                  ),
+                  trailing: Switch(value: false, onChanged: (value) {}),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
