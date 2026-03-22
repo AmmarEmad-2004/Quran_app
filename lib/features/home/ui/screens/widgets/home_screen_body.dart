@@ -79,25 +79,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
         // Content Layer
         Column(
           children: [
-            AnimatedSlide(
-              duration: const Duration(milliseconds: 300),
-              offset: _isAppBarVisible ? Offset.zero : const Offset(0, -1.0),
-              curve: Curves.easeInOut,
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 300),
-                opacity: _isAppBarVisible ? 1.0 : 0.0,
-                curve: Curves.easeInOut,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: MediaQuery.paddingOf(context).top + 10,
-                    left: 20,
-                    right: 20,
-                  ),
-                  child: const CustomHomeAppBar(),
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 60),
             AnimatedBuilder(
               animation: _scrollController,
               builder: (context, child) {
@@ -127,6 +109,29 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
           ],
         ),
         HomeScreenScrollBody(scrollController: _scrollController),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: AnimatedSlide(
+            duration: const Duration(milliseconds: 300),
+            offset: _isAppBarVisible ? Offset.zero : const Offset(0, -1.0),
+            curve: Curves.easeInOut,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 300),
+              opacity: _isAppBarVisible ? 1.0 : 0.0,
+              curve: Curves.easeInOut,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.paddingOf(context).top + 10,
+                  left: 20,
+                  right: 20,
+                ),
+                child: const CustomHomeAppBar(),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
