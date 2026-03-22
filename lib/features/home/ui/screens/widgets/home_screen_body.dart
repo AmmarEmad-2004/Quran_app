@@ -61,13 +61,11 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.sizeOf(context).height;
-    // Top section expands initially to about 45% of screen height
     final double expandedHeight = (screenHeight * 0.45).clamp(350.0, 500.0);
 
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        // Background Layer
         Positioned(
           top: 0,
           left: 0,
@@ -75,6 +73,8 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
           height: expandedHeight,
           child: const CustomHomeBackground(),
         ),
+
+        HomeScreenScrollBody(scrollController: _scrollController),
 
         // Content Layer
         Column(
@@ -126,7 +126,6 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
             ),
           ],
         ),
-        HomeScreenScrollBody(scrollController: _scrollController),
       ],
     );
   }
