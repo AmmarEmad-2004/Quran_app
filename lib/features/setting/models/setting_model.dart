@@ -5,7 +5,7 @@ class SettingModel {
   final String subTitle;
   final IconData icon;
 
- const SettingModel({
+  const SettingModel({
     required this.title,
     required this.subTitle,
     required this.icon,
