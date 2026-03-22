@@ -31,8 +31,8 @@ class CustomTextField extends StatelessWidget {
         context,
       ).copyWith(color: AppColors.kBlack),
       decoration: InputDecoration(
-        // isDense: true,
-        contentPadding: EdgeInsets.all(0),
+       isDense: true,
+        contentPadding: EdgeInsets.zero,
         hintText: hint,
         prefixIcon: icon,
         filled: true,

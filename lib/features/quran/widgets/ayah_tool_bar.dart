@@ -5,6 +5,7 @@ import 'package:quran_app/core/widgets/circle_badge_card.dart';
 import 'package:quran_app/core/widgets/custom_card.dart';
 import 'package:quran_app/features/quran/widgets/font_size_control.dart';
 import 'package:quran_app/features/quran/widgets/language_menu.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class AyahToolBar extends StatelessWidget {
   const AyahToolBar({super.key});
@@ -16,7 +17,7 @@ class AyahToolBar extends StatelessWidget {
       radius: 0,
       elevation: 2,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        padding: EdgeInsets.symmetric(horizontal: AppPadding.p8(context), vertical: AppPadding.p4(context)),
         child: Row(children: [
           FontSizeControl(),
           Spacer(),

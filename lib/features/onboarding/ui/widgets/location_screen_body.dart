@@ -7,7 +7,7 @@ import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_button.dart';
 import 'package:quran_app/core/widgets/custom_text_button.dart';
 import 'package:quran_app/features/onboarding/ui/widgets/location_info_list.dart';
-
+import 'package:quran_app/core/helpers/app_padding.dart';
 class LocationScreenBody extends StatelessWidget {
   const LocationScreenBody({super.key});
 
@@ -23,7 +23,7 @@ class LocationScreenBody extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(AppPadding.p16(context)),
         child: Column(
           spacing: 10,
           mainAxisAlignment: MainAxisAlignment.center,

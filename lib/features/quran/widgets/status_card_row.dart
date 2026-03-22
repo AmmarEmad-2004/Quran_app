@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/quran/widgets/status_card.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class StatusCardRow extends StatelessWidget {
   const StatusCardRow({super.key});
@@ -9,7 +10,7 @@ class StatusCardRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: EdgeInsets.symmetric(horizontal: AppPadding.p16(context), vertical: AppPadding.p12(context)),
         child: Row(
           spacing: 10,
           children: [

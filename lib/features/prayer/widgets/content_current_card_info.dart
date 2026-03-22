@@ -3,6 +3,7 @@ import 'package:quran_app/core/theme/app_colors.dart' show AppColors;
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
 import 'package:quran_app/features/prayer/data/models/prayer_time_model.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class ContentCurrrentCardInfo extends StatelessWidget {
   const ContentCurrrentCardInfo({super.key, required this.prayer});
@@ -25,7 +26,7 @@ class ContentCurrrentCardInfo extends StatelessWidget {
                 colorGradient1: AppColors.kWhite.withValues(alpha: 0.3),
                 colorGradient2: AppColors.kWhite.withValues(alpha: 0.3),
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(AppPadding.p12(context)),
                   child: Image.asset(prayer.emoji),
                 ),
               ),

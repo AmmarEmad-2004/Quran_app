@@ -4,6 +4,7 @@ import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/quran/data/models/surah_model.dart';
 import 'package:quran_app/features/quran/widgets/sura_number_badge.dart';
 import 'package:quran_app/features/quran/widgets/sura_type.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class SurahItem extends StatefulWidget {
   const SurahItem({super.key, required this.surahModel, this.onTap});
@@ -19,7 +20,7 @@ class _SurahItemState extends State<SurahItem> {
   Widget build(BuildContext context) {
     final isMadani = widget.surahModel.type == 'مدنية';
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: EdgeInsets.only(bottom: AppPadding.p8(context)),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(

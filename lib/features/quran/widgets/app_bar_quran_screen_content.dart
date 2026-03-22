@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_text_feild.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 
 class AppBarQuranScreenContent extends StatelessWidget {
   const AppBarQuranScreenContent({super.key});
@@ -9,7 +10,7 @@ class AppBarQuranScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(AppPadding.p16(context)),
       child: Column(
         spacing: 16,
         children: [
