@@ -6,9 +6,11 @@ class AppImages {
   static const String splashBackground = "assets/images/SplashBackground.png";
 
   // ================= Onboarding Screen =================
-  static const String onboardingBackground = "assets/images/OnboardingBackground.png";
+  static const String onboardingBackground =
+      "assets/images/OnboardingBackground.png";
   static const String globalIcon = "assets/images/GlobalIcon.png";
-  static const String locationIconWithShadow = "assets/images/locationIconWithShadow.png";
+  static const String locationIconWithShadow =
+      "assets/images/locationIconWithShadow.png";
   static const String locationIconGreen = "assets/images/locationIconGreen.png";
   static const String mushaf1 = "assets/images/mushaf1.png";
   static const String clock1 = "assets/images/clock1.png";
@@ -40,7 +42,8 @@ class AppImages {
   // ================= Azkar & Doaa =================
   static const String azkarSabah = "assets/images/azkar_sabah.png";
   static const String azkarNoum = "assets/images/azkar_noum.png";
-  static const String azkarAfterPreying = "assets/images/azkar_after_preying.png";
+  static const String azkarAfterPreying =
+      "assets/images/azkar_after_preying.png";
   static const String doaaHandIcon = "assets/images/doaaHandIcon.png";
   static const String handIcon = "assets/images/handIcon.png";
   static const String protectIcon = "assets/images/protectIcon.png";
@@ -54,4 +57,17 @@ class AppImages {
   static const String sebhaIcon = "assets/images/sebhaIcon.png";
   static const String bookIcon = "assets/images/bookIcon.png";
   static const String sendIcon = "assets/images/sendIcon.png";
+
+  // ================= Reminder icons =================
+  static const String blackNotificationIcon =
+      'assets/images/black_notification_icon.png';
+  static const String blackFavIcon = 'assets/images/black_fav_icon.png';
+  static const String blackClockIcon = 'assets/images/black_clock_icon.png';
+  static const String nightLightIcon = 'assets/images/night_light_icon.png';
+  static const String sunnyIcon = 'assets/images/sunny_icon.png';
+  static const String blackStarIcon = 'assets/images/black_star_icon.png';
+  static const String sunriseIcon = 'assets/images/sunrise_icon.png';
+  static const String sunset = 'assets/images/sunset_icon.png';
+  static const String coffeeIcon = 'assets/images/coffee_icon.png';
+  static const String bookMenuIcon = 'assets/images/book_menu_icon.png';
 }

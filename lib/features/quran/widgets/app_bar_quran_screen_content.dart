@@ -14,36 +14,40 @@ class AppBarQuranScreenContent extends StatelessWidget {
       child: Column(
         spacing: 16,
         children: [
-        Row(
-          children: [
-             Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-                size: 16,
+          Row(
+            children: [
+              Icon(Icons.arrow_back, color: Colors.white, size: 16),
+              Spacer(),
+              Column(
+                spacing: 4,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'القرآن الكريم',
+                    style: AppStyles.mediumCairo24(
+                      context,
+                    ).copyWith(color: AppColors.kWhite),
+                  ),
+                  Text(
+                    '114 سورة',
+                    style: AppStyles.regularCairo14(
+                      context,
+                    ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.8)),
+                  ),
+                ],
               ),
               Spacer(),
-             Column(
-              spacing: 4,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'القرآن الكريم',
-                  style: AppStyles.mediumCairo24(context).copyWith(color: AppColors.kWhite),
-                ),
-                Text(
-                  '114 سورة',
-                  style: AppStyles.regularCairo14(context).copyWith(color: AppColors.kWhite.withValues(alpha: 0.8))
-                ),
-              ],
+            ],
+          ),
+          CustomTextField(
+            hint: 'ابحث عن سورة...',
+            icon: Icon(
+              Icons.search,
+              color: AppColors.kWhite.withValues(alpha: 0.6),
             ),
-            Spacer(),
-          ],
-        ),
-       CustomTextField(
-                hint: 'ابحث عن سورة...',
-                icon:  Icon(Icons.search, color: AppColors.kWhite.withValues(alpha: 0.6)),
-              ),
-      ],),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -11,13 +11,14 @@ class CustomTextField extends StatelessWidget {
     this.icon,
     this.fillColor,
     this.hintColor,
-    this.onSubmitted,
+    this.onSubmitted, this.isDense,
   });
   final String? hint;
   final Color? hintColor;
   final int? maxLines;
   final Icon? icon;
   final Color? fillColor;
+  final bool? isDense;
   final TextEditingController? controller;
   final void Function(String)? onSubmitted;
   @override
@@ -31,7 +32,7 @@ class CustomTextField extends StatelessWidget {
         context,
       ).copyWith(color: AppColors.kBlack),
       decoration: InputDecoration(
-       isDense: true,
+        isDense: isDense ?? true,
         contentPadding: EdgeInsets.zero,
         hintText: hint,
         prefixIcon: icon,

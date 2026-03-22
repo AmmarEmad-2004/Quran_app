@@ -24,7 +24,7 @@ class _AddNewReminderWidgetState extends State<AddNewReminderWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 16,
+      spacing: 8,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('عنوان التذكير', style: AppStyles.mediumCairo14(context)),
@@ -32,6 +32,7 @@ class _AddNewReminderWidgetState extends State<AddNewReminderWidget> {
           hint: 'مثال: صلاة الضحى، قراءة ورد...',
           controller: addressController,
           fillColor: AppColors.kWhite,
+          isDense: false,
         ),
         Text('وقت التذكير', style: AppStyles.mediumCairo14(context)),
         Row(
@@ -42,6 +43,7 @@ class _AddNewReminderWidgetState extends State<AddNewReminderWidget> {
               child: CustomTextField(
                 controller: timeController,
                 fillColor: AppColors.kWhite,
+                isDense: false,
               ),
             ),
             TimeOfReminderMenu(),
