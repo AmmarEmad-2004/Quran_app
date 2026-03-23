@@ -18,7 +18,7 @@ class CategoryCardList extends StatelessWidget {
         image: AppImages.mushafIcon,
         gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
         onTap: () {
-          GoRouter.of(context).push(AppRouters.quran);
+    
         },
       ),
       CategoryModel(
