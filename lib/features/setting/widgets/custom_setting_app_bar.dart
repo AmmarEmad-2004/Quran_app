@@ -34,7 +34,11 @@ class CustomSettingAppBar extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).pop();
             },
-            icon: Icon(Icons.arrow_back_outlined, color: AppColors.kWhite),
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: AppColors.kWhite,
+              size: 16,
+            ),
           ),
           SizedBox(width: 16),
           Column(
