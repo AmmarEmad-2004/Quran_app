@@ -43,14 +43,7 @@ class GlobalSetting extends StatelessWidget {
                     subTitle: "إدارة التنبيهات والإشعارات",
                     icon: Icons.notifications_none_outlined,
                   ),
-                  trailing: Container(
-                    padding: EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.darkGreen,
-                    ),
-                    child: Icon(Icons.check, color: AppColors.kWhite),
-                  ),
+                  trailing: Switch(value: true, onChanged: (value) {}),
                 ),
               ],
             ),
