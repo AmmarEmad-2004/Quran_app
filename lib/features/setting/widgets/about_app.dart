@@ -43,7 +43,19 @@ class AboutApp extends StatelessWidget {
                     subTitle: "إصدار التطبيق الحالي",
                     icon: Icons.info_outline,
                   ),
-                  trailing: Switch(value: true, onChanged: (value) {}),
+                  trailing: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: AppColors.lightGrey,
+                    ),
+                    child: Text(
+                      "1.0.0",
+                      style: AppStyles.regularCairo14(
+                        context,
+                      ).copyWith(color: AppColors.darkGrey),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -52,4 +64,4 @@ class AboutApp extends StatelessWidget {
       ),
     );
   }
-} 
+}
