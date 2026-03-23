@@ -14,8 +14,8 @@ class CustomSwitch extends StatefulWidget {
     super.key,
     required this.value,
     required this.onChanged,
-    this.width = 45.0,
-    this.height = 25.0,
+    this.width = 44.0,
+    this.height = 24.0,
     this.thumbSize = 20.0,
     this.activeColor = AppColors.lightGreen,
     this.inactiveColor = AppColors.lightGrey,
@@ -28,7 +28,7 @@ class CustomSwitch extends StatefulWidget {
 class _CustomSwitchState extends State<CustomSwitch> {
   @override
   Widget build(BuildContext context) {
-    // Calculate the padding inside the track based on height and thumbSize
+    // Calculate vertical padding
     final padding = (widget.height - widget.thumbSize) / 2;
 
     return GestureDetector(
@@ -37,9 +37,13 @@ class _CustomSwitchState extends State<CustomSwitch> {
         duration: const Duration(milliseconds: 200),
         width: widget.width,
         height: widget.height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(widget.height / 2),
+        decoration: ShapeDecoration(
+          // Here we can swap the color based on the value
           color: widget.value ? widget.activeColor : widget.inactiveColor,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 2, color: Colors.black.withOpacity(0)),
+            borderRadius: BorderRadius.circular(100),
+          ),
         ),
         child: Stack(
           children: [
@@ -48,21 +52,34 @@ class _CustomSwitchState extends State<CustomSwitch> {
               curve: Curves.easeIn,
               top: padding,
               bottom: padding,
-              left: widget.value ? (widget.width - widget.thumbSize - padding) : padding,
-              right: widget.value ? padding : (widget.width - widget.thumbSize - padding),
+              // Move thumb across depending on state
+              left: widget.value
+                  ? (widget.width - widget.thumbSize - padding)
+                  : padding,
+              right: widget.value
+                  ? padding
+                  : (widget.width - widget.thumbSize - padding),
               child: Container(
                 width: widget.thumbSize,
                 height: widget.thumbSize,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                  boxShadow: [
+                decoration: ShapeDecoration(
+                  color: const Color(0xFFF8F7F4),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                  shadows: const [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 2,
-                      spreadRadius: 1,
-                      offset: const Offset(0, 1),
-                    )
+                      color: Color(0x19000000),
+                      blurRadius: 6,
+                      offset: Offset(0, 4),
+                      spreadRadius: -4,
+                    ),
+                    BoxShadow(
+                      color: Color(0x19000000),
+                      blurRadius: 15,
+                      offset: Offset(0, 10),
+                      spreadRadius: -3,
+                    ),
                   ],
                 ),
               ),
