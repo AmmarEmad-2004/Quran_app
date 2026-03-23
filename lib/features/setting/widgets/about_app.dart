@@ -30,7 +30,11 @@ class AboutApp extends StatelessWidget {
                     subTitle: "معلومات عن المصحف الشريف",
                     icon: Icons.info_outline,
                   ),
-                  trailing: Switch(value: false, onChanged: (value) {}),
+                  trailing: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: AppColors.darkGrey,
+                    size: 20,
+                  ),
                 ),
                 Container(
                   height: 1,
