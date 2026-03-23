@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/constants/app_images.dart';
+import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/home/data/models/category_model.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/category_card.dart';
@@ -17,7 +18,7 @@ class CategoryCardList extends StatelessWidget {
         image: AppImages.mushafIcon,
         gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
         onTap: () {
-          GoRouter.of(context).push(AppRoutes.quran);
+          GoRouter.of(context).push(AppRouters.quran);
         },
       ),
       CategoryModel(
