@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/constants/app_images.dart';
@@ -16,7 +15,7 @@ class CustomSettingAppBar extends StatelessWidget {
         top: AppPadding.p24(context),
         left: AppPadding.p24(context),
         right: AppPadding.p24(context),
-        bottom: AppPadding.p30(context),
+        bottom: AppPadding.p24(context),
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
