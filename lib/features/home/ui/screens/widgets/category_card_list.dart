@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/home/data/models/category_model.dart';
@@ -15,7 +16,9 @@ class CategoryCardList extends StatelessWidget {
         subTitle: 'قراءة القرآن الكريم',
         image: AppImages.mushafIcon,
         gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(AppRoutes.quran);
+        },
       ),
       CategoryModel(
         title: 'الأذان',
