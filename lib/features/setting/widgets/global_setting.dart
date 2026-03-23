@@ -3,7 +3,6 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/setting/models/setting_model.dart';
 import 'package:quran_app/features/setting/widgets/setting_item.dart';
-import 'package:quran_app/features/setting/widgets/custom_switch.dart';
 
 class GlobalSetting extends StatelessWidget {
   const GlobalSetting({super.key});
@@ -31,7 +30,7 @@ class GlobalSetting extends StatelessWidget {
                     subTitle: "تبديل بين الوضع الفاتح والداكن",
                     icon: Icons.dark_mode_outlined,
                   ),
-                  trailing: CustomSwitch(value: false, onChanged: (value) {}),
+                  trailing: Switch(value: false, onChanged: (value) {}),
                 ),
                 Container(
                   height: 1,
@@ -44,7 +43,7 @@ class GlobalSetting extends StatelessWidget {
                     subTitle: "إدارة التنبيهات والإشعارات",
                     icon: Icons.notifications_none_outlined,
                   ),
-                  trailing: CustomSwitch(value: true, onChanged: (value) {}),
+                  trailing: Switch(value: true, onChanged: (value) {}),
                 ),
               ],
             ),
