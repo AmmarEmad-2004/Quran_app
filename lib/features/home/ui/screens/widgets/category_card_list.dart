@@ -26,7 +26,9 @@ class CategoryCardList extends StatelessWidget {
         subTitle: 'مواقيت الصلاة',
         image: AppImages.clockIcon,
         gradientColors: [AppColors.lightGold, AppColors.darkGold],
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(AppRouters.prayer);
+        },
       ),
       CategoryModel(
         title: 'الأدعية والأذكار',
