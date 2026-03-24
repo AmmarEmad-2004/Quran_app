@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:quran_app/features/azkar/ui/screens/widgets/azkar_counter_item.dart';
 
@@ -11,9 +10,15 @@ class AzkarCounters extends StatelessWidget {
       spacing: 12,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Expanded(child: AzkarCounterItem()),
-        Expanded(child: AzkarCounterItem()),
-        Expanded(child: AzkarCounterItem()),
+        Expanded(
+          child: AzkarCounterItem(count: "6", text: "الفئات"),
+        ),
+        Expanded(
+          child: AzkarCounterItem(count: "1", text: "مكتملة اليوم"),
+        ),
+        Expanded(
+          child: AzkarCounterItem(count: "1", text: "المفضلة"),
+        ),
       ],
     );
   }
