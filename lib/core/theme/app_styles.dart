@@ -63,6 +63,16 @@ abstract class AppStyles {
     );
   }
 
+  /// Cairo · Regular · 24
+  static TextStyle regularCairo24(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontFamily: 'Cairo',
+      color: AppColors.kBlack,
+      fontWeight: FontWeight.w400,
+    );
+  }
+  
   /// Cairo · Regular · 18
   static TextStyle regularCairo18(BuildContext context) {
     return TextStyle(
