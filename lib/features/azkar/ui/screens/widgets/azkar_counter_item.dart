@@ -3,8 +3,9 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 
 class AzkarCounterItem extends StatelessWidget {
-  const AzkarCounterItem({super.key});
-
+  const AzkarCounterItem({super.key, required this.count, required this.text});
+  final String count;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,13 +18,13 @@ class AzkarCounterItem extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "1",
+            count,
             style: AppStyles.regularCairo24(
               context,
             ).copyWith(color: AppColors.kWhite),
           ),
           Text(
-            "مكتملة اليوم",
+            text,
             style: AppStyles.regularCairo12(
               context,
             ).copyWith(color: AppColors.kWhite),
