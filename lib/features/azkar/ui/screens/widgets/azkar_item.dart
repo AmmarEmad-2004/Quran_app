@@ -48,6 +48,7 @@ class AzkarItem extends StatelessWidget {
       child: Column(
         spacing: 12,
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(AppImages.azkarSabah),
           Row(
