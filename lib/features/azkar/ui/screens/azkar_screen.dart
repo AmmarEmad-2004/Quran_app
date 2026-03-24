@@ -11,12 +11,10 @@ class AzkarScreen extends StatelessWidget {
       body: Stack(
         clipBehavior: Clip.none,
         children: [
-          CustomAzkarAppBar(),
-          Positioned(child: AzkarList()),
+          Positioned(top: 0, left: 0, right: 0, child: CustomAzkarAppBar()),
+          Positioned(top: 180, left: 0, right: 0, child: AzkarList()),
         ],
       ),
     );
   }
 }
-
-
