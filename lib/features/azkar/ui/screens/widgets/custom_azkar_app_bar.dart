@@ -28,6 +28,7 @@ class CustomAzkarAppBar extends StatelessWidget {
         ),
       ),
       child: Column(
+        spacing: 20,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -64,44 +65,28 @@ class CustomAzkarAppBar extends StatelessWidget {
               Image.asset(AppImages.doaaHandIcon),
             ],
           ),
-          AzkarCounterItem(),
+          AzkarCounters(),
         ],
       ),
     );
   }
 }
 
-class AzkarCounterItem extends StatelessWidget {
-  const AzkarCounterItem({super.key});
+
+
+class AzkarCounters extends StatelessWidget {
+  const AzkarCounters({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 12, left: 12, right: 12, bottom: 12),
-      decoration: ShapeDecoration(
-        color: Colors.white.withValues(alpha: 0.10000000149011612),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      ),
-
-      child: Column(
-        children: [
-          Text(
-            "1",
-            style: AppStyles.regularCairo24(
-              context,
-            ).copyWith(color: AppColors.kWhite),
-          ),
-          Text(
-            "مكتملة اليوم",
-            style: AppStyles.regularCairo12(
-              context,
-            ).copyWith(color: AppColors.kWhite),
-          ),
-        ],
-      ),
+    return Row(
+      spacing: 12,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(child: AzkarCounterItem()),
+        Expanded(child: AzkarCounterItem()),
+        Expanded(child: AzkarCounterItem()),
+      ],
     );
   }
 }
-
-
-
