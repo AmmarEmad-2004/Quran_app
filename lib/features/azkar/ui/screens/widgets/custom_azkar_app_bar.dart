@@ -4,6 +4,7 @@ import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
+import 'package:quran_app/features/azkar/ui/screens/widgets/azkar_counters.dart';
 
 class CustomAzkarAppBar extends StatelessWidget {
   const CustomAzkarAppBar({super.key});
@@ -68,25 +69,6 @@ class CustomAzkarAppBar extends StatelessWidget {
           AzkarCounters(),
         ],
       ),
-    );
-  }
-}
-
-
-
-class AzkarCounters extends StatelessWidget {
-  const AzkarCounters({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      spacing: 12,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Expanded(child: AzkarCounterItem()),
-        Expanded(child: AzkarCounterItem()),
-        Expanded(child: AzkarCounterItem()),
-      ],
     );
   }
 }
