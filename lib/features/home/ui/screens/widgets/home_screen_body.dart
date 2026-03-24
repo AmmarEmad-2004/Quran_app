@@ -113,7 +113,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
 
                 // If it's completely faded, we shrink its height to 0 to let the list take its place
                 return AnimatedSize(
-                  duration: const Duration(milliseconds: 500),
+                  duration: const Duration(milliseconds: 450),
                   child: fadeOpacity == 0.0
                       ? const SizedBox()
                       : Opacity(opacity: fadeOpacity, child: child),
