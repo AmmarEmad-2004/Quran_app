@@ -35,7 +35,9 @@ class CategoryCardList extends StatelessWidget {
         subTitle: 'حصن المسلم',
         image: AppImages.handIcon,
         gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(AppRouters.azkar);
+        },
       ),
       CategoryModel(
         title: 'التذكيرات',
