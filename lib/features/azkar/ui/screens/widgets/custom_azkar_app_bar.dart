@@ -13,16 +13,12 @@ class CustomAzkarAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        top: AppPadding.p24(context),
-        left: AppPadding.p24(context),
-        right: AppPadding.p24(context),
-        bottom: AppPadding.p24(context),
+        top: AppPadding.p20(context),
+        left: AppPadding.p20(context),
+        right: AppPadding.p20(context),
+        bottom: AppPadding.p32(context),
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(48),
-          bottomRight: Radius.circular(48),
-        ),
         image: DecorationImage(
           image: AssetImage(AppImages.appBarBackground),
           fit: BoxFit.cover,
