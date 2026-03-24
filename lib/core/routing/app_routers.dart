@@ -9,4 +9,5 @@ class AppRouters {
   static const String prayer = '/prayer';
   static const String reminder = '/remider';
   static const String setting = '/setting';
+  static const String azkar = '/azkar';
 }
