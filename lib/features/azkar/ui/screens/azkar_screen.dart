@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/core/helpers/app_padding.dart';
 import 'package:quran_app/features/azkar/ui/screens/widgets/azkar_item.dart';
 import 'package:quran_app/features/azkar/ui/screens/widgets/custom_azkar_app_bar.dart';
 
@@ -7,7 +8,15 @@ class AzkarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column(children: [CustomAzkarAppBar(), AzkarList()]));
+    return Scaffold(
+      body: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          CustomAzkarAppBar(),
+          Positioned(child: AzkarList()),
+        ],
+      ),
+    );
   }
 }
 
@@ -24,18 +33,22 @@ class AzkarList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 16,
-        crossAxisSpacing: 16,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: AppPadding.p20(context)),
+      child: GridView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 16,
+          crossAxisSpacing: 16,
+          childAspectRatio: 1.2,
+        ),
+        itemCount: azkar.length,
+        itemBuilder: (context, index) {
+          return azkar[index];
+        },
       ),
-      itemCount: azkar.length,
-      itemBuilder: (context, index) {
-        return azkar[index];
-      },
     );
   }
 }
