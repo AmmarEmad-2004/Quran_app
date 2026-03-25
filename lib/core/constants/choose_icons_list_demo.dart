@@ -1,7 +1,7 @@
 import 'package:quran_app/core/constants/app_images.dart';
 
 const List<String> icons = [
-  AppImages.nightLightIcon,
+  AppImages.blackNotificationIcon,
   AppImages.blackFavIcon,
   AppImages.blackClockIcon,
   AppImages.nightLightIcon,
