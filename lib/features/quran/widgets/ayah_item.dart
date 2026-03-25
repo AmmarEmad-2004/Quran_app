@@ -11,8 +11,14 @@ class AyahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: AppPadding.p8(context)),
+      padding: EdgeInsets.symmetric(vertical: AppPadding.p8(context)),
       child: Container(
+        padding: EdgeInsets.only(
+          top: AppPadding.p20(context),
+          left: AppPadding.p20(context),
+          right: AppPadding.p20(context),
+          bottom: AppPadding.p32(context),
+        ),
         width: double.infinity,
         decoration: BoxDecoration(
           color: AppColors.kWhite,
