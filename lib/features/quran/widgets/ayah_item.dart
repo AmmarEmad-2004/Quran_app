@@ -19,15 +19,12 @@ class AyahItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
         child: ListTile(
-          title: Text(
-            ayahModel.ayah,
-            style: AppStyles.mediumCairo18(context),
-          ),
+          title: Text(ayahModel.ayah, style: AppStyles.regularAmiri20(context)),
           trailing: CircleBadgeCard(
             height: 40,
             width: 40,
             child: Text(
-             "${ayahModel.number}",
+              "${ayahModel.number}",
               textAlign: TextAlign.right,
               style: AppStyles.regularCairo16(
                 context,
