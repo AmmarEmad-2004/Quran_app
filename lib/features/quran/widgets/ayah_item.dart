@@ -20,9 +20,12 @@ class AyahItem extends StatelessWidget {
           bottom: AppPadding.p32(context),
         ),
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: ShapeDecoration(
           color: AppColors.kWhite,
-          borderRadius: BorderRadius.circular(20),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 1, color: Color(0x0F0D7D5D)),
+            borderRadius: BorderRadius.circular(20),
+          ),
         ),
         child: ListTile(
           title: Text(ayahModel.ayah, style: AppStyles.regularAmiri20(context)),
