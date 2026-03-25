@@ -6,11 +6,14 @@ class CircleBadgeCard extends StatelessWidget {
     super.key,
     required this.child,
     required this.height,
-    required this.width, this.gradient1, this.gradient2,
+    required this.width,
+    this.gradient1,
+    this.gradient2, this.radius,
   });
   final Widget child;
   final double height, width;
   final Color? gradient1, gradient2;
+  final double? radius;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,10 +23,13 @@ class CircleBadgeCard extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment(0.50, 0.00),
           end: Alignment(0.50, 1.00),
-          colors: [gradient1?? AppColors.lightGreen,gradient2?? AppColors.darkGreen],
+          colors: [
+            gradient1 ?? AppColors.lightGreen,
+            gradient2 ?? AppColors.darkGreen,
+          ],
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(33554400),
+          borderRadius: BorderRadius.circular(radius?? 33554400),
         ),
         shadows: [
           BoxShadow(
