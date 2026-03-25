@@ -12,7 +12,7 @@ class QuranScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
       children: [
-        GradientAppbar(height: 0.2, radius: 0, child: AppBarQuranScreenContent(),),
+        AppBarQuranScreenContent(),
         FilterChipsRow(),
         StatusCardRow(),
         Expanded(child: SurahsList()),
