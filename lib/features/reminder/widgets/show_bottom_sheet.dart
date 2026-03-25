@@ -17,17 +17,19 @@ void showMyBottomSheet(BuildContext context) {
     ),
     builder: (context) {
       return Padding(
-        padding: EdgeInsets.only(
-          left: 16,
-          right: 16,
-          top: 16,
-          bottom: MediaQuery.of(context).viewInsets.bottom + 16,
-        ),
+        padding: EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 16,
             children: [
+              IconButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(Icons.close, size: 16),
+              ),
               Text(
                 'إضافة تذكير جديد',
                 style: AppStyles.semiBoldCairo24(context),
