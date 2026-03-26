@@ -3,12 +3,12 @@ import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/routing/app_transitions.dart';
 import 'package:quran_app/features/home/ui/screens/home_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/onboarding_screen.dart';
-import 'package:quran_app/features/prayer/screens/prayer_screen.dart';
-import 'package:quran_app/features/quran/screens/quran_details_screen.dart';
-import 'package:quran_app/features/quran/screens/quran_screen.dart';
+import 'package:quran_app/features/prayer/ui/screens/prayer_screen.dart';
+import 'package:quran_app/features/quran/ui/screens/quran_details_screen.dart';
+import 'package:quran_app/features/quran/ui/screens/quran_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/language_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/location_screen.dart';
-import 'package:quran_app/features/reminder/screens/reminder_screen_.dart';
+import 'package:quran_app/features/reminder/ui/screens/reminder_screen_.dart';
 import 'package:quran_app/features/setting/screens/setting_screen.dart';
 import 'package:quran_app/features/splash/screens/splash_screen.dart';
 
