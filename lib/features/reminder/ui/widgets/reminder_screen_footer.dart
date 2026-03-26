@@ -12,7 +12,7 @@ class ReminderScreenFooter extends StatelessWidget {
     return CustomGradientBackground(
       boderColor: AppColors.lightGold,
       borderRadius: 20,
-      width: 1.5,
+      borderWidth: 1.5,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Row(
@@ -20,7 +20,7 @@ class ReminderScreenFooter extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomGradientBackground(
-              sizeWidth: 50,
+              width: 50,
               borderRadius: 60,
               colorGradient1: AppColors.lightGold,
               colorGradient2: AppColors.lightGold,

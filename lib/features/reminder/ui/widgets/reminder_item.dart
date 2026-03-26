@@ -20,7 +20,7 @@ class ReminderItem extends StatelessWidget {
           padding: const EdgeInsets.all(12.0),
           child: ListTile(
             leading: CustomGradientBackground(
-              sizeWidth: 55,
+              width: 55,
               borderRadius: 22,
               colorGradient1: AppColors.lightGreen,
               colorGradient2: AppColors.darkGreen,

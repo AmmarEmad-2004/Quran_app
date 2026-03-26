@@ -7,15 +7,18 @@ class CustomGradientBackground extends StatelessWidget {
     required this.child,
     this.colorGradient1,
     this.colorGradient2,
-    this.boderColor, this.borderRadius, this.width, this.sizeWidth,
+    this.boderColor,
+    this.borderRadius,
+    this.borderWidth,
+    this.width,
   });
   final Widget child;
   final Color? colorGradient1, colorGradient2, boderColor;
-  final double? borderRadius, width, sizeWidth;
+  final double? borderRadius, borderWidth, width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:sizeWidth?? double.infinity,
+      width: width ?? double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -25,7 +28,10 @@ class CustomGradientBackground extends StatelessWidget {
             colorGradient2 ?? AppColors.darkBeige,
           ],
         ),
-        border: Border.all(color: boderColor ?? Colors.transparent, width:width?? 0.5),
+        border: Border.all(
+          color: boderColor ?? Colors.transparent,
+          width: borderWidth ?? 0.5,
+        ),
         borderRadius: BorderRadius.circular(borderRadius ?? 0),
       ),
       child: child,

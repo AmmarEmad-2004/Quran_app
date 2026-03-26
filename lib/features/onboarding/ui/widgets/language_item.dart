@@ -5,6 +5,7 @@ import 'package:quran_app/core/widgets/circle_badge_card.dart';
 import 'package:quran_app/core/widgets/custom_gradient_background.dart';
 import 'package:quran_app/features/onboarding/data/models/language_model.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
+
 class LanguageItem extends StatelessWidget {
   const LanguageItem({
     super.key,
@@ -28,7 +29,7 @@ class LanguageItem extends StatelessWidget {
             : AppColors.kWhite,
         boderColor: isSelected ? AppColors.lightGreen : Colors.transparent,
         borderRadius: 16,
-        width: 2,
+        borderWidth: 2,
         child: ListTile(
           onTap: onTap,
           leading: Image.asset(languageModel.image, fit: BoxFit.contain),

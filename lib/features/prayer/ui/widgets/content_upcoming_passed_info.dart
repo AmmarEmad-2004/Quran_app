@@ -13,7 +13,7 @@ class ContentUpcomingPassedCardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Opacity(
-      opacity: prayer.status == PrayerStatus.passed? 0.50: 1,
+      opacity: prayer.status == PrayerStatus.passed ? 0.50 : 1,
       child: Padding(
         padding: EdgeInsets.all(AppPadding.p12(context)),
         child: Row(
@@ -25,7 +25,7 @@ class ContentUpcomingPassedCardInfo extends StatelessWidget {
                 spacing: 6,
                 children: [
                   CustomGradientBackground(
-                    sizeWidth: 50,
+                    width: 50,
                     borderRadius: 50,
                     colorGradient1: AppColors.lightGreen.withValues(alpha: 0.1),
                     colorGradient2: AppColors.lightGold.withValues(alpha: 0.1),
@@ -64,10 +64,7 @@ class ContentUpcomingPassedCardInfo extends StatelessWidget {
                 spacing: 2,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    prayer.time,
-                    style: AppStyles.regularCairo30(context),
-                  ),
+                  Text(prayer.time, style: AppStyles.regularCairo30(context)),
                   Row(
                     spacing: 6,
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -75,9 +72,9 @@ class ContentUpcomingPassedCardInfo extends StatelessWidget {
                     children: [
                       Text(
                         prayer.alarmOn ? 'مفعّل' : 'غير\nمفعّل',
-                        style: AppStyles.regularCairo12(
-                          context,
-                        ).copyWith(color: AppColors.kBlack.withValues(alpha: 0.8)),
+                        style: AppStyles.regularCairo12(context).copyWith(
+                          color: AppColors.kBlack.withValues(alpha: 0.8),
+                        ),
                       ),
                       GestureDetector(
                         onTap: () {},
@@ -109,10 +106,7 @@ class ContentUpcomingPassedCardInfo extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {},
-                        child: Icon(
-                          Icons.notifications_outlined,
-                          size: 16,
-                        ),
+                        child: Icon(Icons.notifications_outlined, size: 16),
                       ),
                     ],
                   ),

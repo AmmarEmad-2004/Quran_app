@@ -21,7 +21,7 @@ class CurrentPrayerCard extends StatelessWidget {
       colorGradient2: AppColors.darkGreen,
       boderColor: AppColors.lightGold,
       borderRadius: 20,
-      width: 2,
+      borderWidth: 2,
       child: Padding(
         padding: EdgeInsets.all(AppPadding.p14(context)),
         child: Column(
@@ -81,4 +81,3 @@ class CurrentPrayerCard extends StatelessWidget {
     );
   }
 }
-

@@ -27,16 +27,16 @@ class BottomSheetPreviewCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CustomGradientBackground(
-                  sizeWidth: 55,
-                  borderRadius: 60,
+                  width: 55,
+                  borderRadius: 22,
                   colorGradient1: AppColors.lightGreen,
-                  colorGradient2: AppColors.lightGreen,
+                  colorGradient2: AppColors.darkGreen,
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Image.asset(
                       AppImages.clockIcon,
-                      width: 20,
-                      height: 20,
+                      width: 25,
+                      height: 25,
                     ),
                   ),
                 ),

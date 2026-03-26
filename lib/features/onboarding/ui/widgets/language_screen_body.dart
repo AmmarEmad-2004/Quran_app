@@ -8,6 +8,7 @@ import 'package:quran_app/core/widgets/custom_gradient_background.dart';
 import 'package:quran_app/core/widgets/custom_gradient_button.dart';
 import 'package:quran_app/features/onboarding/ui/widgets/language_list.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
+
 class LanguageScreenBody extends StatelessWidget {
   const LanguageScreenBody({super.key});
 
@@ -27,7 +28,7 @@ class LanguageScreenBody extends StatelessWidget {
               shadowColor: Colors.black.withValues(alpha: 0.6),
 
               child: CustomGradientBackground(
-                sizeWidth: 96,
+                width: 96,
                 borderRadius: 30,
                 colorGradient1: AppColors.lightGreen,
                 colorGradient2: AppColors.darkGreen,

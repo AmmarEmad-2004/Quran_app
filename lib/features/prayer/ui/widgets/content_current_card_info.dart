@@ -21,7 +21,7 @@ class ContentCurrrentCardInfo extends StatelessWidget {
             spacing: 6,
             children: [
               CustomGradientBackground(
-                sizeWidth: 50,
+                width: 50,
                 borderRadius: 50,
                 colorGradient1: AppColors.kWhite.withValues(alpha: 0.3),
                 colorGradient2: AppColors.kWhite.withValues(alpha: 0.3),

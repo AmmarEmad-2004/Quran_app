@@ -24,7 +24,7 @@ class ReminderAppbarContent extends StatelessWidget {
           ),
           Spacer(),
           CustomGradientBackground(
-            sizeWidth: 40,
+            width: 40,
             borderRadius: 50,
             colorGradient1: AppColors.kWhite.withValues(alpha: 0.3),
             colorGradient2: AppColors.kWhite.withValues(alpha: 0.3),
