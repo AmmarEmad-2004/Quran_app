@@ -11,12 +11,21 @@ class AyahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: AppPadding.p8(context)),
+      padding: EdgeInsets.symmetric(vertical: AppPadding.p8(context)),
       child: Container(
+        padding: EdgeInsets.only(
+          top: AppPadding.p20(context),
+          left: AppPadding.p20(context),
+          right: AppPadding.p20(context),
+          bottom: AppPadding.p32(context),
+        ),
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: ShapeDecoration(
           color: AppColors.kWhite,
-          borderRadius: BorderRadius.circular(20),
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 1, color: Color(0x0F0D7D5D)),
+            borderRadius: BorderRadius.circular(20),
+          ),
         ),
         child: ListTile(
           title: Text(ayahModel.ayah, style: AppStyles.regularAmiri20(context)),
