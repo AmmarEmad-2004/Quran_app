@@ -1,5 +1,5 @@
 class AppRouters {
-  static const String splash = '/';
+  static const String splash = '/splah';
   static const String home = '/home';
   static const String onBoarding = '/onBoarding';
   static const String quran = '/quran';
@@ -10,4 +10,5 @@ class AppRouters {
   static const String reminder = '/eminder';
   static const String setting = '/setting';
   static const String azkar = '/azkar';
+  static const String tasbih = '/';
 }

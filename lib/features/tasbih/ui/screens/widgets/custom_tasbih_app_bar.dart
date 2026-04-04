@@ -19,8 +19,8 @@ class CustomTasbihAppBar extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(48),
-          bottomRight: Radius.circular(48),
+          bottomLeft: Radius.circular(0),
+          bottomRight: Radius.circular(0),
         ),
         image: DecorationImage(
           image: AssetImage(AppImages.appBarBackground),

@@ -9,14 +9,19 @@ class TasbihNonActiveItem extends StatelessWidget {
   final String zekr;
   @override
   Widget build(BuildContext context) {
-    return CustomCard(
-      elevation: 0,
-      cardColor: AppColors.kWhite,
-      borderColor: Colors.transparent,
-      radius: 20,
-      child: Padding(
-        padding: EdgeInsets.all(AppPadding.p20(context)),
-        child: Text(zekr, style: AppStyles.regularAmiri18(context)),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.40,
+      child: CustomCard(
+        elevation: 0,
+        cardColor: AppColors.kWhite,
+        borderColor: Colors.transparent,
+        radius: 20,
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(AppPadding.p20(context)),
+            child: Text(zekr, style: AppStyles.regularAmiri18(context)),
+          ),
+        ),
       ),
     );
   }

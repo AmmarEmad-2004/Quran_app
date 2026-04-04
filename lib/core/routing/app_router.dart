@@ -12,6 +12,7 @@ import 'package:quran_app/features/onboarding/ui/screens/location_screen.dart';
 import 'package:quran_app/features/reminder/ui/screens/reminder_screen_.dart';
 import 'package:quran_app/features/setting/screens/setting_screen.dart';
 import 'package:quran_app/features/splash/screens/splash_screen.dart';
+import 'package:quran_app/features/tasbih/ui/screens/tasbih_screen.dart';
 
 // GoRouter configuration
 abstract class AppRouter {
@@ -82,6 +83,11 @@ abstract class AppRouter {
         path: AppRouters.azkar,
         pageBuilder: (context, state) =>
             AppTransitions.buildPage(state: state, child: const AzkarScreen()),
+      ),
+      GoRoute(
+        path: AppRouters.tasbih,
+        pageBuilder: (context, state) =>
+            AppTransitions.buildPage(state: state, child: const TasbihScreen()),
       ),
     ],
   );

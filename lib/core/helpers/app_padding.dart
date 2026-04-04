@@ -22,6 +22,9 @@ class AppPadding {
 
   static double p16(BuildContext context) =>
       AppDimensions.responsive(context, 16);
+  
+  static double p18(BuildContext context) =>
+      AppDimensions.responsive(context, 18);
 
   static double p20(BuildContext context) =>
       AppDimensions.responsive(context, 20);

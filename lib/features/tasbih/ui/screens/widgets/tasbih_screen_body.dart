@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/features/tasbih/ui/screens/widgets/custom_tasbih_app_bar.dart';
+import 'package:quran_app/features/tasbih/ui/screens/widgets/sebha_card.dart';
 import 'package:quran_app/features/tasbih/ui/screens/widgets/tasbih_item_list.dart';
 
 class TasbihScreenBody extends StatelessWidget {
@@ -13,6 +14,7 @@ class TasbihScreenBody extends StatelessWidget {
         children: [
           CustomTasbihAppBar(),
          TasbihItemList(),
+         SebhaCard(),
         ],
       ),
     );
