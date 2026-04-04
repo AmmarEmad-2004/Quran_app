@@ -19,7 +19,7 @@ class SebhaCard extends StatelessWidget {
         child: CustomCard(
           cardColor: AppColors.kWhite,
           borderColor: Colors.transparent,
-          elevation: 8,
+          elevation: 10,
           radius: 20,
           child: Padding(
             padding: EdgeInsets.all(AppPadding.p20(context)),

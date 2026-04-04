@@ -19,7 +19,7 @@ class CustomCard extends StatelessWidget {
     return Card(
       color: cardColor,
       elevation: elevation ?? 6, // درجة الظل
-      shadowColor: AppColors.lightGrey.withValues(alpha: 0.3),
+      shadowColor: AppColors.lightGrey.withValues(alpha: 0.4),
       shape: RoundedRectangleBorder(
         side: BorderSide(color: borderColor ?? Colors.transparent),
         borderRadius: BorderRadius.circular(radius ?? 24),

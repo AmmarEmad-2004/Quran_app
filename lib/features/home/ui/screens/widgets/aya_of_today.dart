@@ -7,6 +7,10 @@ class AyaOfToday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomStarBackground();
+    return CustomStarBackground(
+      label: 'آية اليوم',
+      content: '﴿ وَقُل رَّبِّ زِدۡنِی عِلۡمࣰا ﴾',
+      footer: 'سورة طه - الآية 114',
+    );
   }
 }

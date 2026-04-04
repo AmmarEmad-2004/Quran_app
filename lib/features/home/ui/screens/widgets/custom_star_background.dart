@@ -6,8 +6,13 @@ import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/home/ui/screens/widgets/custom_star_background_divider.dart';
 
 class CustomStarBackground extends StatelessWidget {
-  const CustomStarBackground({super.key});
-
+  const CustomStarBackground({
+    super.key,
+    required this.label,
+    required this.content,
+    required this.footer,
+  });
+  final String label, content, footer;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,6 +28,7 @@ class CustomStarBackground extends StatelessWidget {
       ),
       child: Column(
         spacing: 15,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: EdgeInsets.all(AppPadding.p10(context)),
@@ -34,19 +40,20 @@ class CustomStarBackground extends StatelessWidget {
           ),
 
           Text(
-            'آية اليوم',
+            label,
             style: AppStyles.mediumCairo12(
               context,
             ).copyWith(color: AppColors.darkGrey),
           ),
           CustomStarBackgroundDivider(),
           Text(
-            '﴿ وَقُل رَّبِّ زِدۡنِی عِلۡمࣰا ﴾',
+            content,
+            textAlign: TextAlign.center,
             style: AppStyles.regularAmiri24(context),
           ),
           CustomStarBackgroundDivider(),
           Text(
-            'سورة طه - الآية 114',
+            footer,
             style: AppStyles.regularCairo14(
               context,
             ).copyWith(color: AppColors.darkGrey),
