@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 
 class ZekrProgressbar extends StatelessWidget {
-  const ZekrProgressbar({super.key});
-
+  const ZekrProgressbar({super.key, required this.count, required this.maxCount});
+final int count;
+  final int maxCount;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -19,7 +20,7 @@ class ZekrProgressbar extends StatelessWidget {
 
         // التقدم
         FractionallySizedBox(
-          widthFactor: 0.7, // نسبة التقدم
+          widthFactor: count / maxCount, // نسبة التقدم
           child: Container(
             height: 6,
             decoration: BoxDecoration(

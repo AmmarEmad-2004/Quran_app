@@ -18,7 +18,7 @@ class _TasbihItemListState extends State<TasbihItemList> {
       runSpacing: 10,
       children: List.generate(zekr.length, (index) {
         final item = zekr[index];
-        return TasbihItem(zekr: item, isSelected: selectedIndex == index);
+        return TasbihItem(zekr: item["zikr"], isSelected: selectedIndex == index);
       }),
     );
   }
