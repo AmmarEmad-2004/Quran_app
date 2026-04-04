@@ -7,7 +7,6 @@ import 'package:quran_app/features/onboarding/ui/screens/onboarding_screen.dart'
 import 'package:quran_app/features/prayer/ui/screens/prayer_screen.dart';
 import 'package:quran_app/features/quran/ui/screens/quran_details_screen.dart';
 import 'package:quran_app/features/quran/ui/screens/quran_screen.dart';
-import 'package:quran_app/features/onboarding/ui/screens/language_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/location_screen.dart';
 import 'package:quran_app/features/reminder/ui/screens/reminder_screen_.dart';
 import 'package:quran_app/features/setting/screens/setting_screen.dart';
@@ -45,13 +44,6 @@ abstract class AppRouter {
         pageBuilder: (context, state) => AppTransitions.buildPage(
           state: state,
           child: const QuranDetailsScreen(),
-        ),
-      ),
-      GoRoute(
-        path: AppRouters.language,
-        pageBuilder: (context, state) => AppTransitions.buildPage(
-          state: state,
-          child: const LanguageScreen(),
         ),
       ),
       GoRoute(
