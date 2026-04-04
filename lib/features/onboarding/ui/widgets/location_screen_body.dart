@@ -54,7 +54,7 @@ class LocationScreenBody extends StatelessWidget {
               height: 50,
               image: AppImages.locationIcon,
               onTap: () {
-                GoRouter.of(context).go(AppRouters.quran);
+                GoRouter.of(context).go(AppRouters.home);
               },
             ),
             CustomTextButton(

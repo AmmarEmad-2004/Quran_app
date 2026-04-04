@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_text_feild.dart';
@@ -16,7 +17,14 @@ class AppBarQuranScreenContent extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.arrow_back, color: Colors.white, size: 16),
+              IconButton(
+                icon: Icon(Icons.arrow_back),
+                color: Colors.white,
+               // size: 16,
+                onPressed:(){
+                  GoRouter.of(context).pop();
+                },
+              ),
               Spacer(),
               Column(
                 spacing: 4,

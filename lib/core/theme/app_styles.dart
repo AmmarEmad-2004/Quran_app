@@ -17,6 +17,16 @@ abstract class AppStyles {
   }
 
 
+  /// Amiri · Regular · 18
+  static TextStyle regularAmiri18(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontFamily: 'Amiri',
+      color: AppColors.kBlack,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
    /// Amiri · Regular · 24
   static TextStyle regularAmiri24(BuildContext context) {
     return TextStyle(
