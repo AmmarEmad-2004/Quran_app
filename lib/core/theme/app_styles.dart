@@ -6,6 +6,16 @@ abstract class AppStyles {
   // Amiri Font
   // ─────────────────────────────────────────
 
+   /// Amiri · Regular · 18
+  static TextStyle regularAmiri18(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontFamily: 'Amiri',
+      color: AppColors.kBlack,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
   /// Amiri · Regular · 20
   static TextStyle regularAmiri20(BuildContext context) {
     return TextStyle(
@@ -16,11 +26,10 @@ abstract class AppStyles {
     );
   }
 
-
-  /// Amiri · Regular · 18
-  static TextStyle regularAmiri18(BuildContext context) {
+   /// Amiri · Regular · 24
+  static TextStyle regularAmiri24(BuildContext context) {
     return TextStyle(
-      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
       fontFamily: 'Amiri',
       color: AppColors.kBlack,
       fontWeight: FontWeight.w400,
@@ -28,9 +37,9 @@ abstract class AppStyles {
   }
 
    /// Amiri · Regular · 24
-  static TextStyle regularAmiri24(BuildContext context) {
+  static TextStyle regularAmiri30(BuildContext context) {
     return TextStyle(
-      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontSize: getResponsiveFontSize(context, fontSize: 30),
       fontFamily: 'Amiri',
       color: AppColors.kBlack,
       fontWeight: FontWeight.w400,
@@ -97,6 +106,16 @@ abstract class AppStyles {
   static TextStyle regularCairo30(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 30),
+      fontFamily: 'Cairo',
+      color: AppColors.kBlack,
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  /// Cairo · Regular · 72
+  static TextStyle regularCairo72(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 72),
       fontFamily: 'Cairo',
       color: AppColors.kBlack,
       fontWeight: FontWeight.w400,
