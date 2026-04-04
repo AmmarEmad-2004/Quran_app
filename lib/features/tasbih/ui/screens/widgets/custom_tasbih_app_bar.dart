@@ -51,7 +51,7 @@ class CustomTasbihAppBar extends StatelessWidget {
                 ).copyWith(color: AppColors.kWhite),
               ),
               Text(
-                'سبّح واذكر اللّه في كل وقت',
+                'سبّح واذكر الله في كل وقت',
                 style: AppStyles.regularCairo14(
                   context,
                 ).copyWith(color: AppColors.kWhite),

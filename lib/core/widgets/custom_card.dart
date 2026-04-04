@@ -7,7 +7,8 @@ class CustomCard extends StatelessWidget {
     this.child,
     this.cardColor,
     this.elevation,
-    this.radius, this.borderColor,
+    this.radius,
+    this.borderColor,
   });
   final Widget? child;
   final Color? cardColor;
@@ -18,7 +19,7 @@ class CustomCard extends StatelessWidget {
     return Card(
       color: cardColor,
       elevation: elevation ?? 6, // درجة الظل
-      shadowColor: AppColors.lightGrey.withValues(alpha: 0.2),
+      shadowColor: AppColors.lightGrey.withValues(alpha: 0.3),
       shape: RoundedRectangleBorder(
         side: BorderSide(color: borderColor ?? Colors.transparent),
         borderRadius: BorderRadius.circular(radius ?? 24),

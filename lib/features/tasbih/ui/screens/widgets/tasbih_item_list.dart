@@ -14,15 +14,12 @@ class _TasbihItemListState extends State<TasbihItemList> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 14,
-      runSpacing: 14,
+      spacing: 10,
+      runSpacing: 10,
       children: List.generate(zekr.length, (index) {
         final item = zekr[index];
-        return TasbihItem(
-          zekr: item,
-          isSelected: selectedIndex == index,
-        );
+        return TasbihItem(zekr: item, isSelected: selectedIndex == index);
       }),
-      );
+    );
   }
 }

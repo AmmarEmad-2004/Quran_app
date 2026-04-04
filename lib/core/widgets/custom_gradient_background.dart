@@ -34,7 +34,7 @@ class CustomGradientBackground extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(borderRadius ?? 0),
       ),
-      child: child,
+      child: Center(child: child),
     );
   }
 }
