@@ -6,6 +6,6 @@ class PrayerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const PrayerScreenBody();
+    return Scaffold(body: const PrayerScreenBody());
   }
 }
