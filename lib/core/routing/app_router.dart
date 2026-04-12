@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/routing/app_transitions.dart';
+import 'package:quran_app/features/azkar/ui/screens/azkar_detail_screen.dart';
 import 'package:quran_app/features/azkar/ui/screens/azkar_screen.dart';
 import 'package:quran_app/features/home/ui/screens/home_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/onboarding_screen.dart';
@@ -61,10 +62,6 @@ abstract class AppRouter {
         path: AppRouters.reminder,
         builder: (context, state) => const ReminderScreen(),),
       GoRoute(
-        path: AppRouters.reminder,
-        builder: (context, state) => const ReminderScreen(),
-      ),
-      GoRoute(
         path: AppRouters.setting,
         pageBuilder: (context, state) => AppTransitions.buildPage(
           state: state,
@@ -80,6 +77,11 @@ abstract class AppRouter {
         path: AppRouters.tasbih,
         pageBuilder: (context, state) =>
             AppTransitions.buildPage(state: state, child: const TasbihScreen()),
+      ),
+       GoRoute(
+        path: AppRouters.azkarDetails,
+        pageBuilder: (context, state) =>
+            AppTransitions.buildPage(state: state, child: const AzkarDetailScreen()),
       ),
     ],
   );

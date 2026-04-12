@@ -6,6 +6,6 @@ class QuranDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const QuranDetailsScreenBody();
+    return Scaffold(body: const QuranDetailsScreenBody());
   }
 }

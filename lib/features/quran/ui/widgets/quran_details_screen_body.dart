@@ -10,13 +10,11 @@ class QuranDetailsScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      body: Column(children: [
+    return   Column(children: [
         GradientAppbar(radius: 0 ,height: 0.1 , child: AppBarDetailsScreenContent(surahName: 'الفاتحة', surahType: 'مكية', ayahCount: 7,)),
        AyahToolBar(),
        Expanded(child: AyahList()),
        SurahNavigationBar(),
-      ],),
-    );
+      ],);
   }
 }
