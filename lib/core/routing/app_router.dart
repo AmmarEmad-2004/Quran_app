@@ -56,11 +56,18 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: AppRouters.prayer,
-        builder: (context, state) => const PrayerScreen(),
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const PrayerScreen(),
+        ),
       ),
       GoRoute(
         path: AppRouters.reminder,
-        builder: (context, state) => const ReminderScreen(),),
+       pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: const ReminderScreen(),
+        ),
+      ),
       GoRoute(
         path: AppRouters.setting,
         pageBuilder: (context, state) => AppTransitions.buildPage(
