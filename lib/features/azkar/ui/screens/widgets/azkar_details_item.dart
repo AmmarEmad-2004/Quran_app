@@ -25,7 +25,7 @@ class _AzkarDetailsItemState extends State<AzkarDetailsItem> {
       child: Padding(
         padding: EdgeInsets.all(AppPadding.p20(context)),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AzkarNumberBadge(number: widget.azkarDetail.count),
@@ -41,7 +41,7 @@ class _AzkarDetailsItemState extends State<AzkarDetailsItem> {
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
-                    alignment: WrapAlignment.end,
+                    alignment: WrapAlignment.start,
                     children: [
                       CustomCard(
                         cardColor: AppColors.lightGold,
