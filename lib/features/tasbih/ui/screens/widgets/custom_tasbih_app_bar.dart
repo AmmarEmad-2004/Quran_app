@@ -11,12 +11,7 @@ class CustomTasbihAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        top: AppPadding.p24(context),
-        left: AppPadding.p24(context),
-        right: AppPadding.p24(context),
-        bottom: AppPadding.p24(context),
-      ),
+      padding: EdgeInsets.all(AppPadding.p24(context)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(0),
@@ -34,6 +29,7 @@ class CustomTasbihAppBar extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).pop();
             },
+            padding: EdgeInsets.zero,
             icon: Icon(
               Icons.arrow_back_rounded,
               color: AppColors.kWhite,

@@ -11,9 +11,10 @@ class TasbihScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
       child: Column(
-        spacing: 20,
+        spacing: 8,
         children: [
           CustomTasbihAppBar(),
+          SizedBox(height: 2),
           TasbihItemList(),
           SebhaCard(),
           Padding(

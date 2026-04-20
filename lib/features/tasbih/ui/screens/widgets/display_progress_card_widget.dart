@@ -5,7 +5,11 @@ import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/tasbih/ui/screens/widgets/zekr_progress_bar.dart';
 
 class DisplayProgressCardWidget extends StatelessWidget {
-  const DisplayProgressCardWidget({super.key, required this.count, required this.maxCount});
+  const DisplayProgressCardWidget({
+    super.key,
+    required this.count,
+    required this.maxCount,
+  });
   final int count, maxCount;
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class DisplayProgressCardWidget extends StatelessWidget {
             AppColors.lightGold.withValues(alpha: 0.1),
           ],
         ),
-        border: Border.all(color: AppColors.lightGreen, width: 6),
+        border: Border.all(color: AppColors.lightGreen, width: 8),
         shape: BoxShape.circle,
       ),
       child: Padding(
@@ -28,12 +32,15 @@ class DisplayProgressCardWidget extends StatelessWidget {
           horizontal: AppPadding.p60(context),
         ),
         child: Column(
-          spacing: 8,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(count.toString(), style: AppStyles.regularCairo72(context)),
             Text('من $maxCount', style: AppStyles.regularCairo14(context)),
-            SizedBox(width: 64, child: ZekrProgressbar(count: count, maxCount: maxCount)),
+            SizedBox(height: AppPadding.p4(context)),
+            SizedBox(
+              width: 64,
+              child: ZekrProgressbar(count: count, maxCount: maxCount),
+            ),
           ],
         ),
       ),

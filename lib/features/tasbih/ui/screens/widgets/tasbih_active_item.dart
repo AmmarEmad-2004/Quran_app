@@ -10,8 +10,8 @@ class TasbihActiveItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomGradientBackground(
-      colorGradient1: AppColors.lightGreen.withValues(alpha: 0.3),
-      colorGradient2: AppColors.lightGold.withValues(alpha: 0.02),
+      colorGradient1: AppColors.lightGreen.withValues(alpha: 0.15),
+      colorGradient2: AppColors.lightGold.withValues(alpha: 0.001),
       boderColor: AppColors.lightGreen,
       width: MediaQuery.of(context).size.width * 0.42,
       borderRadius: 20,

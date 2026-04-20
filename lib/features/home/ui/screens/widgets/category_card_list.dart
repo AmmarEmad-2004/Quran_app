@@ -51,7 +51,9 @@ class CategoryCardList extends StatelessWidget {
         subTitle: 'عداد التسبيح',
         image: AppImages.sebhaIcon,
         gradientColors: [AppColors.lightGreen, AppColors.darkGreen],
-        onTap: () {},
+        onTap: () {
+          GoRouter.of(context).push(AppRouters.tasbih);
+        },
       ),
 
       CategoryModel(

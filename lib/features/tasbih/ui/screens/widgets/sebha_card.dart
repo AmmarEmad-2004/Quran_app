@@ -25,9 +25,9 @@ class _SebhaCardState extends State<SebhaCard> {
   void increaseCount() {
     setState(() => isPressed = true);
     // animation for button press
-  Future.delayed(Duration(milliseconds: 150), () {
-    setState(() => isPressed = false);
-  });
+    Future.delayed(Duration(milliseconds: 150), () {
+      setState(() => isPressed = false);
+    });
     if (currentCount < zekr[currentIndex]["count"]) {
       setState(() {
         currentCount++;
@@ -106,9 +106,7 @@ class _SebhaCardState extends State<SebhaCard> {
                   count: currentCount,
                   maxCount: zekr[currentIndex]['count'],
                 ),
-                TasbihCardButton(
-                  isPressed: isPressed,
-                  onTap: increaseCount),
+                TasbihCardButton(isPressed: isPressed, onTap: increaseCount),
                 Divider(
                   thickness: 2,
                   indent: 30,
