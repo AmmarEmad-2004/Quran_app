@@ -13,13 +13,13 @@ class TasbihActiveItem extends StatelessWidget {
       colorGradient1: AppColors.lightGreen.withValues(alpha: 0.15),
       colorGradient2: AppColors.lightGold.withValues(alpha: 0.001),
       boderColor: AppColors.lightGreen,
-      width: MediaQuery.of(context).size.width * 0.42,
+      width: MediaQuery.of(context).size.width * 0.4,
       borderRadius: 20,
       borderWidth: 1.5,
       child: Padding(
         padding: EdgeInsets.all(AppPadding.p20(context)),
         child: Column(
-          spacing: 8,
+          spacing: 4,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(zekr, style: AppStyles.regularAmiri18(context)),
