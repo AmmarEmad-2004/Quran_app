@@ -6,7 +6,7 @@ import 'package:quran_app/core/errors/azkar_failure.dart';
 import 'package:quran_app/core/errors/failure.dart';
 import 'package:quran_app/features/azkar/data/models/azkar_detail_model.dart';
 import 'package:quran_app/features/azkar/data/models/get_azkar_category.dart';
-import 'package:quran_app/features/azkar/repos/azkar_repo.dart';
+import 'package:quran_app/features/azkar/data/repos/azkar_repo.dart';
 
 class AzkarRepoImpl implements AzkarRepo {
   Map<String, dynamic>? _azkarData;
