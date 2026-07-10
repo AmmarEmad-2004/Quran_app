@@ -1,11 +1,22 @@
 class AzkarDetailModel {
-  final String title;
+  final String content;
   final String reference;
   final String description;
   final int count;
 
   AzkarDetailModel({
-    required this.title,
-    required this.count, required this.reference, required this.description,
+    required this.content,
+    required this.count,
+    required this.reference,
+    required this.description,
   });
+
+  factory AzkarDetailModel.fromJson(Map<String, dynamic> json) {
+    return AzkarDetailModel(
+      content: json['content'] as String,
+      count: json['count'] as int,
+      reference: json['reference'] as String,
+      description: json['description'] as String,
+    );
+  }
 }

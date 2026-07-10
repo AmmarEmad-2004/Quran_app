@@ -35,7 +35,7 @@ class _AzkarDetailsItemState extends State<AzkarDetailsItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.azkarDetail.title,
+                    widget.azkarDetail.content,
                     style: AppStyles.regularCairo16(context),
                   ),
                   Wrap(
