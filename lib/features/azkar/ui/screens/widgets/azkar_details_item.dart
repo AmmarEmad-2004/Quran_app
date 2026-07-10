@@ -53,7 +53,7 @@ class _AzkarDetailsItemState extends State<AzkarDetailsItem> {
                             vertical: AppPadding.p6(context),
                           ),
                           child: Text(
-                            widget.azkarDetail.reference,
+                            widget.azkarDetail.reference ,
                             style: AppStyles.mediumCairo12(context),
                           ),
                         ),

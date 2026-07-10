@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/helpers/di.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/routing/app_transitions.dart';
+import 'package:quran_app/features/azkar/data/models/get_azkar_category.dart';
 import 'package:quran_app/features/azkar/data/repos/azkar_repo_impl.dart';
 import 'package:quran_app/features/azkar/logic/azkar_cubit/azkar_cubit.dart';
 import 'package:quran_app/features/azkar/ui/screens/azkar_detail_screen.dart';
@@ -17,6 +18,7 @@ import 'package:quran_app/features/reminder/ui/screens/reminder_screen_.dart';
 import 'package:quran_app/features/setting/screens/setting_screen.dart';
 import 'package:quran_app/features/splash/screens/splash_screen.dart';
 import 'package:quran_app/features/tasbih/ui/screens/tasbih_screen.dart';
+import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details_cubit.dart';
 
 // GoRouter configuration
 abstract class AppRouter {
@@ -82,8 +84,9 @@ abstract class AppRouter {
         pageBuilder: (context, state) => AppTransitions.buildPage(
           state: state,
           child: BlocProvider(
-          create: (context) => AzkarCubit(getIt.get<AzkarRepoImpl>())..loadAzkar()..getAzkarCategories(), 
-          child: const AzkarScreen(),
+            create: (context) =>
+                AzkarCubit(getIt.get<AzkarRepoImpl>())..loadAzkar(),
+            child: const AzkarScreen(),
           ),
         ),
       ),
@@ -94,10 +97,16 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: AppRouters.azkarDetails,
-        pageBuilder: (context, state) => AppTransitions.buildPage(
-          state: state,
-          child: const AzkarDetailScreen(),
-        ),
+        pageBuilder: (context, state) {
+          final category = state.extra as GetAzkarCategory;
+          return AppTransitions.buildPage(
+            state: state,
+            child: BlocProvider(
+              create: (context) => AzkarDetailsCubit(getIt.get<AzkarRepoImpl>())..getAzkarDetails(category.category),
+              child: const AzkarDetailScreen(),
+            ),
+          );
+        },
       ),
     ],
   );

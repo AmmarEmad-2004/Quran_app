@@ -16,7 +16,7 @@ class AzkarCubit extends Cubit<AzkarState> {
     var result = await azkarRepo.loadAzkar();
     result.fold(
       (failure) => emit(AzkarFailure(failure.errorMessage)),
-      (_) => emit(AzkarInitial()),    // Emit initial state after loading azkar data
+      (_) => getAzkarCategories(),    // Emit initial state after loading azkar data
     );
   }
 
@@ -25,14 +25,6 @@ class AzkarCubit extends Cubit<AzkarState> {
     return result.fold(
       (failure) =>  emit(AzkarFailure(failure.errorMessage)),
       (categories) => emit(AzkarCategorySuccess(categories)),
-    );
-  }
-
-  void getAzkarDetails(String category) {
-    var result = azkarRepo.getAzkarDetails(category);
-    return result.fold(
-      (failure) => emit(AzkarFailure(failure.errorMessage)),
-      (details) => emit(AzkarDetailsSuccess(details)),
     );
   }
 }
