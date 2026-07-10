@@ -3,22 +3,14 @@ import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
+import 'package:quran_app/features/azkar/data/models/get_azkar_category.dart';
 
 class AzkarItem extends StatelessWidget {
-  const AzkarItem({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.subTitle,
-    required this.onTap,
-    required this.colors,
-  });
-  final String image;
-  final String title;
-  final String subTitle;
-  final VoidCallback onTap;
-  final List<Color> colors;
+  const AzkarItem({super.key, required this.azkarCategory, this.onTap, required this.colors});
 
+  final GetAzkarCategory azkarCategory;
+  final void Function()? onTap;
+  final List<Color> colors;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,13 +49,13 @@ class AzkarItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    azkarCategory.category,
                     style: AppStyles.mediumCairo18(
                       context,
                     ).copyWith(color: AppColors.kWhite),
                   ),
                   Text(
-                    subTitle,
+                    "5 ذكر",
                     style: AppStyles.regularCairo14(
                       context,
                     ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.8)),
@@ -71,10 +63,13 @@ class AzkarItem extends StatelessWidget {
                 ],
               ),
               Spacer(),
-              Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: AppColors.kWhite.withValues(alpha: 0.6),
-                size: 20,
+              IconButton(
+                onPressed: onTap,
+                icon: Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: AppColors.kWhite.withValues(alpha: 0.6),
+                  size: 18,
+                ),
               ),
             ],
           ),

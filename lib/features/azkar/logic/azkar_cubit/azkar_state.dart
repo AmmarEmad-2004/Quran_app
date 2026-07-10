@@ -12,15 +12,15 @@ final class AzkarInitial extends AzkarState {}
 final class AzkarLoading extends AzkarState {}
 
 final class AzkarCategorySuccess extends AzkarState {
-  final List<GetAzkarCategory> surahs;
+  final List<GetAzkarCategory> azkarCategories;
 
-  const AzkarCategorySuccess(this.surahs);
+  const AzkarCategorySuccess(this.azkarCategories);
 }
 
 final class AzkarDetailsSuccess extends AzkarState {
-  final List<AzkarDetailModel> details;
+  final List<AzkarDetailModel> azkarDetails;
 
-  const AzkarDetailsSuccess(this.details);
+  const AzkarDetailsSuccess(this.azkarDetails);
 }
 
 final class AzkarFailure extends AzkarState {
