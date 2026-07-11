@@ -1,4 +1,6 @@
 import 'package:quran_app/core/constants/key_constants.dart';
+import 'package:quran_app/core/functions/cache_all_surahs.dart';
+import 'package:quran_app/core/functions/cache_all_ayahs.dart';
 import 'package:quran_app/core/networking/api_service.dart';
 import 'package:quran_app/features/quran/data/models/ayah_model.dart';
 import 'package:quran_app/features/quran/data/models/surah_model.dart';
@@ -20,9 +22,11 @@ class QuranRemoteDataSourceImpl implements QuranRemoteDataSource {
       final surahList = (response['data'] as List)
           .map((surah) => SurahModel.fromJson(surah))
           .toList();
+      cacheAllSurahs(surahList);
     return surahList;
   }
 
+ 
   @override
   Future<List<AyahModel>> getAllAyahsById(int surahNumber) async {
     var response = await apiService.get(
@@ -31,6 +35,9 @@ class QuranRemoteDataSourceImpl implements QuranRemoteDataSource {
     final ayahList = (response['data']['ayahs'] as List)
         .map((ayah) => AyahModel.fromJson(ayah, surahNumber))
         .toList();
+    cacheAllAyahs(ayahList);    
     return ayahList;
   }
+
+ 
 }
