@@ -12,4 +12,14 @@ class SurahModel {
     required this.ayatCount,
     required this.type,
   });
+
+  factory SurahModel.fromJson(Map<String, dynamic> json) {
+    return SurahModel(
+      number: json['number'],
+      nameArabic: json['name'],
+      nameEnglish: json['englishName'],
+      ayatCount: json['numberOfAyahs'],
+      type: json['revelationType'],
+    );
+  }
 }
