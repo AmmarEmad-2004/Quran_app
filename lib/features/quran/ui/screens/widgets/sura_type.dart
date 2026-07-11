@@ -4,8 +4,7 @@ import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 
 class SuraType extends StatelessWidget {
-  const SuraType({super.key, required this.suraType, required this.isMadani});
-  final String suraType;
+  const SuraType({super.key, required this.isMadani});
   final bool isMadani;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class SuraType extends StatelessWidget {
         spacing: 4,
         children: [
           Text(
-            suraType,
+             isMadani ? 'مدنية' : 'مكية',
             textAlign: TextAlign.right,
             style: AppStyles.regularCairo12(context).copyWith(
               color: isMadani ? AppColors.lightGold : AppColors.lightGreen,

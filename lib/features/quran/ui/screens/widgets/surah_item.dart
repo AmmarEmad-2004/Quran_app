@@ -6,19 +6,14 @@ import 'package:quran_app/features/quran/ui/screens/widgets/sura_number_badge.da
 import 'package:quran_app/features/quran/ui/screens/widgets/sura_type.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 
-class SurahItem extends StatefulWidget {
+class SurahItem extends StatelessWidget {
   const SurahItem({super.key, required this.surahModel, this.onTap});
   final SurahModel surahModel;
   final void Function()? onTap;
 
   @override
-  State<SurahItem> createState() => _SurahItemState();
-}
-
-class _SurahItemState extends State<SurahItem> {
-  @override
   Widget build(BuildContext context) {
-    final isMadani = widget.surahModel.type == 'مدنية';
+    final isMadani = surahModel.type == 'Medinan';
     return Padding(
       padding: EdgeInsets.only(bottom: AppPadding.p8(context)),
       child: Container(
@@ -28,24 +23,23 @@ class _SurahItemState extends State<SurahItem> {
           borderRadius: BorderRadius.circular(20),
         ),
         child: ListTile(
-          onTap: widget.onTap,
+          onTap: onTap,
           leading: SuraType(
-            suraType: widget.surahModel.type,
             isMadani: isMadani,
           ),
 
           title: Text(
-            widget.surahModel.nameArabic,
-            style: AppStyles.mediumCairo18(context),
+            surahModel.nameArabic,
+            style: AppStyles.regularAmiri20(context),
           ),
           subtitle: Text(
-            "آية ${widget.surahModel.ayatCount}. ${widget.surahModel.nameEnglish}",
+            "آية ${surahModel.ayatCount}. ${surahModel.nameEnglish}",
             textAlign: TextAlign.right,
             style: AppStyles.regularCairo12(
               context,
             ).copyWith(color: AppColors.darkGrey),
           ),
-          trailing: SurahNumberBadge(number: widget.surahModel.number),
+          trailing: SurahNumberBadge(number: surahModel.number),
         ),
       ),
     );
