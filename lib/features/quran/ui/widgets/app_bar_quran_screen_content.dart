@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quran_app/core/constants/app_images.dart';
+import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_text_feild.dart';
@@ -10,21 +12,29 @@ class AppBarQuranScreenContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(AppPadding.p16(context)),
+    return Container(
+      padding: EdgeInsets.only(
+        top: AppPadding.p20(context),
+        left: AppPadding.p20(context),
+        right: AppPadding.p20(context),
+        bottom: AppPadding.p32(context),
+      ),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AppImages.appBarBackground),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         spacing: 16,
         children: [
           Row(
             children: [
-              IconButton(
-                icon: Icon(Icons.arrow_back),
-                color: Colors.white,
-               // size: 16,
-                onPressed:(){
-                  GoRouter.of(context).pop();
+              GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).go(AppRouters.home);
                 },
-              ),
+                child: Icon(Icons.arrow_back, color: Colors.white, size: 16)),
               Spacer(),
               Column(
                 spacing: 4,

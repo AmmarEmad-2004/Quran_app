@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
+import 'package:quran_app/core/constants/key_constants.dart';
 import 'package:quran_app/core/errors/azkar_failure.dart';
 import 'package:quran_app/core/errors/failure.dart';
 import 'package:quran_app/features/azkar/data/models/azkar_detail_model.dart';
@@ -38,7 +39,7 @@ class AzkarRepoImpl implements AzkarRepo {
   Future<Either<Failure, void>> loadAzkar() async {
     try {
       final azkarJson = await rootBundle.loadString(
-        'assets/azkarJson/adkar.json',
+        KeyConstants.azkarJsonPath,
       );
       _azkarData = jsonDecode(azkarJson);
       return Right(null);
