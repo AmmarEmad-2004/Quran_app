@@ -35,7 +35,10 @@ class AzkarList extends StatelessWidget {
                 return AzkarItem(
                   azkarCategory: azkarCategory[index],
                   onTap: () {
-                   GoRouter.of(context).push(AppRouters.azkarDetails, extra: azkarCategory[index]);
+                    GoRouter.of(context).push(
+                      AppRouters.azkarDetails,
+                      extra: azkarCategory[index],
+                    );
                   },
                   colors: AzkarColors.getGradient(index),
                 );
@@ -43,7 +46,13 @@ class AzkarList extends StatelessWidget {
             );
           }
           return Center(
-            child: CircularProgressIndicator(color: AppColors.darkGreen),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(color: AppColors.darkGreen),
+              ],
+            ),
           );
         },
       ),

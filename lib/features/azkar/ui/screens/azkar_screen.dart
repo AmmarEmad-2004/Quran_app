@@ -12,7 +12,7 @@ class AzkarScreen extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Positioned(top: 0, left: 0, right: 0, child: CustomAzkarAppBar()),
-          Positioned(top: 180, left: 0, right: 0, child: AzkarList()),
+          Positioned(top: 200, left: 0, right: 0, child: AzkarList()),
         ],
       ),
     );

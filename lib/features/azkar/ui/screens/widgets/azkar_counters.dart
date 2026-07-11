@@ -11,7 +11,7 @@ class AzkarCounters extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          child: AzkarCounterItem(count: "6", text: "الفئات"),
+          child: AzkarCounterItem(count: "8", text: "الفئات"),
         ),
         Expanded(
           child: AzkarCounterItem(count: "1", text: "مكتملة اليوم"),

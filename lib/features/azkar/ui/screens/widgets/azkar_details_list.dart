@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quran_app/core/constants/azkar_details_list.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details_cubit.dart';
 import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details_state.dart';
