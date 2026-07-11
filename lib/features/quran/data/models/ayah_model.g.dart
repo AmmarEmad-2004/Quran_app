@@ -19,17 +19,20 @@ class AyahModelAdapter extends TypeAdapter<AyahModel> {
     return AyahModel(
       ayah: fields[0] as String,
       number: fields[1] as int,
+      surahNumber: fields[2] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, AyahModel obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.ayah)
       ..writeByte(1)
-      ..write(obj.number);
+      ..write(obj.number)
+      ..writeByte(2)
+      ..write(obj.surahNumber);
   }
 
   @override

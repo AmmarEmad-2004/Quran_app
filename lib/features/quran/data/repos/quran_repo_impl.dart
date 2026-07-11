@@ -37,7 +37,7 @@ class QuranRepoImpl implements QuranRepo {
         endPoint: '${KeyConstants.suraEndPoint}/$surahNumber',
       );
       final ayahList = (response['data']['ayahs'] as List)
-          .map((ayah) => AyahModel.fromJson(ayah))
+          .map((ayah) => AyahModel.fromJson(ayah, surahNumber))
           .toList();
       return Right(ayahList);
     } on Exception catch (e) {

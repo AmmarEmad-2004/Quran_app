@@ -7,13 +7,16 @@ class AyahModel extends HiveObject{
   final String ayah;
   @HiveField(1)
   final int number;
+  @HiveField(2)
+  final int surahNumber;
 
-  AyahModel({required this.ayah, required this.number});
+  AyahModel({required this.ayah, required this.number, required this.surahNumber});
 
- factory AyahModel.fromJson(Map<String, dynamic> json) {
+ factory AyahModel.fromJson(Map<String, dynamic> json, int surahNumber,) {
     return AyahModel(
       ayah: json['text'],
       number: json['numberInSurah'],
+       surahNumber: surahNumber,
     );
   }
 }
