@@ -11,6 +11,9 @@ import 'package:quran_app/features/azkar/ui/screens/azkar_screen.dart';
 import 'package:quran_app/features/home/ui/screens/home_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/onboarding_screen.dart';
 import 'package:quran_app/features/prayer/ui/screens/prayer_screen.dart';
+import 'package:quran_app/features/quran/data/repos/quran_repo.dart';
+import 'package:quran_app/features/quran/logic/ayahs_cubit/ayahs_cubit.dart';
+import 'package:quran_app/features/quran/logic/surah_cubit/surah_cubit.dart';
 import 'package:quran_app/features/quran/ui/screens/quran_details_screen.dart';
 import 'package:quran_app/features/quran/ui/screens/quran_screen.dart';
 import 'package:quran_app/features/onboarding/ui/screens/location_screen.dart';
@@ -43,15 +46,29 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: AppRouters.quran,
-        pageBuilder: (context, state) =>
-            AppTransitions.buildPage(state: state, child: const QuranScreen()),
+        pageBuilder: (context, state) => AppTransitions.buildPage(
+          state: state,
+          child: BlocProvider(
+            create: (context) =>
+                SurahCubit(getIt.get<QuranRepo>())..getAllSurahs(),
+            child: const QuranScreen(),
+          ),
+        ),
       ),
       GoRoute(
         path: AppRouters.quranDetails,
-        pageBuilder: (context, state) => AppTransitions.buildPage(
-          state: state,
-          child: const QuranDetailsScreen(),
-        ),
+        pageBuilder: (context, state) {
+          final surahNumber = state.extra as int;
+          return AppTransitions.buildPage(
+            state: state,
+            child: BlocProvider(
+              create: (context) =>
+                  AyahsCubit(getIt.get<QuranRepo>())
+                    ..getAllAyahsById(surahNumber),
+              child: const QuranDetailsScreen(),
+            ),
+          );
+        },
       ),
       GoRoute(
         path: AppRouters.location,
@@ -102,7 +119,9 @@ abstract class AppRouter {
           return AppTransitions.buildPage(
             state: state,
             child: BlocProvider(
-              create: (context) => AzkarDetailsCubit(getIt.get<AzkarRepoImpl>())..getAzkarDetails(category.category),
+              create: (context) =>
+                  AzkarDetailsCubit(getIt.get<AzkarRepoImpl>())
+                    ..getAzkarDetails(category.category),
               child: const AzkarDetailScreen(),
             ),
           );

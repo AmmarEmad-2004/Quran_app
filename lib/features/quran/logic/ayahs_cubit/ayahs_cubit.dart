@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quran_app/features/quran/data/models/ayah_model.dart';
@@ -10,7 +9,7 @@ class AyahsCubit extends Cubit<AyahsState> {
   AyahsCubit(this.quranrepo) : super(AyahsInitial());
   final QuranRepo quranrepo;
 
-  Future<void> getAyahsById(int surahNumber) async {
+  Future<void> getAllAyahsById(int surahNumber) async {
     emit(AyahsLoading());
     final result = await quranrepo.getAllAyahsById(surahNumber);
     result.fold(
