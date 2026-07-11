@@ -4,7 +4,7 @@ import 'package:quran_app/core/helpers/di.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/routing/app_transitions.dart';
 import 'package:quran_app/features/azkar/data/models/get_azkar_category.dart';
-import 'package:quran_app/features/azkar/data/repos/azkar_repo_impl.dart';
+import 'package:quran_app/features/azkar/data/repos/azkar_repo.dart';
 import 'package:quran_app/features/azkar/logic/azkar_cubit/azkar_cubit.dart';
 import 'package:quran_app/features/azkar/ui/screens/azkar_detail_screen.dart';
 import 'package:quran_app/features/azkar/ui/screens/azkar_screen.dart';
@@ -103,7 +103,7 @@ abstract class AppRouter {
           state: state,
           child: BlocProvider(
             create: (context) =>
-                AzkarCubit(getIt.get<AzkarRepoImpl>())..loadAzkar(),
+                AzkarCubit(getIt.get<AzkarRepo>())..loadAzkar(),
             child: const AzkarScreen(),
           ),
         ),
@@ -121,7 +121,7 @@ abstract class AppRouter {
             state: state,
             child: BlocProvider(
               create: (context) =>
-                  AzkarDetailsCubit(getIt.get<AzkarRepoImpl>())
+                  AzkarDetailsCubit(getIt.get<AzkarRepo>())
                     ..getAzkarDetails(category.category),
               child: const AzkarDetailScreen(),
             ),

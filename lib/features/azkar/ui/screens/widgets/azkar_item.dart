@@ -46,40 +46,19 @@ class AzkarItem extends StatelessWidget {
         ),
         child: Column(
           spacing: 12,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(AppImages.azkarSabah),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        azkarCategory.category,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: AppStyles.mediumCairo18(
-                          context,
-                        ).copyWith(color: AppColors.kWhite),
-                      ),
-                      Text(
-                        "5 ذكر",
-                        style: AppStyles.regularCairo14(context).copyWith(
-                          color: AppColors.kWhite.withValues(alpha: 0.8),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: AppColors.kWhite.withValues(alpha: 0.6),
-                  size: 16,
-                ),
-              ],
+            Flexible(
+              child: Text(
+                azkarCategory.category,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+                style: AppStyles.mediumCairo18(
+                  context,
+                ).copyWith(color: AppColors.kWhite),
+              ),
             ),
           ],
         ),

@@ -12,9 +12,7 @@ class QuranDetailsScreenBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final args = GoRouterState.of(context).extra as Map<String, dynamic>;
-    //final number = args['surahNumber'] as int;
     final name = args['surahName'] as String;
-    //final type = args['surahType'] as String;
     final ayahCount = args['ayahCount'] as int;
     final isMadani = args['surahType'] as String  == 'Medinan';
     return Column(
