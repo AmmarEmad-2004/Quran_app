@@ -43,39 +43,42 @@ class _AzkarDetailsItemState extends State<AzkarDetailsItem> {
                     runSpacing: 8,
                     alignment: WrapAlignment.start,
                     children: [
-                      CustomCard(
-                        cardColor: AppColors.lightGold,
-                        elevation: 0,
-                        radius: 20,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: AppPadding.p8(context),
-                            vertical: AppPadding.p6(context),
-                          ),
-                          child: Text(
-                            widget.azkarDetail.reference ,
-                            style: AppStyles.mediumCairo12(context),
-                          ),
-                        ),
-                      ),
-                      CustomCard(
-                        cardColor: AppColors.kWhite,
-                        borderColor: AppColors.lightGreen.withValues(
-                          alpha: 0.12,
-                        ),
-                        elevation: 0,
-                        radius: 20,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: AppPadding.p8(context),
-                            vertical: AppPadding.p6(context),
-                          ),
-                          child: Text(
-                            widget.azkarDetail.description,
-                            style: AppStyles.mediumCairo12(context),
+                      if (widget.azkarDetail.reference.trim().isNotEmpty)
+                        CustomCard(
+                          cardColor: AppColors.lightGold,
+                          elevation: 0,
+                          radius: 20,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: AppPadding.p8(context),
+                              vertical: AppPadding.p6(context),
+                            ),
+                            child: Text(
+                              widget.azkarDetail.reference,
+                              style: AppStyles.mediumCairo12(context),
+                            ),
                           ),
                         ),
-                      ),
+
+                      if (widget.azkarDetail.description.trim().isNotEmpty)
+                        CustomCard(
+                          cardColor: AppColors.kWhite,
+                          borderColor: AppColors.lightGreen.withValues(
+                            alpha: 0.12,
+                          ),
+                          elevation: 0,
+                          radius: 20,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: AppPadding.p8(context),
+                              vertical: AppPadding.p6(context),
+                            ),
+                            child: Text(
+                              widget.azkarDetail.description,
+                              style: AppStyles.mediumCairo12(context),
+                            ),
+                          ),
+                        ),
                     ],
                   ),
                 ],

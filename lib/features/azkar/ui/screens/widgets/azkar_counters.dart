@@ -14,10 +14,10 @@ class AzkarCounters extends StatelessWidget {
           child: AzkarCounterItem(count: "8", text: "الفئات"),
         ),
         Expanded(
-          child: AzkarCounterItem(count: "1", text: "مكتملة اليوم"),
+          child: AzkarCounterItem(count: "0", text: "مكتملة اليوم"),
         ),
         Expanded(
-          child: AzkarCounterItem(count: "1", text: "المفضلة"),
+          child: AzkarCounterItem(count: "0", text: "المفضلة"),
         ),
       ],
     );
