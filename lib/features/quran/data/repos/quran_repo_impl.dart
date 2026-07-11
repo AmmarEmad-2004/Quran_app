@@ -29,10 +29,13 @@ class QuranRepoImpl implements QuranRepo {
   }
 
   @override
-  Future<Either<Failure, List<AyahModel>>> getSurahDetails(int surahNumber) async{
+  Future<Either<Failure, List<AyahModel>>> getAllAyahsById(
+    int surahNumber,
+  ) async {
     try {
       var response = await apiService.get(
-          endPoint: '${KeyConstants.suraEndPoint}/$surahNumber');
+        endPoint: '${KeyConstants.suraEndPoint}/$surahNumber',
+      );
       final ayahList = (response['data']['ayahs'] as List)
           .map((ayah) => AyahModel.fromJson(ayah))
           .toList();

@@ -5,5 +5,5 @@ import 'package:quran_app/features/quran/data/models/surah_model.dart';
 
 abstract class QuranRepo {
   Future<Either<Failure, List<SurahModel>>> getAllSurahs();
-  Future<Either<Failure, List<AyahModel>>> getSurahDetails(int surahNumber);
+  Future<Either<Failure, List<AyahModel>>> getAllAyahsById(int surahNumber);
 }
