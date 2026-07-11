@@ -27,7 +27,13 @@ class SurahsList extends StatelessWidget {
                   onTap: () {
                     GoRouter.of(context).push(
                       AppRouters.quranDetails,
-                      extra: surahList[index].number,
+                      extra: {
+                        'surahNumber': surahList[index].number,
+                        'surahName': surahList[index].nameArabic,
+                        'surahType': surahList[index].type,
+                        'ayahCount': surahList[index].ayatCount,
+                      },
+                    
                     );
                   },
                 );

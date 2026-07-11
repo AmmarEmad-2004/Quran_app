@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/core/constants/ayah_list_demo.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quran_app/core/theme/app_colors.dart';
+import 'package:quran_app/features/quran/logic/ayahs_cubit/ayahs_cubit.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/ayah_item.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 
@@ -10,12 +12,21 @@ class AyahList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(AppPadding.p16(context)),
-      child: ListView.builder(
-        itemCount: ayahs.length,
-        itemBuilder: (context, index) {
-          return AyahItem(ayahModel: ayahs[index]);
-        },
-      ),
+      child: BlocBuilder<AyahsCubit, AyahsState>(
+        builder: (context, state) {
+          if (state is AyahsError) {
+            return Center(child: Text(state.errormessage));
+          } else if (state is AyahsSuccess) {
+            final ayahs = state.ayahList;
+            return ListView.builder(
+              itemCount: ayahs.length,
+              itemBuilder: (context, index) {
+                return AyahItem(ayahModel: ayahs[index]);
+              },
+            );
+          } else {
+            return const Center(child: CircularProgressIndicator(color: AppColors.darkGreen,));
+          }})
     );
   }
 }

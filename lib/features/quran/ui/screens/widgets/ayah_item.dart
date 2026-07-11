@@ -17,7 +17,6 @@ class AyahItem extends StatelessWidget {
           top: AppPadding.p20(context),
           left: AppPadding.p20(context),
           right: AppPadding.p20(context),
-          bottom: AppPadding.p32(context),
         ),
         width: double.infinity,
         decoration: ShapeDecoration(
@@ -28,6 +27,7 @@ class AyahItem extends StatelessWidget {
           ),
         ),
         child: ListTile(
+          contentPadding: EdgeInsets.zero,
           title: Text(ayahModel.ayah, style: AppStyles.regularAmiri20(context)),
           trailing: CircleBadgeCard(
             height: 40,

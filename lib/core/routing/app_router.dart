@@ -58,7 +58,8 @@ abstract class AppRouter {
       GoRoute(
         path: AppRouters.quranDetails,
         pageBuilder: (context, state) {
-          final surahNumber = state.extra as int;
+          final args = state.extra as Map<String, dynamic>;
+          final surahNumber = args['surahNumber'] as int;
           return AppTransitions.buildPage(
             state: state,
             child: BlocProvider(

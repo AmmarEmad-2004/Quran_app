@@ -6,14 +6,13 @@ import 'package:quran_app/core/theme/app_styles.dart';
 
 class AppBarDetailsScreenContent extends StatelessWidget {
   final String surahName;
-  final String surahType;
   final int ayahCount;
-
+  final bool isMadani;
   const AppBarDetailsScreenContent({
     super.key,
     required this.surahName,
-    required this.surahType,
     required this.ayahCount,
+    required this.isMadani,
   });
 
   @override
@@ -31,13 +30,13 @@ class AppBarDetailsScreenContent extends StatelessWidget {
           spacing: 4,
           children: [
             Text(
-              'سورة $surahName',
+              surahName,
               style: AppStyles.mediumCairo18(
                 context,
               ).copyWith(color: AppColors.kWhite, fontSize: 20),
             ),
             Text(
-              '$surahType · $ayahCount آية',
+              '${isMadani ? 'مدنية' : 'مكية'} · $ayahCount آية',
               style: AppStyles.regularCairo14(
                 context,
               ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.8)),

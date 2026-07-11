@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/widgets/gradient_appbar.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/app_bar_detalis_screen_conten.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/ayah_list.dart';
@@ -10,11 +11,27 @@ class QuranDetailsScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Column(children: [
-        GradientAppbar(radius: 0 ,height: 0.1 , child: AppBarDetailsScreenContent(surahName: 'الفاتحة', surahType: 'مكية', ayahCount: 7,)),
-       AyahToolBar(),
-       Expanded(child: AyahList()),
-       SurahNavigationBar(),
-      ],);
+    final args = GoRouterState.of(context).extra as Map<String, dynamic>;
+    //final number = args['surahNumber'] as int;
+    final name = args['surahName'] as String;
+    //final type = args['surahType'] as String;
+    final ayahCount = args['ayahCount'] as int;
+    final isMadani = args['surahType'] as String  == 'Medinan';
+    return Column(
+      children: [
+        GradientAppbar(
+          radius: 0,
+          height: 0.1,
+          child: AppBarDetailsScreenContent(
+            surahName: name,
+            ayahCount: ayahCount,
+            isMadani: isMadani,
+          ),
+        ),
+        AyahToolBar(),
+        Expanded(child: AyahList()),
+        SurahNavigationBar(),
+      ],
+    );
   }
 }
