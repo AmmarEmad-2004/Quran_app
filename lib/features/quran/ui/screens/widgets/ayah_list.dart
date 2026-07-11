@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/constants/ayah_list_demo.dart';
-import 'package:quran_app/features/quran/ui/widgets/ayah_item.dart';
+import 'package:quran_app/features/quran/ui/screens/widgets/ayah_item.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 
 class AyahList extends StatelessWidget {

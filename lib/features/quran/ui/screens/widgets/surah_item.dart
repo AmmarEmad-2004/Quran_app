@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/features/quran/data/models/surah_model.dart';
-import 'package:quran_app/features/quran/ui/widgets/sura_number_badge.dart';
-import 'package:quran_app/features/quran/ui/widgets/sura_type.dart';
+import 'package:quran_app/features/quran/ui/screens/widgets/sura_number_badge.dart';
+import 'package:quran_app/features/quran/ui/screens/widgets/sura_type.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 
 class SurahItem extends StatefulWidget {

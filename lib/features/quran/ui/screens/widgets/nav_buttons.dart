@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
-import 'package:quran_app/features/quran/ui/widgets/nav_button_item.dart';
+import 'package:quran_app/features/quran/ui/screens/widgets/nav_button_item.dart';
 
 class SurahNavigationBar extends StatefulWidget {
   const SurahNavigationBar({super.key});

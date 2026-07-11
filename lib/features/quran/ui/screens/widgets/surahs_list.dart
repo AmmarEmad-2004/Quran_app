@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/constants/sura_list_demo.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
-import 'package:quran_app/features/quran/ui/widgets/surah_item.dart';
+import 'package:quran_app/features/quran/ui/screens/widgets/surah_item.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 
 class SurahsList extends StatelessWidget {
