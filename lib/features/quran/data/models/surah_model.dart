@@ -1,11 +1,20 @@
-class SurahModel {
+import 'package:hive/hive.dart';
+part 'surah_model.g.dart';
+
+@HiveType(typeId: 0)
+class SurahModel extends HiveObject {
+  @HiveField(0)
   final int number;
+  @HiveField(1)
   final String nameArabic;
+  @HiveField(2)
   final String nameEnglish;
+  @HiveField(3)
   final int ayatCount;
-  final String type; 
- 
-  const SurahModel({
+  @HiveField(4)
+  final String type;
+
+  SurahModel({
     required this.number,
     required this.nameArabic,
     required this.nameEnglish,
