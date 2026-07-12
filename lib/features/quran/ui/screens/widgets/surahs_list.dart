@@ -18,7 +18,7 @@ class SurahsList extends StatelessWidget {
           if (state is SurahError) {
             return Center(child: Text(state.errormessage));
           } else if (state is SurahSuccess) {
-            final surahList = state.surahList;
+            final surahList = state.filteredList;
             return ListView.builder(
               itemCount: surahList.length,
               itemBuilder: (context, index) {

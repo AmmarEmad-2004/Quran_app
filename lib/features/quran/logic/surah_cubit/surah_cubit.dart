@@ -14,7 +14,37 @@ class SurahCubit extends Cubit<SurahState> {
     final result = await quranrepo.getAllSurahs();
     result.fold(
       (failure) => emit(SurahError(errormessage: failure.errorMessage)),
-      (surahList) => emit(SurahSuccess(surahList: surahList)),
+      (surahList) => emit(SurahSuccess(
+        surahList: surahList,
+        filteredList: surahList,
+      )),
     );
+  }
+
+  void filterSurahs(SurahFilterType filterType) {
+    final currentState = state;
+    if (currentState is! SurahSuccess) return; 
+
+    List<SurahModel> filtered;
+    switch (filterType) {
+      case SurahFilterType.all:
+        filtered = currentState.surahList;
+        break;
+      case SurahFilterType.meccan:
+        filtered = currentState.surahList
+            .where((surah) => surah.type == 'Meccan')
+            .toList();
+        break;
+      case SurahFilterType.medinan:
+        filtered = currentState.surahList
+            .where((surah) => surah.type == 'Medinan')
+            .toList();
+        break;
+    }
+
+    emit(currentState.copyWith(
+      filteredList: filtered,
+      selectedFilter: filterType,
+    ));
   }
 }
