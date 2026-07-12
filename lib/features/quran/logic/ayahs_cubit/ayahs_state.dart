@@ -11,10 +11,11 @@ final class AyahsInitial extends AyahsState {}
 final class AyahsLoading extends AyahsState {}
 final class AyahsSuccess extends AyahsState {
   final List<AyahModel> ayahList;
+   final int currentSurahNumber;
 
-  const AyahsSuccess({required this.ayahList});
+  const AyahsSuccess({required this.ayahList, required this.currentSurahNumber});
     @override
-  List<Object> get props => [ayahList];
+  List<Object> get props => [ayahList, currentSurahNumber];
 }
 final class AyahsError extends AyahsState {
   final String errormessage;

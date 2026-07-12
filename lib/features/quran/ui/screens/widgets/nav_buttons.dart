@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
+import 'package:quran_app/features/quran/logic/ayahs_cubit/ayahs_cubit.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/nav_button_item.dart';
 
 class SurahNavigationBar extends StatefulWidget {
   const SurahNavigationBar({super.key});
-
+  
   @override
   State<SurahNavigationBar> createState() => _SurahNavigationBarState();
 }
@@ -27,9 +29,10 @@ class _SurahNavigationBarState extends State<SurahNavigationBar> {
               text: 'السورة التالية',
               leftIcon: Icons.arrow_forward,
               onTap: () {
-                setState(() {
-                  selectedIndex = 0;
-                });
+                context.read<AyahsCubit>().goToNextSurah();
+                 setState(() {
+                    selectedIndex = 0;
+                  });
               },
             ),
           ),
@@ -40,6 +43,7 @@ class _SurahNavigationBarState extends State<SurahNavigationBar> {
               rightIcon: Icons.arrow_back,
               isSelected: selectedIndex == 1,
               onTap: () {
+                context.read<AyahsCubit>().goToPreviousSurah();
                 setState(() {
                   selectedIndex = 1;
                 });
