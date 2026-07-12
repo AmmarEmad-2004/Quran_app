@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
     this.icon,
     this.fillColor,
     this.hintColor,
-    this.onSubmitted, this.isDense,
+    this.onChanged, this.isDense,
   });
   final String? hint;
   final Color? hintColor;
@@ -20,14 +20,14 @@ class CustomTextField extends StatelessWidget {
   final Color? fillColor;
   final bool? isDense;
   final TextEditingController? controller;
-  final void Function(String)? onSubmitted;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
       onTapOutside: (_) => FocusManager.instance.primaryFocus?.unfocus(),
       maxLines: maxLines,
-      onSubmitted: onSubmitted,
+      onChanged: onChanged,
       style: AppStyles.regularCairo14(
         context,
       ).copyWith(color: AppColors.kBlack),

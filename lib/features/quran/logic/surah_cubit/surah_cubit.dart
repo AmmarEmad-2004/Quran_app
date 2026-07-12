@@ -63,6 +63,6 @@ class SurahCubit extends Cubit<SurahState> {
           surah.nameEnglish.toLowerCase().contains(query.toLowerCase());
     }).toList();
 
-    emit(currentState.copyWith(filteredList: searched));
+    emit(currentState.copyWith(filteredList: searched, selectedFilter: SurahFilterType.all,));
   }
 }

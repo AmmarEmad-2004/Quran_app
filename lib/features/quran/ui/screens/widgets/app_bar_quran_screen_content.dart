@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
@@ -6,6 +7,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_text_feild.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
+import 'package:quran_app/features/quran/logic/surah_cubit/surah_cubit.dart';
 
 class AppBarQuranScreenContent extends StatelessWidget {
   const AppBarQuranScreenContent({super.key});
@@ -63,6 +65,9 @@ class AppBarQuranScreenContent extends StatelessWidget {
               Icons.search,
               color: AppColors.kWhite.withValues(alpha: 0.6),
             ),
+            onChanged: (value) {
+             context.read<SurahCubit>().searchSurahs(value);
+            },
           ),
         ],
       ),
