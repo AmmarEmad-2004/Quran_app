@@ -15,16 +15,22 @@ final class AzkarCategorySuccess extends AzkarState {
   final List<GetAzkarCategory> azkarCategories;
 
   const AzkarCategorySuccess(this.azkarCategories);
+  @override
+  List<Object> get props => [azkarCategories];
 }
 
 final class AzkarDetailsSuccess extends AzkarState {
   final List<AzkarDetailModel> azkarDetails;
 
   const AzkarDetailsSuccess(this.azkarDetails);
+  @override
+  List<Object> get props => [azkarDetails];
 }
 
 final class AzkarFailure extends AzkarState {
   final String errMessage;
 
   const AzkarFailure(this.errMessage);
+  @override
+  List<Object> get props => [errMessage];
 }

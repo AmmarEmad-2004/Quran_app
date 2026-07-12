@@ -13,9 +13,13 @@ final class AyahsSuccess extends AyahsState {
   final List<AyahModel> ayahList;
 
   const AyahsSuccess({required this.ayahList});
+    @override
+  List<Object> get props => [ayahList];
 }
 final class AyahsError extends AyahsState {
   final String errormessage;
 
   const AyahsError({required this.errormessage});
+    @override
+  List<Object> get props => [errormessage];
 }
