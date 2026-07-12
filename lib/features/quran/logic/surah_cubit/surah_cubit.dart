@@ -9,6 +9,7 @@ part 'surah_state.dart';
 class SurahCubit extends Cubit<SurahState> {
   SurahCubit(this.quranrepo) : super(SurahInitial());
   final QuranRepo quranrepo;
+
   Future<void> getAllSurahs() async {
     emit(SurahLoading());
     final result = await quranrepo.getAllSurahs();
@@ -46,5 +47,22 @@ class SurahCubit extends Cubit<SurahState> {
       filteredList: filtered,
       selectedFilter: filterType,
     ));
+  }
+
+    void searchSurahs(String query) {
+    final currentState = state;
+    if (currentState is! SurahSuccess) return;
+
+    if (query.trim().isEmpty) {
+      emit(currentState.copyWith(filteredList: currentState.surahList));
+      return;
+    }
+
+    final searched = currentState.surahList.where((surah) {
+      return surah.nameArabic.contains(query) ||
+          surah.nameEnglish.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+
+    emit(currentState.copyWith(filteredList: searched));
   }
 }

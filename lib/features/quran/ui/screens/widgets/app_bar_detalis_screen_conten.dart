@@ -31,9 +31,9 @@ class AppBarDetailsScreenContent extends StatelessWidget {
           children: [
             Text(
               surahName,
-              style: AppStyles.mediumCairo18(
+              style: AppStyles.regularAmiri20(
                 context,
-              ).copyWith(color: AppColors.kWhite, fontSize: 20),
+              ).copyWith(color: AppColors.kWhite),
             ),
             Text(
               '${isMadani ? 'مدنية' : 'مكية'} · $ayahCount آية',
