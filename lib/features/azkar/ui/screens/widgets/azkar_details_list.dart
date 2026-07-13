@@ -6,7 +6,7 @@ import 'package:quran_app/features/azkar/data/models/get_azkar_category.dart';
 import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details_cubit.dart';
 import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details_state.dart';
 import 'package:quran_app/features/azkar/ui/screens/widgets/azkar_details_item.dart';
-import 'package:quran_app/features/azkar/ui/screens/widgets/custom_azkar_error_item.dart';
+import 'package:quran_app/core/widgets/custom_error_item.dart';
 
 class AzkarDetailsList extends StatelessWidget {
   const AzkarDetailsList({super.key});
@@ -22,14 +22,14 @@ class AzkarDetailsList extends StatelessWidget {
         builder: (context, state) {
           if (state is AzkarDetailsFailure) {
             return Center(
-              child: CustomAzkarErrorItem(
+              child: CustomErrorItem(
                 errorMessage: "حدث خطأ ما أثناء تحميل البيانات",
                 onRetry: () =>
                     context.read<AzkarDetailsCubit>().getAzkarDetails(category),
               ),
             );
           } else if (state is AzkarDetailsSuccess) {
-              final azkarDetailsList = state.azkarDetails;
+            final azkarDetailsList = state.azkarDetails;
             return ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -40,7 +40,7 @@ class AzkarDetailsList extends StatelessWidget {
             );
           }
           return Center(
-            child: CircularProgressIndicator(color: AppColors.darkGreen)
+            child: CircularProgressIndicator(color: AppColors.darkGreen),
           );
         },
       ),

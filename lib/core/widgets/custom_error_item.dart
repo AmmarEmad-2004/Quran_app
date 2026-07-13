@@ -4,12 +4,8 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
 import 'package:quran_app/core/widgets/custom_card.dart';
 
-class CustomAzkarErrorItem extends StatelessWidget {
-  const CustomAzkarErrorItem({
-    super.key,
-    required this.errorMessage,
-    this.onRetry,
-  });
+class CustomErrorItem extends StatelessWidget {
+  const CustomErrorItem({super.key, required this.errorMessage, this.onRetry});
 
   final String errorMessage;
   final void Function()? onRetry;

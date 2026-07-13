@@ -21,7 +21,7 @@ class ServerFailer extends Failure {
         return ServerFailer('Request to ApiServse was canceld');
       case DioExceptionType.connectionError:
         return ServerFailer(
-            'Unable to connect to the server. Please check your internet connection and try again.');
+           'يبدو أنك غير متصل بالإنترنت. يرجى الاتصال بالإنترنت لأول مرة لتحميل البيانات.');
       case DioExceptionType.unknown:
         if (dioException.message!.contains('SocketException')) {
           return ServerFailer('No internet connection!');
