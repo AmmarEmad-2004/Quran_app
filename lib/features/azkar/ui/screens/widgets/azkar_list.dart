@@ -7,6 +7,7 @@ import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/features/azkar/logic/azkar_cubit/azkar_cubit.dart';
 import 'package:quran_app/core/constants/azkar_colors_cards.dart';
 import 'package:quran_app/features/azkar/ui/screens/widgets/azkar_item.dart';
+import 'package:quran_app/features/azkar/ui/screens/widgets/custom_azkar_error_item.dart';
 
 class AzkarList extends StatelessWidget {
   const AzkarList({super.key});
@@ -18,13 +19,14 @@ class AzkarList extends StatelessWidget {
       child: BlocBuilder<AzkarCubit, AzkarState>(
         builder: (context, state) {
           if (state is AzkarFailure) {
-            return Center(child: Text(state.errMessage));
+            return Center(child: CustomAzkarErrorItem(errorMessage: "حدث خطأ ما أثناء تحميل البيانات", onRetry: () {
+              context.read<AzkarCubit>().getAzkarCategories();
+            }));
           } else if (state is AzkarCategorySuccess) {
             final azkarCategory = state.azkarCategories;
             return GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-           // physics: const AlwaysScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
@@ -47,13 +49,7 @@ class AzkarList extends StatelessWidget {
             );
           }
           return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircularProgressIndicator(color: AppColors.darkGreen),
-              ],
-            ),
+            child: CircularProgressIndicator(color: AppColors.darkGreen),
           );
         },
       ),
