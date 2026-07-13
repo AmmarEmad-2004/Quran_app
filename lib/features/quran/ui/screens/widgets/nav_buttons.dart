@@ -6,13 +6,14 @@ import 'package:quran_app/features/quran/ui/screens/widgets/nav_button_item.dart
 
 class SurahNavigationBar extends StatefulWidget {
   const SurahNavigationBar({super.key});
-  
+
   @override
   State<SurahNavigationBar> createState() => _SurahNavigationBarState();
 }
 
 class _SurahNavigationBarState extends State<SurahNavigationBar> {
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,9 +31,9 @@ class _SurahNavigationBarState extends State<SurahNavigationBar> {
               leftIcon: Icons.arrow_forward,
               onTap: () {
                 context.read<AyahsCubit>().goToNextSurah();
-                 setState(() {
-                    selectedIndex = 0;
-                  });
+                setState(() {
+                  selectedIndex = 0;
+                });
               },
             ),
           ),

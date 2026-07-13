@@ -35,11 +35,13 @@ class AppBarDetailsScreenContent extends StatelessWidget {
                 context,
               ).copyWith(color: AppColors.kWhite),
             ),
-            Text(
-              '${isMadani ? 'مدنية' : 'مكية'} · $ayahCount آية',
-              style: AppStyles.regularCairo14(
-                context,
-              ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.8)),
+            Flexible(
+              child: Text(
+                '${isMadani ? 'مدنية' : 'مكية'} · $ayahCount آية',
+                style: AppStyles.regularCairo14(
+                  context,
+                ).copyWith(color: AppColors.kWhite.withValues(alpha: 0.8)),
+              ),
             ),
           ],
         ),

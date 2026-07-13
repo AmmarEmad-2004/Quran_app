@@ -11,7 +11,10 @@ class SuraType extends StatelessWidget {
     return Container(
       width: 42.44,
       height: 20,
-      padding: EdgeInsets.symmetric(horizontal: AppPadding.p8(context), vertical: AppPadding.p2(context)),
+      padding: EdgeInsets.symmetric(
+        horizontal: AppPadding.p8(context),
+        vertical: AppPadding.p2(context),
+      ),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         color: isMadani
@@ -19,20 +22,15 @@ class SuraType extends StatelessWidget {
             : AppColors.lightGreen.withValues(alpha: 0.1),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        spacing: 4,
-        children: [
-          Text(
-             isMadani ? 'مدنية' : 'مكية',
-            textAlign: TextAlign.right,
-            style: AppStyles.regularCairo12(context).copyWith(
-              color: isMadani ? AppColors.lightGold : AppColors.lightGreen,
-            ),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          isMadani ? 'مدنية' : 'مكية',
+          textAlign: TextAlign.right,
+          style: AppStyles.regularCairo12(context).copyWith(
+            color: isMadani ? AppColors.lightGold : AppColors.lightGreen,
           ),
-        ],
+        ),
       ),
     );
   }
