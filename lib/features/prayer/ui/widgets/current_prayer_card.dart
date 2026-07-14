@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/custom_gradient_background.dart';
+import 'package:quran_app/core/utils/widgets/custom_gradient_background.dart';
 import 'package:quran_app/features/prayer/data/models/prayer_time_model.dart';
 import 'package:quran_app/features/prayer/ui/widgets/content_current_card_info.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';

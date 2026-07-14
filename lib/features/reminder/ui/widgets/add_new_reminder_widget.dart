@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/custom_text_feild.dart';
+import 'package:quran_app/core/utils/widgets/custom_text_feild.dart';
 import 'package:quran_app/features/reminder/ui/widgets/time_of_reminder_menu.dart';
 
 class AddNewReminderWidget extends StatefulWidget {

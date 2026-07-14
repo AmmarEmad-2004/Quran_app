@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran_app/core/widgets/circle_badge_card.dart';
+import 'package:quran_app/core/utils/widgets/circle_badge_card.dart';
 
 class ChooseColorItem extends StatelessWidget {
   const ChooseColorItem({

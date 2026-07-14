@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
-import 'package:quran_app/core/widgets/custom_button.dart';
+import 'package:quran_app/core/utils/widgets/custom_button.dart';
 
 class BottomSheetFooterNavButtons extends StatelessWidget {
   const BottomSheetFooterNavButtons({super.key});

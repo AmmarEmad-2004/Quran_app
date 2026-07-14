@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/constants/app_images.dart';
-import 'package:quran_app/core/function/format_custom_time.dart';
+import 'package:quran_app/core/utils/function/format_custom_time.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/custom_gradient_background.dart';
+import 'package:quran_app/core/utils/widgets/custom_gradient_background.dart';
 
 class BottomSheetPreviewCard extends StatelessWidget {
   const BottomSheetPreviewCard({super.key});

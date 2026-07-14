@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quran_app/core/widgets/gradient_appbar.dart';
+import 'package:quran_app/core/utils/widgets/gradient_appbar.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/app_bar_detalis_screen_conten.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/ayah_list.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/ayah_tool_bar.dart';

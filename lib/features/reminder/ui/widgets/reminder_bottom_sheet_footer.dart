@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart' show AppColors;
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/custom_card.dart';
+import 'package:quran_app/core/utils/widgets/custom_card.dart';
 import 'package:quran_app/features/reminder/ui/widgets/bottom_sheet_footer_nav_buttons.dart';
 import 'package:quran_app/features/reminder/ui/widgets/bottom_sheet_preview_card.dart';
 

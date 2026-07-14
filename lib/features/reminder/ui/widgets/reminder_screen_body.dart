@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
-import 'package:quran_app/core/widgets/custom_button.dart';
-import 'package:quran_app/core/widgets/gradient_appbar.dart';
+import 'package:quran_app/core/utils/widgets/custom_button.dart';
+import 'package:quran_app/core/utils/widgets/gradient_appbar.dart';
 import 'package:quran_app/features/reminder/ui/widgets/reminder_appbar_content.dart';
 import 'package:quran_app/features/reminder/ui/widgets/reminder_item_list.dart';
 import 'package:quran_app/features/reminder/ui/widgets/reminder_screen_footer.dart';

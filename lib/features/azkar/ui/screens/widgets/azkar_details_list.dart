@@ -6,7 +6,7 @@ import 'package:quran_app/features/azkar/data/models/get_azkar_category.dart';
 import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details_cubit.dart';
 import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details_state.dart';
 import 'package:quran_app/features/azkar/ui/screens/widgets/azkar_details_item.dart';
-import 'package:quran_app/core/widgets/custom_error_item.dart';
+import 'package:quran_app/core/utils/widgets/custom_error_item.dart';
 
 class AzkarDetailsList extends StatelessWidget {
   const AzkarDetailsList({super.key});

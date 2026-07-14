@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/circle_badge_card.dart';
-import 'package:quran_app/core/widgets/custom_card.dart';
+import 'package:quran_app/core/utils/widgets/circle_badge_card.dart';
+import 'package:quran_app/core/utils/widgets/custom_card.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/font_size_control.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/language_menu.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';

@@ -4,8 +4,8 @@ import 'package:quran_app/core/constants/app_images.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/custom_gradient_button.dart';
-import 'package:quran_app/core/widgets/custom_text_button.dart';
+import 'package:quran_app/core/utils/widgets/custom_gradient_button.dart';
+import 'package:quran_app/core/utils/widgets/custom_text_button.dart';
 import 'package:quran_app/features/onboarding/ui/widgets/location_info_list.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 class LocationScreenBody extends StatelessWidget {

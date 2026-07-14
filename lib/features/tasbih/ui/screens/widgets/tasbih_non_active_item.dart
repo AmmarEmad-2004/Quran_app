@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/custom_card.dart';
+import 'package:quran_app/core/utils/widgets/custom_card.dart';
 
 class TasbihNonActiveItem extends StatelessWidget {
   const TasbihNonActiveItem({super.key, required this.zekr});

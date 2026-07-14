@@ -3,7 +3,7 @@ import 'package:quran_app/core/constants/zekr_list_demo.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
-import 'package:quran_app/core/widgets/custom_card.dart';
+import 'package:quran_app/core/utils/widgets/custom_card.dart';
 import 'package:quran_app/features/tasbih/ui/screens/widgets/display_progress_card_widget.dart';
 import 'package:quran_app/features/tasbih/ui/screens/widgets/tasbih_card_button.dart';
 import 'package:quran_app/features/tasbih/ui/screens/widgets/tasbih_card_footer.dart';

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
-import 'package:quran_app/core/widgets/custom_error_item.dart';
+import 'package:quran_app/core/utils/widgets/custom_error_item.dart';
 import 'package:quran_app/features/quran/logic/surah_cubit/surah_cubit.dart';
 import 'package:quran_app/features/quran/ui/screens/widgets/surah_item.dart';
 import 'package:quran_app/core/helpers/app_padding.dart';

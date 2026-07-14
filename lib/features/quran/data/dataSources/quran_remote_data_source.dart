@@ -1,6 +1,6 @@
 import 'package:quran_app/core/constants/key_constants.dart';
-import 'package:quran_app/core/functions/cache_all_surahs.dart';
-import 'package:quran_app/core/functions/cache_all_ayahs.dart';
+import 'package:quran_app/core/utils/function/cache_all_surahs.dart';
+import 'package:quran_app/core/utils/function/cache_all_ayahs.dart';
 import 'package:quran_app/core/networking/api_service.dart';
 import 'package:quran_app/features/quran/data/models/ayah_model.dart';
 import 'package:quran_app/features/quran/data/models/surah_model.dart';
