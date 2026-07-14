@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:quran_app/core/helpers/di.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/routing/app_transitions.dart';
+import 'package:quran_app/core/utils/function/get_initial_route.dart';
 import 'package:quran_app/features/azkar/data/models/get_azkar_category.dart';
 import 'package:quran_app/features/azkar/data/repos/azkar_repo.dart';
 import 'package:quran_app/features/azkar/logic/azkar_cubit/azkar_cubit.dart';
@@ -26,6 +27,7 @@ import 'package:quran_app/features/azkar/logic/azkar_details_cubit/azkar_details
 // GoRouter configuration
 abstract class AppRouter {
   static final GoRouter goRouter = GoRouter(
+    initialLocation: getInitialRoute(),
     routes: [
       GoRoute(
         path: AppRouters.splash,
