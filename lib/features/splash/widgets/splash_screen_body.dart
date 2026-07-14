@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
+import 'package:quran_app/core/config/cache/get_storage_helper.dart';
 import 'package:quran_app/core/constants/app_images.dart';
+import 'package:quran_app/core/constants/key_constants.dart';
 import 'package:quran_app/core/routing/app_routers.dart';
 import 'package:quran_app/core/theme/app_colors.dart';
 import 'package:quran_app/core/theme/app_styles.dart';
@@ -23,7 +25,17 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   Future<void> navigateAfterDelay() async {
     await Future.delayed(const Duration(seconds: 3));
     if (!mounted) return;
-    GoRouter.of(context).pushReplacement(AppRouters.onBoarding);
+    final hasSeenOnboarding =
+        GetStorageHelper.getGetStorageData(
+          key: KeyConstants.hasSeenOnboarding,
+        ) ??
+        false;
+
+    if (hasSeenOnboarding) {
+      GoRouter.of(context).go(AppRouters.home);
+    } else {
+      GoRouter.of(context).go(AppRouters.onBoarding);
+    }
   }
 
   @override
